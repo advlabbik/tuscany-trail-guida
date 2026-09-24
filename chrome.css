@@ -62,11 +62,18 @@ button {
   backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--line);
   transform: translateY(-100%);
-  transition: transform 0.25s ease;
+  /* visibility, e non solo il transform: spinta fuori dallo schermo la barra
+     restava raggiungibile col Tab, e i primi quattro tasti finivano su bottoni
+     invisibili. È la stessa trappola della barra fissa di ttrefactor. Il ritardo
+     di 0.25s lascia finire l'uscita prima di nasconderla. */
+  visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s 0.25s;
 }
 
 .barra-top.su {
   transform: none;
+  visibility: visible;
+  transition: transform 0.25s ease, visibility 0s;
 }
 
 .marchio {
@@ -256,9 +263,27 @@ button {
     display: none;
   }
 
+  /* Su telefono la targa non sta più sopra la foto: con titolo, date,
+     countdown e bottone copriva quasi tutto lo schermo, e su un iPhone con le
+     barre del browser della foto restava una striscia di cielo (100px a
+     390×664, niente a 375×560). Qui la foto viene prima, alta metà schermo, e la
+     targa la segue. */
+  .copertina {
+    display: block;
+    min-height: 0;
+    background: var(--wine);
+  }
+
+  .copertina > img {
+    position: relative;
+    height: 52vh;
+    height: 52svh;
+  }
+
   .copertina-in {
     width: 100%;
-    padding: 24px var(--pad-x) 28px;
+    padding: 24px var(--pad-x) 32px;
+    background: var(--wine);
   }
 }
 
@@ -349,12 +374,15 @@ button {
     overflow: auto;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.25s;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0s 0.25s;
   }
 
   .binario.su {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
+    transition: opacity 0.25s, visibility 0s;
   }
 
   .binario ol {
@@ -428,11 +456,16 @@ button {
   background: var(--cream);
   border-left: 1px solid var(--line);
   transform: translateX(100%);
-  transition: transform 0.25s ease;
+  /* Chiuso era solo spostato: aria-hidden lo toglieva agli screen reader, ma i
+     suoi 16 link restavano nel giro del Tab. */
+  visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s 0.25s;
 }
 
 .cassetto.aperto {
   transform: none;
+  visibility: visible;
+  transition: transform 0.25s ease, visibility 0s;
 }
 
 .cassetto-testa {
