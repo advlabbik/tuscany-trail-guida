@@ -47,15 +47,41 @@
     for(var i=0;i<caps.length;i++){if(caps[i].getBoundingClientRect().top<window.innerHeight*.35)att=caps[i].id}
     $$('[data-cap]').forEach(function(a){a.classList.toggle('attivo',a.dataset.cap===att)});
   }
-  window.addEventListener('scroll',scorri,{passive:true});window.addEventListener('resize',scorri);scorri();
+  /* Una volta per fotogramma e non a ogni evento: lo scroll ne manda decine al
+     secondo, e ognuno rileggeva la posizione di 15 capitoli. */
+  var inCoda=false;
+  function scorriPoi(){if(inCoda)return;inCoda=true;requestAnimationFrame(function(){inCoda=false;scorri()})}
+  window.addEventListener('scroll',scorriPoi,{passive:true});window.addEventListener('resize',scorriPoi);scorri();
 
   /* ---------- cassetto indice ---------- */
   var cas=$('#cassetto'),velo=$('#velo'),cerca=$('#cerca'),campo=$('#cerca-campo');
-  function apriIndice(){cas.classList.add('aperto');velo.classList.add('aperto');cas.setAttribute('aria-hidden','false');var a=$('a.attivo',cas)||$('a',cas);a&&a.focus({preventScroll:true})}
-  function chiudiTutto(){cas.classList.remove('aperto');velo.classList.remove('aperto');cas.setAttribute('aria-hidden','true');cerca.classList.remove('aperto');document.body.style.overflow=''}
+  /* Il fuoco. Chi apre il cassetto o la ricerca da tastiera deve restarci dentro
+     finché non chiude (Tab gira fra i controlli del pannello), e alla chiusura
+     tornare al bottone da cui è partito: prima, con Esc, restava su un link del
+     cassetto ormai invisibile. Il cassetto chiuso non è raggiungibile col Tab
+     perché chrome.css gli dà visibility: hidden. */
+  var daDove=null;
+  function pannelloAperto(){return cerca.classList.contains('aperto')?cerca:cas.classList.contains('aperto')?cas:null}
+  function apriIndice(){daDove=document.activeElement;cas.classList.add('aperto');velo.classList.add('aperto');cas.setAttribute('aria-hidden','false');var a=$('a.attivo',cas)||$('a',cas);a&&a.focus({preventScroll:true})}
+  /* ridai=false quando dopo la chiusura il fuoco va altrove: su un capitolo scelto
+     dal cassetto, su un risultato della ricerca. */
+  function chiudiTutto(ridai){
+    var eraAperto=pannelloAperto();
+    cas.classList.remove('aperto');velo.classList.remove('aperto');cas.setAttribute('aria-hidden','true');cerca.classList.remove('aperto');document.body.style.overflow='';
+    if(eraAperto&&ridai!==false&&daDove&&daDove.focus)daDove.focus({preventScroll:true});
+    daDove=null;
+  }
   $$('[data-apri-indice]').forEach(function(b){b.addEventListener('click',apriIndice)});
-  $$('[data-chiudi-tutto]').forEach(function(b){b.addEventListener('click',chiudiTutto)});
-  cas.addEventListener('click',function(e){if(e.target.closest('a'))chiudiTutto()});
+  $$('[data-chiudi-tutto]').forEach(function(b){b.addEventListener('click',function(){chiudiTutto()})});
+  cas.addEventListener('click',function(e){if(e.target.closest('a'))chiudiTutto(false)});
+  document.addEventListener('keydown',function(e){
+    var pan=pannelloAperto();if(!pan||e.key!=='Tab')return;
+    var f=$$('a[href],button,input',pan).filter(function(x){return x.offsetParent!==null});if(!f.length)return;
+    var primo=f[0],ultimo=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===primo){e.preventDefault();ultimo.focus()}
+    else if(!e.shiftKey&&document.activeElement===ultimo){e.preventDefault();primo.focus()}
+    else if(!pan.contains(document.activeElement)){e.preventDefault();primo.focus()}
+  });
 
   /* ---------- ricerca ---------- */
   function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’`]/g,"'")}
@@ -102,7 +128,7 @@
     });
   }
   function vai(x,termini){
-    chiudiTutto();
+    chiudiTutto(false);
     var el=x.el,orig=el.innerHTML,conControlli=!!el.querySelector('input,button');
     /* evidenzia le parole cercate dentro il paragrafo, poi rimette tutto com'era.
        Non sulle voci della lista da spuntare: rifare l'HTML staccherebbe le caselle. */
@@ -111,13 +137,17 @@
       nodi.forEach(function(tn){var h=evidenzia(tn.nodeValue,termini);if(h.indexOf('<mark>')>-1){var s=document.createElement('span');s.innerHTML=h;tn.parentNode.replaceChild(s,tn)}});
     }catch(_){}
     el.scrollIntoView({behavior:'smooth',block:'center'});
+    /* Il fuoco sul blocco trovato: chi usa la tastiera riparte da lì, non dalla
+       cima della pagina. */
+    if(!el.hasAttribute('tabindex'))el.setAttribute('tabindex','-1');
+    el.focus({preventScroll:true});
     el.classList.remove('lampo');void el.offsetWidth;el.classList.add('lampo');
     setTimeout(function(){if(!conControlli)el.innerHTML=orig;el.classList.remove('lampo')},4000);
     var q=campo.value.trim();
     try{if(window.gtag)gtag('event','search',{search_term:q,language:LANG})}catch(_){}
     try{if(window.zaraz)zaraz.track('search',{search_term:q,language:LANG})}catch(_){}
   }
-  function apriCerca(){cerca.classList.add('aperto');document.body.style.overflow='hidden';setTimeout(function(){campo.focus();campo.select()},30);cercaOra()}
+  function apriCerca(){if(!pannelloAperto())daDove=document.activeElement;cas.classList.remove('aperto');velo.classList.remove('aperto');cerca.classList.add('aperto');document.body.style.overflow='hidden';setTimeout(function(){campo.focus();campo.select()},30);cercaOra()}
   $$('[data-apri-cerca]').forEach(function(b){b.addEventListener('click',apriCerca)});
   campo.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(cercaOra,120)});
   $$('button',sug).forEach(function(b){b.addEventListener('click',function(){campo.value=b.textContent;cercaOra();campo.focus()})});
@@ -148,6 +178,9 @@
     ];
     var timer,pad=function(n){return String(n).padStart(2,'0')};
     function tick(){
+      /* Scheda in background: niente da aggiornare. Al ritorno riparte subito
+         (visibilitychange più sotto), senza aspettare il secondo successivo. */
+      if(document.hidden)return;
       var now=Date.now(),tappa=null;
       for(var i=0;i<tappe.length;i++){if(tappe[i].t>now){tappa=tappe[i];break}}
       boxes.forEach(function(box){
@@ -163,7 +196,7 @@
       });
       if(!tappa)clearInterval(timer);
     }
-    tick();timer=setInterval(tick,1000);
+    tick();timer=setInterval(tick,1000);document.addEventListener('visibilitychange',tick);
   })();
 
   /* ---------- barre: data-v → --v ----------
@@ -172,4 +205,25 @@
      script: setProperty passa, perché è CSSOM e non un attributo. Senza
      JavaScript la barra resta vuota, ma il numero è scritto accanto. */
   $$('[data-v]').forEach(function(el){el.style.setProperty('--v',el.getAttribute('data-v'))});
+
+  /* ---------- stampa ----------
+     Le foto hanno loading="lazy": in stampa quelle mai raggiunte scorrendo
+     uscivano vuote (2 su 17 caricate, misurato). Il bottone del piè di pagina
+     le carica tutte e aspetta che arrivino prima di aprire la stampa; con
+     Ctrl+P si fa lo stesso in beforeprint, ma lì il browser non aspetta, quindi
+     è un tentativo e basta. Il gestore sta qui e non in un onclick nell'HTML:
+     il lettore di bas-guides vieta gli script in linea. */
+  function fotoTutte(){
+    return Promise.all($$('img').map(function(i){
+      i.loading='eager';
+      if(i.complete&&i.naturalWidth)return null;
+      return new Promise(function(ok){i.addEventListener('load',ok,{once:true});i.addEventListener('error',ok,{once:true})});
+    }));
+  }
+  window.addEventListener('beforeprint',fotoTutte);
+  $$('[data-stampa]').forEach(function(b){b.addEventListener('click',function(){
+    b.disabled=true;
+    var basta=new Promise(function(ok){setTimeout(ok,8000)});
+    Promise.race([fotoTutte(),basta]).then(function(){b.disabled=false;window.print()});
+  })});
 })();
