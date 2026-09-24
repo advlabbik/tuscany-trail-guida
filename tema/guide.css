@@ -1,0 +1,832 @@
+/* Generato da ttrefactor@c0abf95 (src/styles/guide.css) con scripts/export-guide-theme.mjs.
+   Non modificare qui: si corregge in ttrefactor e si esporta di nuovo. */
+
+/* ============================================================
+   Tuscany Trail — il testo lungo della guida
+   Le classi con cui è scritta La Guida del Tuscany Trail 2027
+   (repo tuscany-trail-guida) e che bas-guides userà per le guide HTML.
+
+   Perché classi globali e non componenti: il contenuto della guida non passa
+   da Astro. È HTML scritto a mano, pubblicato da un altro sistema, e lì un
+   componente non arriva — la stessa ragione per cui .cta e .link-rule stanno
+   in tokens.css. Qui si scrive lo STILE, una volta sola; la guida e bas-guides
+   ne ricevono una copia generata (scripts/export-guide-theme.mjs) e non la
+   modificano: una correzione fatta là si perderebbe alla copia successiva.
+
+   Tutto sta sotto .guida. Senza l'antenato, regole come `.box` o `h3` varrebbero
+   su qualunque pagina che importasse questo file.
+
+   Le regole sono quelle del sito, non quelle della guida di prima:
+   - righe sottili (--line-strong) al posto dei riquadri colorati;
+   - spigoli vivi, niente pillole;
+   - le etichette maiuscole sono il Kicker (Inter 500, 11px, oliva);
+   - i numeri in Libre Baskerville 700 bordeaux, come StatsRow e StepList;
+   - il corsivo serif (Libre Baskerville 400 italic) solo per le voci dei
+     partecipanti e per le frasi che la guida scrive già in corsivo.
+   ============================================================ */
+
+.guida {
+  font: 400 var(--fs-body) / 1.7 var(--font-body);
+  color: var(--ink);
+}
+
+.guida .colonna {
+  max-width: var(--maxw-text);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* --- Capitoli ----------------------------------------------------------- */
+
+.guida .cap {
+  padding: var(--sec-y-sm) 0 8px;
+}
+
+.guida .cap-testa {
+  margin: 0 0 clamp(26px, 5vw, 40px);
+}
+
+/* Il numero è decorazione: il titolo sotto dice già dove si è. Per questo può
+   stare in --blush, che su --cream non regge il contrasto di un testo. */
+.guida .cap-num {
+  display: block;
+  margin: 0 0 8px;
+  font: 700 clamp(56px, 14vw, 96px) / 0.9 var(--font-display);
+  color: var(--blush);
+  font-variant-numeric: lining-nums;
+}
+
+.guida .cap-testa h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  color: var(--heading);
+}
+
+.guida .cap-sotto {
+  margin: 14px 0 0;
+  font: 400 var(--fs-lead) / 1.6 var(--font-body);
+  color: var(--muted-strong);
+}
+
+/* --- Testo corrente ----------------------------------------------------- */
+
+.guida p {
+  margin: 0 0 0.9em;
+}
+
+.guida b,
+.guida strong {
+  font-weight: 600;
+  color: var(--heading);
+}
+
+/* Come Prose: il link si riconosce dalla sottolineatura, non dal colore — nel
+   testo lungo un paragrafo mezzo bordeaux si legge come un paragrafo di link. */
+.guida a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.guida a:hover {
+  color: var(--wine);
+}
+
+.guida h3 {
+  margin: clamp(36px, 6vw, 48px) 0 14px;
+  font-size: var(--fs-h4);
+  line-height: 1.2;
+  color: var(--heading);
+}
+
+.guida .etichetta {
+  margin: clamp(30px, 5vw, 38px) 0 12px;
+  font: 500 var(--fs-kicker) / 1.5 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.guida .apertura {
+  font: italic 400 clamp(19px, 4.8vw, 22px) / 1.55 var(--font-display);
+  color: var(--ink);
+}
+
+/* Le frasi-cardine della guida: una riga, a volte due. In display, come i
+   titoli del sito, e non in grassetto del corpo — lì si confonderebbero con i
+   paragrafi che cominciano in grassetto, che sono decine. */
+.guida .forte {
+  font: 700 var(--fs-h4) / 1.3 var(--font-display);
+  color: var(--heading);
+}
+
+.guida .forte.grosso {
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+}
+
+.guida .centro {
+  text-align: center;
+}
+
+.guida .stacco {
+  width: 64px;
+  height: 0;
+  margin: clamp(36px, 6vw, 46px) auto;
+  border: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+/* --- Voci dei partecipanti ---------------------------------------------- */
+
+/* Una riga sopra, come RuleList, e niente barra spessa a sinistra: la barra
+   colorata è il segno della citazione nei blog, non nel sito. Il corsivo serif è
+   l'unico posto del sito in cui compare: dice «queste parole non sono nostre». */
+.guida .voce {
+  margin: clamp(28px, 5vw, 40px) 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.guida .voce p {
+  margin: 0 0 10px;
+  font: italic 400 clamp(18px, 4.6vw, 22px) / 1.5 var(--font-display);
+  color: var(--ink);
+}
+
+.guida .voce .trad {
+  font: 400 var(--fs-xs) / 1.55 var(--font-body);
+  color: var(--muted-strong);
+}
+
+.guida .voce cite {
+  display: block;
+  margin-top: 12px;
+  font: 500 var(--fs-kicker) / 1.4 var(--font-body);
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+/* Il muro: colonne e non griglia, perché le voci hanno lunghezze diversissime
+   (una riga, dieci righe) e una griglia lascerebbe buchi alti mezza pagina. */
+.guida .muro {
+  margin-top: 10px;
+}
+
+.guida .muro .voce {
+  break-inside: avoid;
+  margin: 0 0 28px;
+}
+
+@media (min-width: 834px) {
+  .guida .muro {
+    columns: 2;
+    column-gap: clamp(28px, 4vw, 44px);
+  }
+}
+
+/* --- Numeri -------------------------------------------------------------- */
+
+/* Il «box» della guida di prima era un riquadro color sabbia. Qui resta solo la
+   riga sopra e l'occhiello: i numeri si distinguono dal testo per il carattere
+   display bordeaux, non per il fondo. */
+.guida .box {
+  margin: clamp(28px, 5vw, 40px) 0;
+  padding-top: clamp(18px, 4vw, 24px);
+  border-top: 1px solid var(--line-strong);
+}
+
+.guida .box-tit {
+  margin: 0 0 14px;
+  font: 500 var(--fs-kicker) / 1.4 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+/* Come StatsRow. L'etichetta però è una frase («al primo evento bikepacking
+   della vita») e non una parola: a 10px maiuscolo non si leggerebbe. */
+.guida .grandi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: clamp(14px, 3vw, 24px);
+  margin: 0 0 clamp(18px, 4vw, 26px);
+}
+
+.guida .grande strong {
+  display: block;
+  font: 700 var(--fs-stat) / 1 var(--font-display);
+  color: var(--wine);
+}
+
+.guida .grande span {
+  display: block;
+  margin-top: 8px;
+  font: 400 var(--fs-xs) / 1.4 var(--font-body);
+  color: var(--muted-strong);
+}
+
+/* Come DefinitionRows, rovesciato: qui il valore è il dato e sta a destra. */
+.guida .numeri {
+  display: grid;
+  column-gap: clamp(24px, 4vw, 36px);
+}
+
+@media (min-width: 700px) {
+  .guida .numeri {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.guida .num {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-strong);
+  font: 400 var(--fs-sm) / 1.4 var(--font-body);
+}
+
+.guida .num b,
+.guida .riga-b b {
+  flex: none;
+  font: 700 clamp(17px, 4.4vw, 22px) / 1 var(--font-display);
+  color: var(--wine);
+  white-space: nowrap;
+}
+
+.guida .num.top b {
+  color: var(--heading);
+}
+
+/* Le barre. Il valore arriva da data-v, e lo script lo copia in --v: lo stile
+   in linea (style="--v:62") è vietato dalla CSP del lettore di bas-guides. Senza
+   JavaScript la barra resta vuota e il numero scritto accanto basta. */
+.guida .riga-b {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.guida .riga-b span {
+  font: 400 var(--fs-sm) / 1.4 var(--font-body);
+}
+
+.guida .riga-b i,
+.guida .perc i {
+  grid-column: 1 / -1;
+  display: block;
+  height: 4px;
+  background: var(--line);
+}
+
+.guida .riga-b i::before,
+.guida .perc i::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: calc(var(--v, 0) * 1%);
+  background: var(--wine);
+}
+
+.guida .riga-b.top b {
+  color: var(--heading);
+}
+
+.guida .riga-b.top i::before {
+  background: var(--heading);
+}
+
+/* --- I quattro percorsi -------------------------------------------------- */
+
+.guida .percorsi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(8px, 2.5vw, 16px);
+}
+
+.guida .perc {
+  padding: clamp(14px, 3.5vw, 20px);
+  border: 1px solid var(--line-hard);
+}
+
+.guida .perc span {
+  display: block;
+  margin-bottom: 10px;
+  font: 500 var(--fs-kicker) / 1.4 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.guida .perc strong {
+  display: block;
+  font: 700 var(--fs-stat) / 1 var(--font-display);
+  color: var(--wine);
+  white-space: nowrap;
+}
+
+.guida .perc i {
+  margin-top: 14px;
+}
+
+/* L'Elba in evidenza col fondo pieno, come il Chip dell'edizione corrente.
+   Sul bordeaux l'occhiello passa al --blush: l'oliva lì sotto la soglia AA. */
+.guida .perc.elba {
+  background: var(--wine);
+  border-color: var(--wine);
+}
+
+.guida .perc.elba span {
+  color: var(--blush);
+}
+
+.guida .perc.elba strong {
+  color: var(--cream);
+}
+
+.guida .perc.elba i {
+  background: var(--line-cream);
+}
+
+.guida .perc.elba i::before {
+  background: var(--cream);
+}
+
+/* --- Elenchi ------------------------------------------------------------- */
+
+/* Passi numerati: la cifra display bordeaux di StepList. */
+.guida .passi {
+  margin: 8px 0 22px;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+
+/* La cifra in posizione assoluta e non in una griglia: una voce che mescola
+   <b> e testo semplice, in griglia, diventerebbe due celle affiancate. */
+.guida .passi li {
+  counter-increment: passo;
+  position: relative;
+  padding: 10px 0 10px calc(clamp(34px, 9vw, 44px) + clamp(12px, 3vw, 18px));
+}
+
+.guida .passi li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font: 700 clamp(24px, 6.4vw, 30px) / 1.1 var(--font-display);
+  color: var(--wine);
+  font-variant-numeric: tabular-nums;
+}
+
+/* «Non è»: una RuleList con la croce. */
+.guida .nonlista {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-strong);
+}
+
+.guida .nonlista li {
+  position: relative;
+  padding: 14px 0 14px 30px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.guida .nonlista li:last-child {
+  border-bottom: 0;
+}
+
+.guida .nonlista li::before {
+  content: '✕';
+  position: absolute;
+  left: 2px;
+  top: 14px;
+  font: 600 14px / 1.7 var(--font-body);
+  color: var(--wine);
+}
+
+.guida .nonlista li.ultima::before {
+  content: '!';
+  left: 6px;
+}
+
+/* «Cosa c'è dentro»: una CheckList. La spunta è disegnata col bordo e non con
+   un'immagine: nessuna richiesta in più, e nessuna voce in più nella CSP. */
+.guida .dentro {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-strong);
+}
+
+.guida .dentro li {
+  position: relative;
+  padding: 12px 0 12px 26px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.guida .dentro li:last-child {
+  border-bottom: 0;
+}
+
+.guida .dentro li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: calc(12px + 0.35em);
+  width: 5px;
+  height: 10px;
+  border: solid var(--wine);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* La linea del tempo: un filo e dei segni quadrati, niente cerchi. */
+.guida .linea {
+  margin: 10px 0 20px;
+  padding: 0 0 0 26px;
+  list-style: none;
+  border-left: 1px solid var(--line-strong);
+}
+
+.guida .linea li {
+  position: relative;
+  padding: 0 0 24px;
+}
+
+.guida .linea li::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  background: var(--wine);
+}
+
+.guida .linea .etichetta {
+  margin: 0 0 8px;
+}
+
+/* --- Blocchi speciali ---------------------------------------------------- */
+
+/* L'Elba: Section tone="paper", col bollino a spigoli vivi. */
+.guida .speciale {
+  position: relative;
+  margin: clamp(44px, 7vw, 56px) 0 20px;
+  padding: clamp(30px, 5vw, 40px) clamp(18px, 4vw, 32px) 12px;
+  background: var(--paper);
+}
+
+.guida .speciale .bollino {
+  position: absolute;
+  top: -12px;
+  left: clamp(18px, 4vw, 32px);
+  padding: 8px 12px;
+  background: var(--wine);
+  color: var(--cream);
+  font: 500 var(--fs-kicker) / 1 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.guida .speciale h3 {
+  margin: 8px 0 16px;
+  font-size: var(--fs-h3);
+}
+
+/* Le dieci domande: l'indice è una fila di Chip. */
+.guida .domande-indice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 10px;
+}
+
+.guida .domande-indice a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1px solid var(--line-hard);
+  color: var(--ink);
+  font: 400 13px / 1.25 var(--font-body);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.guida .domande-indice a:hover {
+  border-color: var(--wine);
+  color: var(--wine);
+}
+
+.guida .domanda {
+  margin: clamp(44px, 7vw, 58px) 0 0;
+  padding-top: clamp(20px, 4vw, 28px);
+  border-top: 1px solid var(--line-strong);
+}
+
+.guida .domanda-tit {
+  display: flex;
+  gap: clamp(12px, 3vw, 18px);
+  align-items: baseline;
+  margin: 0 0 16px;
+}
+
+.guida .domanda-tit span {
+  flex: none;
+  min-width: clamp(34px, 9vw, 44px);
+  font: 700 clamp(24px, 6.4vw, 34px) / 1 var(--font-display);
+  color: var(--wine);
+  font-variant-numeric: tabular-nums;
+}
+
+.guida .domanda-tit h3 {
+  margin: 0;
+}
+
+/* Classic e No Stress: il confronto della pagina Iscrizioni. In evidenza col
+   bordo bordeaux doppio, non col fondo pieno. */
+.guida .formule {
+  display: grid;
+  gap: clamp(8px, 2.5vw, 16px);
+  margin: 10px 0 20px;
+}
+
+@media (min-width: 700px) {
+  .guida .formule {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.guida .formula {
+  padding: clamp(16px, 3.5vw, 24px);
+  border: 1px solid var(--line-strong);
+}
+
+.guida .formula.ns {
+  border: 2px solid var(--wine);
+}
+
+.guida .formula b {
+  display: block;
+  margin-bottom: 10px;
+  font: 700 clamp(22px, 6vw, 28px) / 1.05 var(--font-display);
+  color: var(--wine);
+}
+
+.guida .formula p {
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+
+.guida .forum {
+  margin: 6px 0 24px;
+}
+
+/* Bottoni dentro il testo: le stesse forme di .cta e .cta-outline. */
+.guida .btn {
+  display: inline-block;
+  padding: 16px 26px;
+  border: 1px solid var(--wine);
+  background: var(--wine);
+  color: var(--cream);
+  font: 500 15px / 1 var(--font-body);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.guida .btn:hover {
+  background: var(--wine-deep);
+  border-color: var(--wine-deep);
+  color: var(--cream);
+}
+
+.guida .btn-bianco {
+  background: transparent;
+  border-color: rgba(255, 255, 245, 0.7);
+}
+
+.guida .btn-bianco:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--ink);
+}
+
+/* --- Foto ---------------------------------------------------------------- */
+
+/* Il fondo scuro è quello di .photo-well: finché la foto non arriva, il
+   riquadro resta un riquadro. */
+.guida .foto {
+  margin: clamp(48px, 8vw, 64px) 0 0;
+}
+
+.guida .foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ink);
+}
+
+.guida .foto.larga {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+}
+
+.guida .foto.larga img {
+  height: clamp(280px, 55vw, 560px);
+  object-fit: cover;
+}
+
+.guida .foto.alta {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guida .foto.dentro-testo {
+  margin-top: clamp(28px, 5vw, 34px);
+  margin-bottom: clamp(28px, 5vw, 34px);
+}
+
+/* Sul telefono le foto dentro la colonna vanno a filo di schermo: con il
+   margine della colonna attorno sarebbero francobolli. */
+@media (max-width: 640px) {
+  .guida .foto.alta,
+  .guida .foto.dentro-testo {
+    max-width: none;
+    margin-left: calc(-1 * var(--pad-x));
+    margin-right: calc(-1 * var(--pad-x));
+  }
+}
+
+/* --- Date e countdown ---------------------------------------------------- */
+
+/* Section tone="wine". */
+.guida .date {
+  margin: 34px 0 10px;
+  padding: clamp(28px, 5vw, 40px) clamp(20px, 4vw, 32px);
+  background: var(--wine);
+  color: var(--cream);
+}
+
+.guida .date h3 {
+  margin: 0 0 16px;
+  font-size: var(--fs-h3);
+  color: var(--cream);
+}
+
+.guida .date p,
+.guida .date b,
+.guida .date a {
+  color: var(--cream);
+}
+
+/* Il Countdown del sito nella variante scura: bordo --line-cream, cifre crema,
+   etichette --blush. Vale sul bordeaux, cioè qui e in copertina. */
+.guida .cd {
+  margin: 6px 0 22px;
+}
+
+.guida .cd-titolo {
+  margin: 0 0 12px;
+  font: 500 var(--fs-kicker) / 1.5 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
+.guida .cd-griglia {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(6px, 1.6vw, 12px);
+  max-width: 460px;
+}
+
+.guida .cd-box {
+  padding: clamp(12px, 3vw, 20px) 4px;
+  border: 1px solid var(--line-cream);
+  text-align: center;
+}
+
+.guida .cd-box strong {
+  display: block;
+  font: 700 var(--fs-num) / 1 var(--font-display);
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+
+.guida .cd-box span {
+  display: block;
+  margin-top: 8px;
+  font: 400 10.5px / 1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
+/* --- Chiusura ------------------------------------------------------------ */
+
+.guida .firma {
+  margin: 34px 0 0;
+  text-align: center;
+}
+
+.guida .firma p {
+  margin: 0 0 6px;
+}
+
+.guida .firma .ride {
+  margin: 14px 0 8px;
+  font: italic 400 clamp(26px, 6vw, 34px) / 1.3 var(--font-display);
+  color: var(--wine);
+}
+
+/* Il P.S. resta nel carattere del corpo: è fatto di frasi in grassetto, e il
+   grassetto corsivo di Libre Baskerville sarebbe un quinto file di font per due
+   paragrafi. La riga sopra basta a staccarlo dalla firma. */
+.guida .ps {
+  margin: clamp(44px, 7vw, 56px) 0 0;
+  padding-top: clamp(20px, 4vw, 28px);
+  border-top: 1px solid var(--line-strong);
+}
+
+/* --- Ricerca ------------------------------------------------------------- */
+
+.guida mark {
+  background: var(--blush);
+  color: var(--ink);
+}
+
+.guida .lampo {
+  animation: guida-lampo 2.4s ease;
+}
+
+@keyframes guida-lampo {
+  0%,
+  35% {
+    background: var(--wine-tint);
+    box-shadow: 0 0 0 8px var(--wine-tint);
+  }
+  100% {
+    background: transparent;
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+/* --- Stampa -------------------------------------------------------------- */
+
+/* Da qui esce il PDF scaricabile: stesso HTML, stesso foglio. Un capitolo per
+   pagina, e ciò che vive solo a schermo (il countdown) sparisce. */
+@media print {
+  .guida {
+    font-size: 11pt;
+  }
+
+  .guida .cap {
+    break-before: page;
+  }
+
+  .guida .cd {
+    display: none !important;
+  }
+
+  .guida .foto.larga {
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .guida .foto,
+  .guida .voce,
+  .guida .box,
+  .guida .perc,
+  .guida .formula {
+    break-inside: avoid;
+  }
+
+  .guida .foto.larga img {
+    height: auto;
+  }
+
+  .guida .date,
+  .guida .perc.elba,
+  .guida .speciale,
+  .guida .bollino {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
