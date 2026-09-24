@@ -4,10 +4,8 @@
   var LANG=document.documentElement.lang==='en'?'en':'it';
   var T={
     it:{min:' min',cercaVuoto:'Scrivi una parola, per esempio una di queste.',uno:'Un risultato.',tanti:' risultati.',nessuno:'Nessun risultato. Prova con un\'altra parola.',
-        cd:['I bundle aprono tra','Le iscrizioni singole aprono tra'],
         sending:'Invio in corso…',ok:'La tua iscrizione è avvenuta correttamente.',err:'La tua iscrizione non può essere convalidata. Riprova tra poco.',email:'Controlla l’indirizzo email.',consent:'Serve il consenso alla privacy policy per iscriverti.'},
     en:{min:' min',cercaVuoto:'Type a word, for example one of these.',uno:'One result.',tanti:' results.',nessuno:'No results. Try another word.',
-        cd:['Bundles open in','Single entries open in'],
         sending:'Sending…',ok:'You are on the list. Check your inbox.',err:'We could not confirm your subscription. Please try again.',email:'Please check your email address.',consent:'You need to accept the privacy policy to subscribe.'}
   }[LANG];
 
@@ -136,24 +134,36 @@
     if(!scrivendo&&(e.key==='/'||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'))){e.preventDefault();apriCerca()}
   });
 
-  /* ---------- countdown alla prossima apertura (come su elba.tuscanytrail.it) ---------- */
+  /* ---------- countdown alla prossima apertura, in copertina e in fondo ----------
+     Ora italiana (a novembre e dicembre +01:00). Passata una tappa si passa alla
+     successiva, passate tutte i riquadri spariscono. Il gancio compare solo dove
+     c'è [data-cd-gancio], cioè in copertina. */
   (function(){
-    var box=$('[data-countdown]');if(!box)return;
+    var boxes=$$('[data-countdown]');if(!boxes.length)return;
     var tappe=[
-      {t:Date.parse('2026-11-01T18:00:00+01:00'),l:T.cd[0]},
-      {t:Date.parse('2026-12-03T12:00:00+01:00'),l:T.cd[1]}
+      {t:Date.parse('2026-11-01T11:00:00+01:00'),
+       it:{l:'1 novembre, ore 11 · aprono i bundle',g:'Tuscany Trail più una seconda avventura della Bike Adventure Series. Le quote per ogni combinazione sono limitate, e quando una combinazione finisce sparisce.'},
+       en:{l:'1 November, 11am · the bundles open',g:'Tuscany Trail plus a second Bike Adventure Series adventure. Each combination has a limited number of places, and when a combination is gone, it\'s gone.'}},
+      {t:Date.parse('2026-12-03T12:00:00+01:00'),
+       it:{l:'3 dicembre · aprono le iscrizioni singole',g:'Data e fascia di partenza si scelgono all\'iscrizione, e le giornate più richieste finiscono per prime.'},
+       en:{l:'3 December · single entries open',g:'Start date and time slot are chosen at sign up, and the most popular days go first.'}}
     ];
-    var label=$('[data-cd-label]',box),el={},timer;
-    ['d','h','m','s'].forEach(function(k){el[k]=$('[data-k="'+k+'"]',box)});
-    function pad(n){return String(n).padStart(2,'0')}
+    var timer,pad=function(n){return String(n).padStart(2,'0')};
     function tick(){
       var now=Date.now(),tappa=null;
       for(var i=0;i<tappe.length;i++){if(tappe[i].t>now){tappa=tappe[i];break}}
-      if(!tappa){box.hidden=true;clearInterval(timer);return}
-      var ms=tappa.t-now;label.textContent=tappa.l;
-      el.d.textContent=Math.floor(ms/864e5);el.h.textContent=pad(Math.floor(ms/36e5)%24);
-      el.m.textContent=pad(Math.floor(ms/6e4)%60);el.s.textContent=pad(Math.floor(ms/1e3)%60);
-      box.hidden=false;
+      boxes.forEach(function(box){
+        if(!tappa){box.hidden=true;return}
+        var ms=tappa.t-now,testi=tappa[LANG],g=$('[data-cd-gancio]',box);
+        $('[data-cd-label]',box).textContent=testi.l;
+        if(g)g.textContent=testi.g;
+        $('[data-k="d"]',box).textContent=Math.floor(ms/864e5);
+        $('[data-k="h"]',box).textContent=pad(Math.floor(ms/36e5)%24);
+        $('[data-k="m"]',box).textContent=pad(Math.floor(ms/6e4)%60);
+        $('[data-k="s"]',box).textContent=pad(Math.floor(ms/1e3)%60);
+        box.hidden=false;
+      });
+      if(!tappa)clearInterval(timer);
     }
     tick();timer=setInterval(tick,1000);
   })();

@@ -40,7 +40,7 @@ if(/github\.io$/.test(location.hostname)){
   if(q==='en'||(!s&&nav!=='it')||s==='en')location.replace('en/'+location.hash);
 }catch(_){}})();
 </script>
-<link rel="stylesheet" href="guida.css?v=2">
+<link rel="stylesheet" href="guida.css?v=3">
 </head>
 <body>
 
@@ -65,6 +65,17 @@ if(/github\.io$/.test(location.hostname)){
     <p class="laguida">La Guida</p>
     <p class="dati">Edizione 2027<br>19–25 maggio · Campiglia Marittima, Toscana</p>
     <p class="spaziato">Quattordicesima edizione<br>Il più grande evento di bikepacking del mondo</p>
+    <div class="cd cd-cop" data-countdown hidden>
+      <p class="cd-titolo" data-cd-label></p>
+      <div class="cd-griglia">
+        <div class="cd-box"><strong data-k="d">0</strong><span>Giorni</span></div>
+        <div class="cd-box"><strong data-k="h">00</strong><span>Ore</span></div>
+        <div class="cd-box"><strong data-k="m">00</strong><span>Minuti</span></div>
+        <div class="cd-box"><strong data-k="s">00</strong><span>Secondi</span></div>
+      </div>
+      <p class="cd-gancio" data-cd-gancio></p>
+      <a class="cd-link" href="#resta-in-lista">Come non restare fuori ↓</a>
+    </div>
     <div class="bottoni">
       <a class="btn btn-bianco" href="#prima-di-tutto">Inizia a leggere</a>
     </div>
@@ -634,7 +645,7 @@ if(/github\.io$/.test(location.hostname)){
   <header class="cap-testa"><span class="cap-num">13</span><h2>Come si entra nel Tuscany Trail 2027</h2></header>
   <p class="forte">Segnati due date.</p>
 
-  <p class="etichetta">1 novembre 2026 — I bundle</p>
+  <p class="etichetta">1 novembre 2026, ore 11 — I bundle</p>
   <p><b>Il biglietto doppio.</b> Tuscany Trail 2027 <b>più una seconda avventura</b> a scelta fra gli altri eventi della Bike Adventure Series — Trentino Gravel, The Grand Escape, Unpaved Roads.</p>
   <p>Le quote per ogni combinazione sono limitate. Quando una combinazione finisce, sparisce.</p>
 
@@ -657,9 +668,7 @@ if(/github\.io$/.test(location.hostname)){
 
   <div class="date" id="resta-in-lista">
     <h3>Resta in lista. È l'unica cosa che ti chiediamo di fare oggi.</h3>
-    <!-- Il countdown punta alla prossima apertura, il bundle fino al 1/11 ore 18,
-         poi il biglietto singolo fino al 3/12 ore 12. Ora italiana, come sul sito
-         e come su elba.tuscanytrail.it. Passate tutte e due sparisce. -->
+    <!-- Countdown: le tappe e i ganci stanno in guida.js -->
     <div class="cd" data-countdown hidden>
       <p class="cd-titolo" data-cd-label></p>
       <div class="cd-griglia">
@@ -669,7 +678,7 @@ if(/github\.io$/.test(location.hostname)){
         <div class="cd-box"><strong data-k="s">00</strong><span>Secondi</span></div>
       </div>
     </div>
-    <p><b>1 novembre</b>, aprono i bundle. <b>3 dicembre</b>, aprono le iscrizioni singole.</p>
+    <p><b>1 novembre alle 11</b>, aprono i bundle. <b>3 dicembre</b>, aprono le iscrizioni singole.</p>
 
     <!-- Modulo lista: stesso worker e stessa lista Brevo (18, Tuscany Trail LEAD)
          di elba.tuscanytrail.it, source "guida". Il worker accetta solo le origini
@@ -747,6 +756,6 @@ if(/github\.io$/.test(location.hostname)){
   </div></div>
 </div>
 
-<script src="guida.js?v=2"></script>
+<script src="guida.js?v=3"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@ if(/github\.io$/.test(location.hostname)){
 <link rel="alternate" hreflang="it" href="https://advlabbik.github.io/tuscany-trail-guida/">
 <link rel="alternate" hreflang="en" href="https://advlabbik.github.io/tuscany-trail-guida/en/">
 <link rel="alternate" hreflang="x-default" href="https://advlabbik.github.io/tuscany-trail-guida/en/">
-<link rel="stylesheet" href="../guida.css?v=2">
+<link rel="stylesheet" href="../guida.css?v=3">
 </head>
 <body>
 
@@ -51,6 +51,17 @@ if(/github\.io$/.test(location.hostname)){
     <p class="laguida">The Guide</p>
     <p class="dati">2027 Edition<br>19–25 May · Campiglia Marittima, Tuscany</p>
     <p class="spaziato">Fourteenth edition<br>The world's largest bikepacking event</p>
+    <div class="cd cd-cop" data-countdown hidden>
+      <p class="cd-titolo" data-cd-label></p>
+      <div class="cd-griglia">
+        <div class="cd-box"><strong data-k="d">0</strong><span>Days</span></div>
+        <div class="cd-box"><strong data-k="h">00</strong><span>Hours</span></div>
+        <div class="cd-box"><strong data-k="m">00</strong><span>Minutes</span></div>
+        <div class="cd-box"><strong data-k="s">00</strong><span>Seconds</span></div>
+      </div>
+      <p class="cd-gancio" data-cd-gancio></p>
+      <a class="cd-link" href="#resta-in-lista">How not to miss out ↓</a>
+    </div>
     <div class="bottoni">
       <a class="btn btn-bianco" href="#prima-di-tutto">Start reading</a>
     </div>
@@ -620,7 +631,7 @@ if(/github\.io$/.test(location.hostname)){
   <header class="cap-testa"><span class="cap-num">13</span><h2>How to get into the Tuscany Trail 2027</h2></header>
   <p class="forte">Mark two dates.</p>
 
-  <p class="etichetta">1 November 2026 — The bundles</p>
+  <p class="etichetta">1 November 2026, 11am — The bundles</p>
   <p><b>The double ticket.</b> Tuscany Trail 2027 <b>plus a second adventure</b> of your choice from the other Bike Adventure Series events — Trentino Gravel, The Grand Escape, Unpaved Roads.</p>
   <p>Each combination has a limited number of places. When a combination is gone, it's gone.</p>
 
@@ -652,7 +663,7 @@ if(/github\.io$/.test(location.hostname)){
         <div class="cd-box"><strong data-k="s">00</strong><span>Seconds</span></div>
       </div>
     </div>
-    <p><b>1 November</b>, the bundles open. <b>3 December</b>, single entries open.</p>
+    <p><b>1 November at 11am</b>, the bundles open. <b>3 December</b>, single entries open.</p>
     <form class="sub" data-subscribe data-endpoint="https://tt-subscribe.account-fe1.workers.dev/subscribe" novalidate hidden>
       <input class="sub-input" id="sub-guida" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="your@email.com" aria-label="Email">
       <div class="sub-hp" aria-hidden="true"><label for="sub-guida-website">Website</label><input id="sub-guida-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
@@ -725,6 +736,6 @@ if(/github\.io$/.test(location.hostname)){
   </div></div>
 </div>
 
-<script src="../guida.js?v=2"></script>
+<script src="../guida.js?v=3"></script>
 </body>
 </html>
