@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Guida · Tuscany Trail 2027</title>
+<meta name="description" content="La guida del Tuscany Trail 2027. Le terre che attraverserai, dove dormi, cosa mangi, come ti prepari e le dieci domande che nessuno ci fa. 19–25 maggio, Campiglia Marittima.">
+<meta property="og:title" content="Tuscany Trail 2027 · La Guida">
+<meta property="og:description" content="Il documento che avremmo voluto trovare noi, la prima volta. Quattordici capitoli sul più grande evento di bikepacking del mondo.">
+<meta property="og:url" content="https://advlabbik.github.io/tuscany-trail-guida/">
+<meta property="og:image" content="https://advlabbik.github.io/tuscany-trail-guida/foto/copertina.jpg">
+<meta property="og:image:alt" content="Una strada bianca che attraversa le colline verdi della Toscana">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Tuscany Trail">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#8a3a1e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%238a3a1e'/></svg>">
+<!-- Tracciamento. Su un sottodominio di tuscanytrail.it (zona Cloudflare) Zaraz
+     inietta da sé GA4 G-9CFZLTETEL e i due pixel: lì niente script nostri, un
+     gtag in più conterebbe ogni visita due volte (vedi tuscany-trail-elba).
+     Finché la guida vive su advlabbik.github.io, invece, Zaraz non c'è e il gtag
+     lo carichiamo noi, solo su quell'host. -->
+<script>
+if(/github\.io$/.test(location.hostname)){
+  var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-9CFZLTETEL';document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-9CFZLTETEL');
+}
+</script>
+<style>
+:root{
+  --terra:#8a3a1e;--terra-scura:#6e2d16;--terra-chiara:#e6d8c9;--terra-velo:rgba(138,58,30,.08);
+  --inchiostro:#23201d;--nero:#171412;--grigio:#7d736b;--grigio-chiaro:#9a8f85;
+  --carta:#fdfbf8;--box:#f7f1ea;--box-bordo:#eadfd3;--riga:rgba(35,32,29,.12);
+  --sans:"Trebuchet MS",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --colonna:700px;--testa:58px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--testa) + 18px)}
+body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--carta);color:var(--inchiostro);font:18px/1.72 var(--serif);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:var(--terra)}
+b,strong{color:var(--nero)}
+button{font:inherit;color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- barra in alto ---------- */
+.barra-top{position:fixed;inset:0 0 auto 0;height:var(--testa);z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:rgba(253,251,248,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--riga);transform:translateY(-100%);transition:transform .25s ease}
+.barra-top.su{transform:none}
+.marchio{font:700 12px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--terra);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.marchio span{color:var(--grigio);font-weight:400}
+.azioni{display:flex;gap:8px;flex:none}
+.btn-ico{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--riga);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font:600 13px/1 var(--sans);color:var(--inchiostro)}
+.btn-ico:hover{border-color:var(--terra);color:var(--terra)}
+.btn-ico svg{width:17px;height:17px;flex:none}
+.progresso{position:absolute;left:0;bottom:-1px;height:2px;background:var(--terra);width:0}
+
+/* ---------- copertina ---------- */
+.copertina{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3d4a2a}
+.copertina img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.copertina::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,0) 32%,rgba(0,0,0,.08) 55%,rgba(0,0,0,.62) 100%)}
+.copertina-in{position:relative;z-index:1;width:100%;max-width:1100px;margin:0 auto;padding:0 22px 9vh}
+.copertina .riga-bianca{width:84px;height:4px;background:#fff;margin-bottom:26px}
+.copertina h1{font:400 clamp(64px,13vw,150px)/.9 var(--serif);margin:0 0 18px;letter-spacing:-.02em;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.copertina .laguida{font:italic 400 clamp(22px,3.2vw,30px)/1.2 var(--serif);margin:0 0 14px}
+.copertina .dati{font-size:clamp(15px,1.8vw,17px);line-height:1.5;margin:0 0 30px;opacity:.95}
+.copertina .spaziato{font:700 11px/1.9 var(--sans);letter-spacing:.3em;text-transform:uppercase;opacity:.92;margin:0 0 30px}
+.copertina .bottoni{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:700 15px/1 var(--sans);padding:15px 22px;border-radius:999px;border:0;cursor:pointer}
+.btn-bianco{background:#fff;color:var(--terra)}
+.btn-vetro{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn-vetro:hover{background:rgba(255,255,255,.24)}
+.btn svg{width:18px;height:18px}
+
+/* ---------- colonna di lettura ---------- */
+main{position:relative}
+.colonna{max-width:var(--colonna);margin:0 auto;padding:0 22px}
+.cap{padding:84px 0 24px}
+.cap-testa{margin:0 0 34px}
+.cap-num{display:block;font:400 clamp(76px,11vw,112px)/.9 var(--serif);color:var(--terra-chiara);margin:0 0 6px;font-variant-numeric:lining-nums}
+.cap-testa h2{font:700 clamp(25px,3.6vw,33px)/1.18 var(--serif);text-transform:uppercase;letter-spacing:.01em;color:var(--terra);margin:0;padding-bottom:12px;border-bottom:2px solid var(--terra)}
+.cap-sotto{font:italic 400 19px/1.5 var(--serif);color:var(--grigio);margin:14px 0 0}
+p{margin:0 0 18px}
+h3{font:700 23px/1.3 var(--serif);color:var(--nero);margin:46px 0 14px}
+h3 + p b:first-child{color:var(--nero)}
+.etichetta{font:700 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:38px 0 12px}
+.stacco{border:0;height:1px;width:38%;margin:46px auto;background:var(--box-bordo)}
+.apertura{font-size:21px;line-height:1.6;font-style:italic;color:var(--grigio)}
+.forte{font-size:20px;line-height:1.55;color:var(--nero);font-weight:700}
+.centro{text-align:center}
+
+/* citazioni dei partecipanti */
+.voce{margin:30px 0;padding:4px 0 4px 22px;border-left:3px solid var(--terra)}
+.voce p{font:italic 400 19.5px/1.55 var(--serif);color:var(--terra);margin:0 0 6px}
+.voce .trad{font-size:15.5px;color:var(--grigio);font-style:italic;margin:0 0 6px}
+.voce cite{display:block;font:700 10.5px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--grigio-chiaro);font-style:normal}
+
+/* tabelle numeri */
+.box{background:var(--box);border:1px solid var(--box-bordo);border-radius:6px;padding:22px 24px;margin:28px 0}
+.box-tit{font:700 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin:0 0 14px}
+.numeri{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px}
+.num{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px dotted var(--box-bordo);font-size:15.5px;line-height:1.35}
+.num b{font-size:17px;color:var(--terra);white-space:nowrap}
+.num.top b{color:var(--nero)}
+.grandi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 18px}
+.grande{background:#fff;border:1px solid var(--box-bordo);border-radius:6px;padding:16px 14px;text-align:center}
+.grande strong{display:block;font:700 34px/1 var(--serif);color:var(--terra);margin-bottom:6px}
+.grande span{display:block;font:13px/1.35 var(--sans);color:var(--grigio)}
+.barre .riga-b{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:baseline;padding:8px 0}
+.barre .riga-b span{font-size:15.5px;line-height:1.35}
+.barre .riga-b b{font-size:17px;color:var(--terra)}
+.barre .riga-b i{grid-column:1/-1;display:block;height:7px;border-radius:9px;background:var(--box-bordo);overflow:hidden}
+.barre .riga-b i::before{content:"";display:block;height:100%;width:calc(var(--v) * 1%);background:var(--terra);border-radius:9px;opacity:.85}
+.barre .riga-b.top b{color:var(--nero)}
+.barre .riga-b.top i::before{opacity:1;background:var(--terra-scura)}
+
+/* i quattro percorsi */
+.percorsi{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.perc{background:#fff;border:1px solid var(--box-bordo);border-radius:6px;padding:16px 16px 14px}
+.perc span{display:block;font:14px/1.3 var(--sans);color:var(--grigio);margin-bottom:6px}
+.perc strong{display:block;font:700 30px/1 var(--serif);color:var(--terra);white-space:nowrap}
+.perc i{display:block;height:5px;border-radius:5px;background:var(--box-bordo);margin-top:12px;overflow:hidden}
+.perc i::before{content:"";display:block;height:100%;width:calc(var(--v) * 1%);background:var(--terra)}
+.perc.elba{background:var(--terra);border-color:var(--terra)}
+.perc.elba span,.perc.elba strong{color:#fff}
+.perc.elba i{background:rgba(255,255,255,.28)}.perc.elba i::before{background:#fff}
+
+/* passi numerati */
+.passi{list-style:none;padding:0;margin:8px 0 22px;counter-reset:p}
+.passi li{counter-increment:p;position:relative;padding:12px 0 12px 52px;border-bottom:1px solid var(--riga)}
+.passi li:last-child{border-bottom:0}
+.passi li::before{content:counter(p);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:var(--terra-velo);color:var(--terra);font:700 15px/34px var(--sans);text-align:center}
+
+/* elenchi "non è" */
+.nonlista{list-style:none;padding:0;margin:0 0 18px}
+.nonlista li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--riga)}
+.nonlista li::before{content:"✕";position:absolute;left:4px;top:15px;font:700 15px/1.6 var(--sans);color:var(--terra)}
+.nonlista li:last-child{border-bottom:0}
+.nonlista li.ultima::before{content:"!"}
+
+/* terre: sottocapitoli con segnalibro */
+.terra{position:relative}
+.terra h3{display:flex;gap:12px;align-items:baseline}
+.terra h3 small{flex:none;font:700 12px/1 var(--sans);letter-spacing:.14em;color:var(--terra);background:var(--terra-velo);border-radius:99px;padding:6px 9px;transform:translateY(-3px)}
+
+/* speciale Elba */
+.speciale{margin:56px 0 20px;background:var(--box);border:1px solid var(--box-bordo);border-radius:8px;padding:30px 28px 12px;position:relative}
+.speciale .bollino{position:absolute;top:-13px;left:24px;background:var(--terra);color:#fff;font:700 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border-radius:99px}
+.speciale h3{font-size:27px;color:var(--terra);margin:8px 0 16px;text-transform:uppercase}
+
+/* domande */
+.domande-indice{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.domande-indice a{font:600 13.5px/1.25 var(--sans);text-decoration:none;color:var(--inchiostro);background:#fff;border:1px solid var(--box-bordo);border-radius:99px;padding:8px 12px}
+.domande-indice a:hover{border-color:var(--terra);color:var(--terra)}
+.domanda{margin:58px 0 0}
+.domanda-tit{display:flex;gap:14px;align-items:flex-start;margin:0 0 16px}
+.domanda-tit span{flex:none;width:40px;height:40px;border-radius:50%;background:var(--terra);color:#fff;font:700 16px/40px var(--sans);text-align:center}
+.domanda-tit h3{margin:4px 0 0;font:italic 700 23px/1.3 var(--serif);color:var(--terra)}
+.dentro{list-style:none;padding:0;margin:0 0 18px}
+.dentro li{position:relative;padding:10px 0 10px 28px;border-bottom:1px dotted var(--box-bordo)}
+.dentro li::before{content:"";position:absolute;left:4px;top:21px;width:9px;height:9px;border-radius:50%;background:var(--terra)}
+.formule{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 20px}
+.formula{border:1px solid var(--box-bordo);background:#fff;border-radius:6px;padding:18px}
+.formula b{display:block;font:700 12px/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+.formula p{font-size:16px;margin:0}
+.formula.ns{background:var(--terra);border-color:var(--terra);color:#fff}
+.formula.ns b{color:#fff}
+
+/* voci */
+.muro{columns:2;column-gap:22px;margin-top:10px}
+.muro .voce{break-inside:avoid;margin:0 0 22px;background:#fff;border:1px solid var(--box-bordo);border-left:3px solid var(--terra);border-radius:4px;padding:18px 18px 16px}
+.muro .voce p{font-size:17.5px}
+
+/* preparazione */
+.linea{list-style:none;margin:10px 0 20px;padding:0 0 0 26px;border-left:2px solid var(--terra-chiara)}
+.linea li{position:relative;padding:0 0 22px}
+.linea li::before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--carta);border:3px solid var(--terra)}
+.linea .etichetta{margin:0 0 8px}
+.lista-conto{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--terra);color:#fff;border-radius:6px;padding:14px 18px;margin:20px 0 6px;font:600 14.5px/1.35 var(--sans)}
+.lista-conto button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:99px;padding:7px 12px;cursor:pointer;font:600 12.5px/1 var(--sans)}
+.gruppo-lista{margin:26px 0 0}
+.check{list-style:none;padding:0;margin:0}
+.check li{border-bottom:1px solid var(--riga)}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:10px 2px;cursor:pointer;font-size:16.5px;line-height:1.45}
+.check input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;margin:1px 0 0;border:2px solid var(--terra-chiara);border-radius:5px;background:#fff;display:grid;place-content:center;cursor:pointer}
+.check input:checked{background:var(--terra);border-color:var(--terra)}
+.check input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check input:checked + span{color:var(--grigio);text-decoration:line-through;text-decoration-color:var(--terra-chiara)}
+.check input:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+.a-casa{background:var(--box);border:1px dashed var(--terra-chiara);border-radius:6px;padding:16px 18px;margin-top:10px}
+
+/* forum */
+.forum{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--box);border:1px solid var(--box-bordo);border-radius:6px;padding:18px 20px;margin:6px 0 24px}
+.forum p{margin:0;font-size:16px}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--terra-scura)}
+
+/* foto */
+.foto{margin:64px 0 0}
+.foto img{width:100%;height:auto;background:var(--box)}
+.foto.larga{width:100vw;position:relative;left:50%;margin-left:-50vw}
+.foto.larga img{height:clamp(300px,64vh,720px);object-fit:cover}
+.foto.alta{max-width:560px;margin-left:auto;margin-right:auto}
+.foto.alta img{border-radius:4px}
+.foto.dentro-testo{margin:34px 0}
+.foto.alta.dentro-testo{margin-left:auto;margin-right:auto}
+.foto.dentro-testo img{border-radius:4px}
+
+/* date e modulo */
+.date{background:var(--terra);color:#fff;border-radius:10px;padding:32px 28px;margin:34px 0 10px}
+.date b{color:#fff}
+.date h3{color:#fff;margin:0 0 14px;font-size:26px}
+.date p{color:rgba(255,255,255,.93)}
+.cd{margin:6px 0 22px}
+.cd-titolo{font:700 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.88);margin:0 0 10px}
+.cd-griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:440px}
+.cd-box{background:rgba(255,255,255,.13);border-radius:10px;padding:12px 6px;text-align:center}
+.cd-box strong{display:block;font:700 30px/1 var(--sans);color:#fff;font-variant-numeric:tabular-nums}
+.cd-box span{display:block;font:11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:7px}
+.sub{display:flex;flex-direction:column;gap:10px;max-width:480px;margin-top:6px}
+.sub-input{width:100%;padding:14px 16px;border:0;border-radius:8px;background:#fff;color:var(--inchiostro);font:16px/1.3 var(--sans)}
+.sub-input:focus{outline:3px solid rgba(255,255,255,.6);outline-offset:1px}
+.sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sub-consent{display:flex;gap:10px;align-items:flex-start;font:14px/1.4 var(--sans);color:rgba(255,255,255,.92)}
+.sub-consent input{margin-top:2px;width:18px;height:18px;flex:none;accent-color:#fff}
+.sub-consent a{color:#fff}
+.sub-msg{font:14px/1.4 var(--sans);color:#fff;background:rgba(0,0,0,.18);border-radius:8px;padding:10px 12px;margin:0}
+.sub-btn{align-self:flex-start;border:0;cursor:pointer;background:#fff;color:var(--terra);font:700 15px/1.2 var(--sans);padding:14px 22px;border-radius:999px}
+.sub-btn:disabled{opacity:.6;cursor:default}
+.date .btn-bianco{margin-top:6px}
+
+/* patto e firma */
+.firma{margin:34px 0 0;text-align:center}
+.firma p{margin:0 0 6px}
+.firma .ride{font:italic 400 30px/1.3 var(--serif);color:var(--terra);margin:14px 0 8px}
+.ps{background:var(--box);border-radius:8px;padding:26px 26px 8px;margin:56px 0 0}
+.ps p{font-style:italic;color:var(--terra);font-size:18px}
+.ps b{font-style:italic}
+
+/* indice */
+.indice{padding:84px 0 10px}
+.indice h2{font:700 13px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin:0 0 6px}
+.indice .sottotitolo{font:400 30px/1.25 var(--serif);margin:0 0 28px;color:var(--nero)}
+.voci-indice{list-style:none;margin:0;padding:0}
+.voci-indice li{border-top:1px solid var(--riga)}
+.voci-indice li:last-child{border-bottom:1px solid var(--riga)}
+.voci-indice a{display:grid;grid-template-columns:62px 1fr auto;gap:4px 14px;align-items:baseline;padding:16px 4px;text-decoration:none;color:var(--inchiostro)}
+.voci-indice a:hover .vi-tit{color:var(--terra)}
+.vi-num{font:400 40px/1 var(--serif);color:var(--terra-chiara);grid-row:1/3;align-self:center;text-align:right}
+.vi-tit{font:700 19px/1.3 var(--serif);color:var(--nero);transition:color .15s}
+.vi-min{font:12px/1 var(--sans);color:var(--grigio-chiaro);white-space:nowrap}
+.vi-som{grid-column:2/4;font-size:15.5px;line-height:1.45;color:var(--grigio)}
+
+/* guida laterale (desktop largo) */
+.binario{display:none}
+@media (min-width:1260px){
+  .binario{display:block;position:fixed;top:calc(var(--testa) + 30px);left:max(24px,calc(50% - var(--colonna)/2 - 290px));width:236px;max-height:calc(100vh - var(--testa) - 60px);overflow:auto;opacity:0;pointer-events:none;transition:opacity .25s}
+  .binario.su{opacity:1;pointer-events:auto}
+  .binario ol{list-style:none;margin:0;padding:0}
+  .binario a{display:flex;gap:10px;align-items:baseline;padding:6px 8px;border-radius:6px;text-decoration:none;color:var(--grigio);font:13.5px/1.35 var(--sans)}
+  .binario a b{flex:none;width:20px;text-align:right;color:var(--terra-chiara);font:700 13px/1.35 var(--sans)}
+  .binario a:hover{color:var(--inchiostro)}
+  .binario a.attivo{background:var(--terra-velo);color:var(--terra)}
+  .binario a.attivo b{color:var(--terra)}
+  .binario .bt{font:700 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin:0 0 12px 8px}
+}
+
+/* cassetto indice (mobile e tablet) */
+.velo{position:fixed;inset:0;background:rgba(23,20,18,.45);z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
+.velo.aperto{opacity:1;pointer-events:auto}
+.cassetto{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);background:var(--carta);z-index:51;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.12)}
+.cassetto.aperto{transform:none}
+.cassetto-testa{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 14px 22px;border-bottom:1px solid var(--riga)}
+.cassetto-testa b{font:700 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--terra)}
+.chiudi{border:0;background:transparent;cursor:pointer;padding:8px;border-radius:50%;display:grid;place-items:center}
+.chiudi svg{width:22px;height:22px}
+.chiudi:hover{background:var(--terra-velo)}
+.cassetto ol{list-style:none;margin:0;padding:10px 10px 30px;overflow:auto}
+.cassetto a{display:flex;gap:14px;align-items:baseline;padding:11px 12px;border-radius:8px;text-decoration:none;color:var(--inchiostro);font:17px/1.3 var(--serif)}
+.cassetto a b{flex:none;width:26px;text-align:right;font:400 22px/1 var(--serif);color:var(--terra-chiara)}
+.cassetto a.attivo{background:var(--terra-velo);color:var(--terra)}
+.cassetto a.attivo b{color:var(--terra)}
+
+/* ricerca */
+.cerca{position:fixed;inset:0;z-index:60;background:var(--carta);display:none;flex-direction:column}
+.cerca.aperto{display:flex}
+.cerca-testa{display:flex;gap:10px;align-items:center;max-width:760px;width:100%;margin:0 auto;padding:14px 16px;border-bottom:1px solid var(--riga)}
+.cerca-testa svg.lente{width:22px;height:22px;color:var(--terra);flex:none}
+.cerca-testa input{flex:1;min-width:0;border:0;background:transparent;font:400 21px/1.3 var(--serif);color:var(--nero);padding:10px 4px;outline:none}
+.cerca-testa input::placeholder{color:var(--grigio-chiaro)}
+.cerca-corpo{flex:1;overflow:auto}
+.cerca-in{max-width:760px;margin:0 auto;padding:10px 16px 60px}
+.cerca-info{font:13px/1.4 var(--sans);color:var(--grigio);margin:12px 4px}
+.suggerimenti{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.suggerimenti button{border:1px solid var(--box-bordo);background:#fff;border-radius:99px;padding:8px 13px;cursor:pointer;font:600 13.5px/1 var(--sans);color:var(--inchiostro)}
+.suggerimenti button:hover{border-color:var(--terra);color:var(--terra)}
+.risultati{list-style:none;margin:0;padding:0}
+.risultati li{border-bottom:1px solid var(--riga)}
+.risultati a{display:block;padding:14px 6px;text-decoration:none;color:var(--inchiostro);border-radius:6px}
+.risultati a:hover,.risultati a.sel{background:var(--terra-velo)}
+.ris-cap{display:block;font:700 11px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin-bottom:5px}
+.ris-txt{display:block;font-size:16px;line-height:1.5}
+mark{background:#f3d9b8;color:var(--nero);border-radius:2px;padding:0 1px}
+.lampo{animation:lampo 2.4s ease}
+@keyframes lampo{0%,35%{background:#f7e4cc;box-shadow:0 0 0 8px #f7e4cc}100%{background:transparent;box-shadow:0 0 0 8px transparent}}
+
+footer{margin-top:80px;border-top:1px solid var(--riga);padding:28px 0 60px;font:13.5px/1.6 var(--sans);color:var(--grigio)}
+footer .colonna{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px}
+footer a{color:var(--grigio)}
+footer button{border:0;background:none;padding:0;cursor:pointer;text-decoration:underline;color:var(--grigio);font:inherit}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  .marchio span{display:none}
+  .btn-ico .etic{display:none}
+  .btn-ico{padding:9px}
+  .cap{padding-top:66px}
+  .numeri{grid-template-columns:1fr}
+  .grandi{grid-template-columns:repeat(3,1fr);gap:8px}
+  .grande{padding:12px 6px}.grande strong{font-size:26px}.grande span{font-size:12px}
+  .box{padding:18px 16px}
+  .speciale{padding:28px 18px 8px}
+  .formule{grid-template-columns:1fr}
+  .muro{columns:1}
+  .perc{padding:14px 12px 12px}.perc strong{font-size:23px}.perc span{font-size:13px}
+  .speciale .box{padding:16px 12px}.percorsi{gap:8px}
+  .voci-indice a{grid-template-columns:44px 1fr auto;gap:2px 12px}
+  .vi-num{font-size:32px}
+  .cd-griglia{gap:6px}.cd-box{padding:10px 2px}.cd-box strong{font-size:24px}.cd-box span{font-size:9.5px;letter-spacing:.04em}
+  .sub-btn{align-self:stretch}
+  .date{padding:26px 20px}
+  .foto.alta{margin-left:-22px;margin-right:-22px;max-width:none}
+  .foto.alta img,.foto.dentro-testo img{border-radius:0}
+  .foto.dentro-testo,.foto.alta.dentro-testo{margin-left:-22px;margin-right:-22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lampo{animation:none}}
+@media print{
+  .barra-top,.binario,.cassetto,.velo,.cerca,.copertina .bottoni,.lista-conto button,.date form,.cd,footer button{display:none!important}
+  .copertina{min-height:0;height:60vh}
+  .foto.larga{width:100%;left:0;margin-left:0}.foto.larga img{height:auto}
+  .cap{break-before:page}
+  body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ barra in alto (compare dopo la copertina) ============ -->
+<header class="barra-top" id="barra">
+  <a class="marchio" href="#inizio">Tuscany Trail <span>· La Guida 2027</span></a>
+  <div class="azioni">
+    <button class="btn-ico" type="button" data-apri-cerca aria-label="Cerca nella guida"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="etic">Cerca</span></button>
+    <button class="btn-ico" type="button" data-apri-indice aria-label="Apri l'indice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1" fill="currentColor"/><circle cx="4.5" cy="12" r="1" fill="currentColor"/><circle cx="4.5" cy="18" r="1" fill="currentColor"/></svg><span class="etic">Indice</span></button>
+  </div>
+  <div class="progresso" id="progresso"></div>
+</header>
+
+<!-- ============ copertina ============ -->
+<section class="copertina" id="inizio">
+  <img width="1600" height="1200" src="foto/copertina.jpg" srcset="foto/copertina-800.jpg 900w, foto/copertina.jpg 1600w" sizes="100vw" alt="Una strada bianca che sale fra colline verdi in Toscana, sotto un cielo con poche nuvole" fetchpriority="high">
+  <div class="copertina-in">
+    <div class="riga-bianca"></div>
+    <h1>Tuscany<br>Trail</h1>
+    <p class="laguida">La Guida</p>
+    <p class="dati">Edizione 2027<br>19–25 maggio · Campiglia Marittima, Toscana</p>
+    <p class="spaziato">Quattordicesima edizione<br>Il più grande evento di bikepacking del mondo</p>
+    <div class="bottoni">
+      <a class="btn btn-bianco" href="#prima-di-tutto">Inizia a leggere</a>
+      <a class="btn btn-vetro" href="#indice">Vai all'indice</a>
+      <button class="btn btn-vetro" type="button" data-apri-cerca><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Cerca</button>
+    </div>
+  </div>
+</section>
+
+<nav class="binario" id="binario" aria-label="Capitoli"><p class="bt">Capitoli</p><ol></ol></nav>
+
+<main id="guida">
+<div class="colonna">
+
+<!-- ============ 0 · Prima di tutto il resto ============ -->
+<section class="cap" id="prima-di-tutto" data-n="" data-titolo="Prima di tutto il resto" data-sommario="Come è fatta questa guida, e l'unica cosa che qui dentro non trovi.">
+  <header class="cap-testa"><h2>Prima di tutto il resto</h2></header>
+
+  <p class="apertura">Quello che segue non è un depliant. È il documento che avremmo voluto trovare noi, la prima volta.</p>
+
+  <p>Probabilmente stai pensando una di queste tre cose.</p>
+  <ul class="nonlista">
+    <li><i>Sembra bellissimo, ma non sono abbastanza allenato.</i></li>
+    <li><i>Sembra bellissimo, ma non ho la bici giusta e non ho l'attrezzatura.</i></li>
+    <li><i>Sembra bellissimo, ma quattrocentosessanta chilometri da solo in mezzo alla Toscana, io, sinceramente non me la sento.</i></li>
+  </ul>
+  <p>Le riconosciamo perché ce le sentiamo dire da tredici anni, ogni giorno, e perché le hanno pensate esattamente le stesse cose <b>più di metà delle seimila persone che sono partite l'anno scorso</b>. Nel questionario di fine evento 2026, il 55% dei partecipanti ha dichiarato che il Tuscany Trail era il primo evento di bikepacking della propria vita.</p>
+  <p>Non erano atleti. Non avevano l'attrezzatura. Alcuni non avevano nemmeno la bici, l'hanno noleggiata a Campiglia il giorno prima.</p>
+  <p>Sono partiti lo stesso, e alla domanda finale — <i>consiglieresti il Tuscany Trail da 1 a 10</i> — hanno risposto in 2.116 con una media di <b>9,13</b>.</p>
+  <p class="forte">Questa guida serve a farti capire se sei uno di loro.</p>
+
+  <h3>Come è fatta questa guida, e cosa ci trovi dentro</h3>
+  <p>Tre cose.</p>
+  <p><b>La prima è la Toscana.</b> Non quella delle cartoline, ma quella che si attraversa in bicicletta, con la polvere bianca sulle gambe e il rumore del ghiaino sotto le gomme. Le terre che il Tuscany Trail tocca da tredici edizioni, una per una, con dentro i borghi, le abbazie, il mare, le terme libere, il pane senza sale e il vino. È la parte più lunga della guida ed è quella che ti consigliamo di leggere con calma, magari la sera.</p>
+  <p><b>La seconda sono le voci.</b> Alla fine di ogni edizione chiediamo a tutti i partecipanti com'è andata. Nel 2026 hanno risposto in 2.116. Quasi tutte le frasi virgolettate che leggi qui dentro vengono da lì, nella lingua in cui sono arrivate e senza ritocchi. Il questionario è anonimo, per questo non troverai nomi.</p>
+  <p><b>La terza sono le risposte.</b> Alle domande che ci arrivano ogni giorno e soprattutto a quelle che nessuno ci fa perché si vergogna a farle. Le trovi tutte al <a href="#dieci-domande">capitolo 8</a>, sono dieci, e ti diciamo subito che c'è anche <i>ho paura di essere l'ultimo</i> e <i>ho passato i sessanta</i>.</p>
+  <p>Più avanti trovi anche l'errore numero uno che commette chi parte per la prima volta. Non è quello che pensi, non riguarda l'allenamento, e ce lo confermano ogni anno centinaia di persone nel questionario. È al <a href="#errore-numero-uno">capitolo 11</a>.</p>
+
+  <p class="etichetta">Una cosa che in questa guida non c'è</p>
+  <p class="forte">La traccia.</p>
+  <p>Il percorso esatto del Tuscany Trail è un segreto che custodiamo da tredici edizioni e che consegniamo soltanto a chi si iscrive, poche settimane prima della partenza.</p>
+  <p>Ogni anno cambia, e dentro ci sono anche delle proprietà private che vengono aperte solo per il passaggio del Tuscany Trail. È il motivo per cui chi torna la seconda volta si emoziona come la prima, ed è il motivo per cui puoi trovare centinaia di fotografie del Tuscany Trail online senza riuscire a ricostruire il giro. Ogni curva deve essere una sorpresa, anche per i veterani. Soprattutto per i veterani. Quello che trovi qui sono le terre. Il filo che le unisce lo ricevi quando sei dentro.</p>
+</section>
+
+<figure class="foto larga"><img width="1600" height="1067" loading="lazy" src="foto/sterrato-colline.jpg" srcset="foto/sterrato-colline-800.jpg 900w, foto/sterrato-colline.jpg 1600w" sizes="100vw" alt="Un gruppo di ciclisti con le borse da bikepacking su uno sterrato fra i prati"></figure>
+
+<!-- ============ indice ============ -->
+<section class="indice" id="indice" aria-labelledby="indice-tit">
+  <h2 id="indice-tit">Indice</h2>
+  <p class="sottotitolo">Quattordici capitoli. Leggili in ordine oppure salta dove ti serve.</p>
+  <ol class="voci-indice" id="voci-indice"></ol>
+</section>
+
+<!-- ============ 1 ============ -->
+<section class="cap" id="cos-e" data-n="1" data-titolo="Cos'è il Tuscany Trail" data-sommario="Dai 68 della prima edizione ai seimila di oggi. Come funziona, in sei righe, e i numeri veri.">
+  <header class="cap-testa"><span class="cap-num">1</span><h2>Cos'è il Tuscany Trail</h2></header>
+
+  <h3>Nel 2014 eravamo 68</h3>
+  <p>Non è una frase ad effetto, è esattamente il numero di persone che si presentarono alla prima edizione, contate una ad una da un'unica foto scattata alla partenza.</p>
+  <p>Nel 2014 in Europa quasi nessuno sapeva cosa fosse il bikepacking. La parola suonava strana anche a dirla. E di eventi come questo non ne esisteva nemmeno uno, in nessun paese. C'era solo il Tuscany Trail.</p>
+  <p>Tredici anni dopo al via ci sono seimila persone da <b>settanta nazioni</b>. Negli ultimi cinque anni hanno pedalato il Tuscany Trail oltre <b>venticinquemila ciclisti</b>. È l'evento di bikepacking più grande del mondo ed è con ogni probabilità anche il più grande evento gravel del pianeta.</p>
+  <p>Tutto quello che è venuto dopo, in Italia e in Europa, è venuto dopo di noi e forse è venuto anche grazie al Tuscany Trail.</p>
+  <p>Quella del 2027 sarà la <b>quattordicesima edizione</b>.</p>
+
+  <h3>La regola che non è mai cambiata</h3>
+  <p>Nessuna classifica. Nessun cronometro. Nessun tempo massimo.</p>
+  <p><b>Arrivare è l'unico traguardo, per il primo come per l'ultimo</b>, e nessuno saprà mai chi dei due sei stato perché nessuno lo sta misurando.</p>
+  <p><b>Il Tuscany Trail non è una gara e non lo diventerà mai.</b> Chi cerca una prestazione da difendere trova centinaia di eventi che gliela offrono volentieri. Qui si viene per un'altra cosa, e chi ci viene lo capisce entro il primo pomeriggio.</p>
+
+  <h3>Come funziona, in sei righe</h3>
+  <ol class="passi">
+    <li><b>Ti iscrivi e ricevi la traccia GPS ufficiale.</b></li>
+    <li>Ritiri il pacco a Campiglia Marittima il 19, il 20 o il 21 maggio, e parti quel giorno stesso oppure la mattina dopo.</li>
+    <li>Pedali il tuo anello. Dormi dove vuoi. Ti fermi quando ti va.</li>
+    <li>Torni a Campiglia Marittima, che è anche il punto di partenza, e ritrovi la macchina dove l'avevi lasciata oppure vai alla vicina stazione per prendere il treno.</li>
+    <li>In media si chiude in <b>quattro giorni</b>. La finestra però è di una settimana intera, dal 19 al 25 maggio, e dentro quella settimana il ritmo lo scegli tu.</li>
+  </ol>
+
+  <h3>I numeri, quelli veri</h3>
+  <p>Dal questionario di fine evento 2026, 2.116 risposte raccolte su 6.125 partecipanti.</p>
+  <div class="box">
+    <div class="grandi">
+      <div class="grande"><strong>9,13</strong><span>voto medio all'evento, su 10</span></div>
+      <div class="grande"><strong>55%</strong><span>al primo evento bikepacking della vita</span></div>
+      <div class="grande"><strong>70</strong><span>nazioni al via</span></div>
+    </div>
+    <div class="numeri">
+      <div class="num"><span>Voto al percorso</span><b>4,55 / 5</b></div>
+      <div class="num"><span>Voto all'atmosfera generale</span><b>4,65 / 5</b></div>
+      <div class="num"><span>Voto ai compagni di viaggio</span><b>4,65 / 5</b></div>
+      <div class="num"><span>Ha completato il percorso senza tagliare</span><b>85%</b></div>
+      <div class="num"><span>Non ha avuto difficoltà a trovare dove dormire</span><b>86%</b></div>
+      <div class="num"><span>Ha trovato facile mangiare lungo il percorso</span><b>77%</b></div>
+      <div class="num"><span>Ha usato una gravel</span><b>77%</b></div>
+    </div>
+  </div>
+  <p>Il dato che guardiamo per primo, ogni anno, è quel <b>55%</b>.</p>
+  <p>Più di metà delle persone che arriva a Campiglia non ha mai fatto un evento di bikepacking prima. Non è un caso statistico e non è coraggio collettivo. È che questo evento è costruito apposta perché anche la prima volta sia una bella prima volta, ed è la ragione per cui esiste il percorso Newbie da 160 chilometri di cui parliamo fra poco.</p>
+</section>
+
+<figure class="foto alta"><img width="1200" height="1600" loading="lazy" src="foto/spiaggia.jpg" srcset="foto/spiaggia-800.jpg 675w, foto/spiaggia.jpg 1200w" sizes="(max-width:640px) 100vw, 560px" alt="Ciclisti che scendono verso una spiaggia di sabbia chiara fra le dune e il mare azzurro"></figure>
+
+<!-- ============ 2 ============ -->
+<section class="cap" id="cosa-non-e" data-n="2" data-titolo="Cosa il Tuscany Trail non è" data-sommario="Otto cose che il Tuscany Trail non è, per capire subito se fa per te.">
+  <header class="cap-testa"><span class="cap-num">2</span><h2>Cosa il Tuscany Trail non è</h2></header>
+  <p>Prima di dirti cos'è, ti diciamo cosa non è. Ci risparmia entrambi un po' di tempo, e a qualcuno eviterà una settimana di ferie sbagliata.</p>
+  <ul class="nonlista">
+    <li><b>Non è una gara.</b> Non c'è classifica, non c'è cronometro, non c'è tempo massimo, non c'è podio. Nessuno registra quando parti e nessuno registra quando arrivi. Se vuoi qualcosa da vincere, questo non è il posto.</li>
+    <li><b>Non è una granfondo.</b> Niente strade chiuse al traffico, niente ristori ogni trenta chilometri, niente moto staffetta, niente pasta party. Al Tuscany Trail il ristoro è il bar del paese, e nove volte su dieci è meglio.</li>
+    <li><b>Non è un viaggio organizzato.</b> Non c'è una guida davanti e un furgone dietro. Non ti portiamo i bagagli da un albergo all'altro. Le prenotazioni le fai tu, quando vuoi tu, dove vuoi tu.</li>
+    <li><b>Non è una prova di sopravvivenza.</b> Non sei nel deserto e non sei in capo al mondo. Sei in Toscana. Ogni pochi chilometri c'è un borgo, una fontanella, un bar aperto, un alimentari. Se finisci l'acqua, la trovi. Se ti gira di fermarti due ore a pranzo, ti fermi due ore a pranzo.</li>
+    <li><b>Non è un evento per soli atleti.</b> Il 55% è alla prima volta. Ci sono partecipanti oltre i settant'anni. Le e-bike sono ammesse dal principio e siamo stati i primi ad accettarle.</li>
+    <li><b>Non è un evento dove serve la bici perfetta.</b> Il 77% usa una gravel, il 15% una mountain bike, e ogni anno arriva qualcuno con una bici da viaggio degli anni Novanta e finisce prima di metà del gruppo.</li>
+    <li><b>Non è un evento affollato.</b> Sembra un paradosso con seimila iscritti, ma le partenze sono distribuite su tre giorni e due fasce orarie, mattina e pomeriggio. Sulla strada ti ritrovi in un evento condiviso, non in una fila.</li>
+    <li class="ultima"><b>E non è un evento a numero aperto.</b> I posti sono seimila e nel 2026 sono finiti in anticipo. Questa è l'unica riga di questa pagina che ti chiediamo di ricordare.</li>
+  </ul>
+</section>
+
+<figure class="foto alta"><img width="1280" height="1600" loading="lazy" src="foto/vigneti-ginestre.jpg" srcset="foto/vigneti-ginestre-800.jpg 720w, foto/vigneti-ginestre.jpg 1280w" sizes="(max-width:640px) 100vw, 560px" alt="Vista dall'alto di una strada bianca fra i vigneti e le ginestre in fiore, percorsa da alcuni ciclisti"></figure>
+
+<!-- ============ 3 ============ -->
+<section class="cap" id="prima-della-partenza" data-n="3" data-titolo="Prima della partenza" data-sommario="Il villaggio evento, le partenze scaglionate e il primo metro di strada.">
+  <header class="cap-testa"><span class="cap-num">3</span><h2>Prima della partenza</h2></header>
+  <p>C'è un momento che nessuno racconta mai bene, e che invece è metà del Tuscany Trail.</p>
+  <p class="forte">È il momento prima della partenza, al villaggio evento.</p>
+  <p>Arrivi con la bici sul portapacchi o smontata dentro una sacca, arrivi in fiera e ritiri il pacco evento della partenza, e poi ti giri intorno. Quello che vedi somiglia a un censimento mondiale del bikepacking.</p>
+  <p>Ci sono gravel da diecimila euro parcheggiate accanto a mountain bike degli anni Novanta con le borse legate coi cinghietti. Ci sono tandem. Ci sono e-bike. C'è uno che è arrivato fin qui pedalando dall'Olanda e domani riparte come se niente fosse. Ci sono due che non si conoscevano dieci minuti fa e stanno già confrontando le borse.</p>
+  <p>Si parla inglese, tedesco, francese, olandese, ceco, spagnolo, e ogni tanto qualcuno parla anche l'italiano. Nel 2026 gli stranieri erano circa due terzi del totale.</p>
+  <p>Non appena sei pronto, arriva il momento di partire.</p>
+  <p>Partenze scaglionate per tre giorni di fila. Non è una scelta organizzativa qualunque, è il cuore del sistema. Serve a noi per governare i flussi e serve a te per ritrovarti dentro un evento condiviso ma mai congestionato.</p>
+  <p class="forte">Nessun cancello. Nessuna griglia. Nessuno sparo di partenza.</p>
+  <p>Si esce dal villaggio a gruppetti, si prende la prima strada, e comincia.</p>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cap" id="le-terre" data-n="4" data-titolo="Le terre che attraverserai" data-sommario="Il mare selvatico, la Maremma, la Val d'Orcia, Siena, la Francigena, la Val di Cecina. E la novità dell'Elba.">
+  <header class="cap-testa"><span class="cap-num">4</span><h2>Le terre che attraverserai</h2></header>
+  <p>Una precisazione, prima di cominciare.</p>
+  <p>Qui sotto trovi le terre che il Tuscany Trail attraversa da tredici edizioni e che continuerà ad attraversare. Non trovi l'ordine, non trovi i chilometri, non trovi la traccia. Quella arriva dopo l'iscrizione. Se sapessi già tutto adesso, mancherebbe la parte migliore.</p>
+  <p>Una cosa però possiamo dirla senza girarci intorno.</p>
+  <p><b>Non esiste al mondo un'altra regione che metta insieme in quattrocentosessanta chilometri questa quantità di cose diverse.</b> Non è solo bellezza, è varietà. Si parte con il mare e si finisce con il mare, e in mezzo ci sono le colline, le miniere, le abbazie, il vino, una città medievale intatta, le terme naturali e le strade bianche che il resto del pianeta conosce dalle fotografie senza sapere dove siano.</p>
+  <p>Chi lo ha fatto lo scrive nel questionario più o meno sempre con le stesse parole.</p>
+  <blockquote class="voce"><p>«Tuscany is everything you've ever read about or seen on tv, just breathtaking everywhere you look.»</p><p class="trad">(La Toscana è tutto quello che hai letto o visto in televisione, semplicemente mozzafiato ovunque guardi.)</p><cite>Partecipante 2026</cite></blockquote>
+
+  <div class="terra" id="campiglia">
+    <h3>La Costa degli Etruschi e Campiglia Marittima</h3>
+    <p><b>Si comincia e si finisce qui, su una collina che guarda il Mar Tirreno.</b></p>
+    <p>Campiglia Marittima è un borgo medievale dominato dalla Rocca, una fortificazione tirata su fra il XII e il XIII secolo. Dall'alto lo sguardo scivola giù per le colline fino alla costa, e nelle giornate limpide all'orizzonte si stacca il profilo dell'Isola d'Elba. Che dal 2027 non è più soltanto un profilo, ma <a href="#detour-elba">ci arriviamo fra qualche pagina</a>.</p>
+    <p>Nel centro storico le stradine si stringono e poi si aprono all'improvviso su piazzette nascoste e chiese antiche, come la Pieve di San Giovanni, romanica, dell'XI secolo, che è un gioiello proprio perché non cerca di esserlo. Gli edifici sono di pietra, le botteghe artigiane sono ancora botteghe.</p>
+    <p>Fuori dal paese c'è il Parco Archeominerario di San Silvestro, dove si entra dentro le miniere medievali da cui per secoli questa valle ha cavato il metallo.</p>
+    <p>Il nome Costa degli Etruschi non è un'invenzione turistica. Prima dei romani, prima di tutti, qui c'erano loro.</p>
+  </div>
+
+  <figure class="foto alta dentro-testo"><img width="1280" height="1600" loading="lazy" src="foto/borgo-in-bici.jpg" srcset="foto/borgo-in-bici-800.jpg 720w, foto/borgo-in-bici.jpg 1280w" sizes="(max-width:640px) 100vw, 560px" alt="Due cicliste con le borse attraversano le stradine di pietra di un borgo toscano"></figure>
+
+  <div class="terra" id="mare-selvatico">
+    <h3>Il mare selvatico — Scarlino, Cala Violina, Castiglione della Pescaia</h3>
+    <p><b>C'è un tratto di costa toscana dove le automobili non arrivano. Ci si va a piedi oppure in bicicletta, e basta.</b></p>
+    <p>Dentro ci sono due baie.</p>
+    <p><b>Cala Violina</b> è una mezzaluna di sabbia così fine che quando la calpesti emette un suono, e da quel suono le viene il nome. Poco più in là c'è <b>Cala Martina</b>, più piccola, più nascosta, più selvatica. Intorno, macchia mediterranea fitta che custodisce le due cale come se fossero un segreto, e in un certo senso lo sono, perché per vederle bisogna guadagnarsele.</p>
+    <p>Lo sterrato che ci porta corre dentro il verde con scorci improvvisi sull'azzurro. È uno di quei tratti in cui la gente scende dalla bici senza un motivo preciso.</p>
+    <p>Poi si apre <b>Castiglione della Pescaia</b>, che è insieme borgo medievale e paese di mare. Il castello del X secolo sta appollaiato sopra le case con le sue torri, e da lassù si vede tutto l'Arcipelago Toscano. Sotto, chilometri di spiaggia dorata e pinete che fanno ombra.</p>
+    <p>Molti partecipanti raccontano questa come la parte che li ha conquistati. E qui va detta una cosa che dice più di tante parole — nel 2025 il Comune ha installato nuove rastrelliere per le biciclette. Piccolo gesto, ma racconta come questi paesi hanno imparato ad aspettarci.</p>
+    <blockquote class="voce"><p>«Il tratto in comune alle due tracce era meraviglioso, estremamente panoramico ed emozionante.»</p><cite>Partecipante 2026</cite></blockquote>
+    <p><b>È qui, a Castiglione della Pescaia, che i due percorsi si separano.</b> Fino a questo punto avete pedalato tutti insieme, chi fa i centosessanta chilometri e chi ne fa quattrocentosessanta. Da qui in avanti ognuno prende la sua strada.</p>
+  </div>
+
+  <div class="terra" id="colline-metallifere">
+    <h3>Le Colline Metallifere e la Maremma — quello che vede chi fa il corto</h3>
+    <p><b>Chi sceglie il percorso Newbie da qui sale verso l'interno, ed entra nella Toscana che i turisti non hanno ancora trovato.</b></p>
+    <p><b>Gavorrano</b> sta sulle Colline Metallifere ed è stata per decenni la capitale europea della pirite. Il castello degli Aldobrandeschi risale all'XI secolo, ma la cosa che resta addosso è il Teatro delle Rocce, un anfiteatro ricavato dentro una cava dismessa. Un posto dove una ferita industriale è diventata un palcoscenico.</p>
+    <p><b>Caldana</b> è costruita a cerchi concentrici, con le strade che si avvolgono a spirale attorno al nucleo antico fino alla Chiesa di San Biagio. Dall'alto, nelle giornate pulite, si vede l'Isola del Giglio. Intorno, oliveti secolari e i vigneti del Monteregio di Massa Marittima.</p>
+    <p>Questa è la Maremma. Terra di butteri, di cinghiali, di cinta senese, di gente che parla poco e bene. La parte di Toscana dove il turismo di massa non è mai arrivato davvero, e per fortuna.</p>
+    <p>Chi fa il corto vede in due giorni il mare, le cale selvagge e queste colline. <b>Non è una versione ridotta del Tuscany Trail, è una sua parte intera.</b></p>
+  </div>
+
+  <figure class="foto dentro-testo"><img width="1600" height="1067" loading="lazy" src="foto/costa.jpg" srcset="foto/costa-800.jpg 900w, foto/costa.jpg 1600w" sizes="(max-width:640px) 100vw, 700px" alt="Ciclisti su uno sterrato a picco sul mare, con la costa e le colline sullo sfondo"></figure>
+
+  <p class="etichetta">E da qui in avanti, il percorso Originale</p>
+
+  <div class="terra" id="val-dorcia">
+    <h3>La Val d'Orcia</h3>
+    <p><b>Questa è la cartolina. Ed è una delle rare volte in cui la cartolina è più brutta dell'originale.</b></p>
+    <p>Patrimonio UNESCO, la Val d'Orcia è quella distesa di colline ondulate, cipressi solitari e casali isolati che chiunque abbia acceso un computer negli ultimi vent'anni ha visto almeno una volta senza sapere dove fosse.</p>
+    <p>A fine maggio il grano è ancora verde, ma di un verde talmente carico che sembra dorato. La luce cambia di ora in ora e al tramonto le colline diventano rosa. È il momento dell'anno in cui questa valle dà il meglio, e non è un caso che il Tuscany Trail si corra adesso.</p>
+    <p><b>Ed è qui che le strade bianche danno il loro massimo.</b> Larghe, compatte, veloci, con i filari di cipressi che salgono dritti verso un casale in cima alla collina. Se hai visto una fotografia della Toscana in vita tua, con buona probabilità era una di queste strade.</p>
+    <p>Dentro la valle ci sono tre posti per cui vale la pena rallentare.</p>
+    <p><b>L'Abbazia di Sant'Antimo.</b> Romanica, in travertino e alabastro, secondo la leggenda fondata da Carlo Magno nel IX secolo. Sta in mezzo ai vigneti di Montalcino, quelli del Brunello, e ha una purezza di linee che mette in silenzio anche chi arriva di corsa. Dentro, colonne e capitelli decorati con foglie e animali. Fino a qualche anno fa i monaci ci cantavano il gregoriano.</p>
+    <p><b>Bagno Vignoni.</b> Qui la piazza principale del paese non è una piazza, è una vasca di acqua termale che fuma. Poco fuori dall'abitato, scendendo verso il Parco dei Mulini, ci sono le vasche libere scavate nel travertino, acqua calda e gratuita in mezzo al verde. Chi ci si ferma a fine giornata, dopo centoventi chilometri, di solito non lo dimentica più.</p>
+    <p><b>Pienza.</b> La città ideale del Rinascimento, disegnata da un papa umanista perché fosse armonia fatta urbanistica. Dalla terrazza si guarda la valle intera. Nelle botteghe c'è il pecorino di Pienza, e conviene comprarne un pezzo anche se poi bisogna trovargli posto nella borsa. Qualcuno ci riesce, qualcuno se lo mangia lì.</p>
+  </div>
+
+<figure class="foto larga"><img width="1600" height="1200" loading="lazy" src="foto/val-dorcia.jpg" srcset="foto/val-dorcia-800.jpg 900w, foto/val-dorcia.jpg 1600w" sizes="100vw" alt="Una lunga fila di ciclisti su una strada bianca dritta fra i campi di grano verde, con un borgo sulla collina"></figure>
+
+  <div class="terra" id="siena">
+    <h3>Siena</h3>
+    <p><b>Piazza del Campo a fine maggio non è la Piazza del Campo di agosto.</b></p>
+    <p>Il Palio si corre il 2 luglio e il 16 agosto, ma a maggio la città è già dentro la sua liturgia. C'è l'estrazione a sorte delle contrade che si aggiungono alle sette che corrono di diritto, ci sono le prime cene, le prove, le bandiere che compaiono ai balconi. L'aria è elettrica in un modo che i turisti di luglio non vedranno mai, perché a luglio è già spettacolo mentre a maggio è ancora rito.</p>
+    <p>E poi c'è una cosa che capita soltanto arrivando in bicicletta.</p>
+    <p>Entrare in una città come Siena con la polvere sulle gambe, e sedersi in terra nella conca di mattoni rossi con un gelato in mano. Le proporzioni si riallineano di colpo. Sei arrivato fin qui con le tue gambe.</p>
+  </div>
+
+  <div class="terra" id="francigena">
+    <h3>La Via Francigena — Monteriggioni, Colle Val d'Elsa, San Gimignano</h3>
+    <p><b>Per un lungo tratto il Tuscany Trail si sovrappone alla Via Francigena</b>, il cammino che dal medioevo porta i pellegrini dal nord Europa fino a Roma. Si pedala dentro mille anni di gente che passava di qui a piedi con lo stesso spirito con cui ci passi tu.</p>
+    <p><b>Monteriggioni</b> è un cerchio di mura lungo cinquecentosettanta metri con quattordici torri, costruito nel Duecento dalla Repubblica di Siena come avamposto contro Firenze. È rimasto intatto. Dante lo cita nell'Inferno paragonando le sue torri ai giganti. Ci si entra dalla Porta Franca, quella che guarda verso Siena, e dentro c'è una piazza, una chiesa romanica e il silenzio.</p>
+    <p><b>Colle di Val d'Elsa</b> sta arroccata su uno sperone di roccia ed è la capitale mondiale del cristallo. Intorno, i piccoli borghi della Francigena, Strove, Gracciano, Campiglia dei Foci, dove il tempo si è fermato senza chiedere il permesso a nessuno.</p>
+    <p><b>San Gimignano</b>, la Manhattan del Medioevo. Al suo apice aveva settantadue torri, oggi ne restano quattordici, e bastano a disegnare uno skyline che si riconosce da venti chilometri di distanza. In Piazza della Cisterna c'è quello che parecchie classifiche considerano il miglior gelato artigianale del mondo. Non è il motivo per cui si fa il Tuscany Trail, ma dopo una salita non è nemmeno un dettaglio trascurabile.</p>
+  </div>
+
+  <div class="terra" id="val-di-cecina">
+    <h3>La Val di Cecina — Volterra e Montecatini</h3>
+    <p><b>Poi il cerchio comincia a chiudersi, attraverso una Toscana più aspra, più boscosa, più solitaria.</b></p>
+    <p><b>Montecatini Val di Cecina</b> sta a quattrocentoquattordici metri, con la torre del castello che ne svetta altri trentotto. Nell'Ottocento qui c'era la miniera di rame più importante d'Europa, e il castello minerario di Caporciano è ancora lì a raccontarlo. Nel 2025 i partecipanti che arrivavano quassù sono stati accolti da una mongolfiera. Nessuno se l'aspettava, ed è esattamente il tipo di cosa che non si può programmare.</p>
+    <p>Intorno, boschi di querce, calanchi, poderi isolati e chilometri in cui non incontri nessuno tranne altri come te.</p>
+  </div>
+
+  <div class="terra" id="il-finale">
+    <h3>Il finale, che non ti raccontiamo</h3>
+    <p>E poi si scende verso il mare.</p>
+    <p>L'aria cambia, l'odore torna salato, e a un certo punto in fondo ricompare il Tirreno. È lo stesso mare di quattro giorni prima e non è affatto lo stesso.</p>
+    <p><b>Su come finisce il Tuscany Trail 2027 non diciamo altro.</b></p>
+    <p>Nel 2026 abbiamo cambiato l'ultima parte del percorso e nessuno se lo aspettava. Nel 2027 l'abbiamo cambiata di nuovo, e chi torna troverà qualcosa che non ha mai visto. Sappiamo già che sarà una delle cose di cui si parlerà di più nel questionario di fine evento.</p>
+    <p class="forte">Il resto lo scopri pedalando. È il patto.</p>
+  </div>
+
+  <aside class="speciale" id="detour-elba">
+    <span class="bollino">La novità del 2027</span>
+    <h3>Il Detour va all'Isola d'Elba</h3>
+    <p><b>Alla quattordicesima edizione, per la prima volta nella sua storia, il Tuscany Trail si imbarca.</b></p>
+    <p>Il Detour è una deviazione facoltativa. Nel 2027 attraversa il mare e porta a pedalare su un'isola. Miniere di ferro che gli Etruschi sfruttavano tremila anni fa. Macchia mediterranea che profuma di elicriso e di mirto. Una montagna nel mezzo e il mare da tutti i lati, che è una condizione che in bicicletta cambia il modo stesso di guardare avanti.</p>
+    <p>Funziona così. A un certo punto del percorso trovi il bivio, e decidi tu.</p>
+    <p>Il Detour si può aggiungere <b>sia al percorso Originale sia al percorso Newbie</b>. La scelta resta aperta fino all'ultimo minuto, perché dopo l'iscrizione <b>ricevi tutte le tracce</b> e puoi cambiare idea anche mentre sei per strada.</p>
+    <div class="box" style="background:#fff">
+      <p class="box-tit">Percorso</p>
+      <div class="percorsi">
+        <div class="perc" style="--v:28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
+        <div class="perc elba" style="--v:53.6"><span>Newbie + Detour Elba</span><strong>300 km</strong><i></i></div>
+        <div class="perc" style="--v:82.1"><span>Originale</span><strong>460 km</strong><i></i></div>
+        <div class="perc elba" style="--v:100"><span>Originale + Detour Elba</span><strong>560 km</strong><i></i></div>
+      </div>
+    </div>
+    <p>Quattro misure diverse dello stesso viaggio. <b>Lo monti come vuoi, e puoi deciderlo fino all'ultimo.</b></p>
+    <p>Non è un obbligo e non è un supplemento. È già compreso.</p>
+    <p>Chilometri definitivi, orari del traghetto e finestra di passaggio arrivano appena sono confermati, e li riceve per prima la lista.</p>
+    <p class="forte">Il Detour non è una prova in più da superare. È un regalo.</p>
+  </aside>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cap" id="il-cibo" data-n="5" data-titolo="Il cibo, che è metà del viaggio" data-sommario="Pici, schiacciata, pane senza sale e la regola del pranzo lungo.">
+  <header class="cap-testa"><span class="cap-num">5</span><h2>Il cibo, che è metà del viaggio</h2></header>
+  <p>C'è una cosa che nel questionario torna con una frequenza che all'inizio ci aveva sorpreso, e adesso non più.</p>
+  <p>Alla domanda su cosa avrebbero cambiato, uno ha risposto così.</p>
+  <blockquote class="voce"><p>«Nothing. Loved it all. The route, the people, the scenery, the atmosphere. The food. Everything.»</p><p class="trad">(Niente. Ho amato tutto. Il percorso, le persone, i paesaggi, l'atmosfera. Il cibo. Tutto.)</p><cite>Partecipante 2026</cite></blockquote>
+  <p><b>Il cibo compare in quella lista, e compare quasi sempre.</b></p>
+  <p><b>Il Tuscany Trail attraversa una delle regioni gastronomiche più forti del mondo nel momento migliore dell'anno, e lo fa alla velocità giusta per accorgersene.</b> Quaranta chilometri in bicicletta separano cucine diverse. In macchina non te ne accorgeresti mai.</p>
+  <p><b>Sulla costa</b> si mangia il pesce povero, il cacciucco, le acciughe sotto sale, e si beve bianco fresco.</p>
+  <p><b>In Maremma</b> cambia tutto. Cinghiale, cinta senese, acquacotta, tortelli maremmani grandi come un palmo di mano, e il Morellino di Scansano.</p>
+  <p><b>Nel senese</b> arrivano i pici, che sono spaghetti grossi fatti a mano e tirati uno per uno, con l'aglione oppure cacio e pepe. Poi la ribollita, i crostini di fegatini, il pecorino di Pienza, la finocchiona.</p>
+  <p>E poi c'è <b>la schiacciata</b>, che è il pane più adatto al bikepacking mai inventato da una civiltà. Costa poco, sta in tasca, non si sbriciola, e con dentro il prosciutto toscano regge quaranta chilometri.</p>
+  <p>Una nota sul pane toscano, visto che ogni anno qualcuno ci resta male. <b>È senza sale.</b> Non è un errore del fornaio, è così da settecento anni. Provalo con qualcosa di saporito sopra e capirai perché.</p>
+
+  <p class="etichetta">La regola del pranzo lungo</p>
+  <p>Il consiglio migliore che possiamo darti su tutta questa guida è anche il più controintuitivo.</p>
+  <p class="forte">Fermati a pranzo. Davvero.</p>
+  <p>Non il panino ingoiato in piedi accanto alla bici. Il tavolo, l'ombra, l'acqua fresca, il primo, il caffè. Un'ora, un'ora e mezza. Chi lo fa arriva la sera meno distrutto di chi non lo fa, e si ricorda molto meglio la giornata.</p>
+  <p>Il Tuscany Trail non è una gara. <b>Il tempo che perdi a tavola non lo stai perdendo.</b></p>
+  <blockquote class="voce"><p>«Plus on s'approche de la ligne d'arrivée, plus les concurrents sont nombreux aux terrasses des cafés.»</p><p class="trad">(Più ci si avvicina al traguardo, più i partecipanti si fermano ai tavolini dei bar. Indugiano, come si rallenta la lettura nelle ultime pagine di un libro che ci ha catturato.)</p><cite>Partecipante 2025</cite></blockquote>
+
+  <figure class="foto dentro-testo"><img width="1600" height="1067" loading="lazy" src="foto/pici.jpg" srcset="foto/pici-800.jpg 900w, foto/pici.jpg 1600w" sizes="(max-width:640px) 100vw, 700px" alt="Un piatto di pici al ragù su un tavolo di trattoria, con bicchieri di vino rosso"></figure>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cap" id="la-giornata" data-n="6" data-titolo="La giornata tipo" data-sommario="Dalla sveglia presto all'arrivo al basecamp, un giorno sul Tuscany Trail.">
+  <header class="cap-testa"><span class="cap-num">6</span><h2>La giornata tipo</h2></header>
+  <p>Non esiste una giornata tipo, ma se proprio dovessimo raccontarne una somiglierebbe a questa.</p>
+  <ol class="passi">
+    <li><b>Sveglia presto.</b> Non per fare chilometri, per prendere le ore fresche. A fine maggio in Toscana dalle sette alle undici del mattino si pedala nella luce migliore della giornata e con la temperatura migliore.</li>
+    <li><b>Colazione al bar del paese.</b> Cappuccino e cornetto, due euro e cinquanta, il barista che ti chiede da dove vieni e ti dice che ieri ne sono passati altri trenta.</li>
+    <li><b>Il primo blocco.</b> Le gambe fresche che girano da sole. È qui che di solito si incontrano le persone con cui poi si pedala mezza giornata senza essersi accordati su niente.</li>
+    <li><b>Pranzo lungo.</b> <a href="#il-cibo">Vedi sopra</a>.</li>
+    <li><b>Il pomeriggio.</b> Più lento, più contemplativo. È il momento in cui si fanno le fotografie e si sbaglia strada perché si stava guardando il panorama.</li>
+    <li><b>L'arrivo.</b> Basecamp, agriturismo, hotel, tenda. Doccia, birra, cena, e la sera che comincia da sola. Nei basecamp si finisce sempre a parlare con qualcuno di cui non si capisce bene la lingua e con cui ci si capisce benissimo lo stesso.</li>
+  </ol>
+  <p><b>In media si chiude in quattro giorni.</b> Chi ha tempo ne prende cinque o sei e vive meglio. Chi ne ha tre stringe i denti e comunque non se ne pente.</p>
+  <blockquote class="voce"><p>«Sono tre anni che partecipo e ogni anno è stata un'avventura diversa.»</p><cite>Partecipante 2026</cite></blockquote>
+</section>
+
+<figure class="foto larga"><img width="1600" height="1067" loading="lazy" src="foto/bottega.jpg" srcset="foto/bottega-800.jpg 900w, foto/bottega.jpg 1600w" sizes="100vw" alt="Due ciclisti con zaino e casco davanti al bancone di una bottega di alimentari toscana"></figure>
+
+<!-- ============ 7 ============ -->
+<section class="cap" id="dove-dormi" data-n="7" data-titolo="Dove dormi" data-sommario="Hotel, agriturismi, tenda, basecamp. Come hanno dormito i partecipanti del 2026.">
+  <header class="cap-testa"><span class="cap-num">7</span><h2>Dove dormi</h2></header>
+  <p>Questa è la domanda che ci fanno più spesso di tutte, subito dopo quella sull'allenamento. <b>La risposta breve è che dormi dove ti pare.</b></p>
+  <p>Ecco come si sono distribuiti i partecipanti nel 2026.</p>
+  <div class="box barre">
+    <p class="box-tit">Dove hanno dormito</p>
+    <div class="riga-b top" style="--v:65"><span>Solo hotel, B&amp;B, agriturismi</span><b>65%</b><i></i></div>
+    <div class="riga-b" style="--v:17"><span>Solo in tenda</span><b>17%</b><i></i></div>
+    <div class="riga-b" style="--v:16"><span>Misto, hotel e tenda</span><b>16%</b><i></i></div>
+    <div class="riga-b" style="--v:2"><span>Bivacco senza tenda</span><b>2%</b><i></i></div>
+  </div>
+  <p><b>Il 65% non ha mai montato una tenda.</b> Se hai in testa che bikepacking voglia dire per forza sacco a pelo e bivacco, questo numero è la risposta. La maggioranza dorme al coperto.</p>
+
+  <p class="etichetta">Hotel, B&amp;B e agriturismi</p>
+  <p>Lungo il percorso ci sono strutture che ormai conoscono il Tuscany Trail e sanno cosa serve a un ciclista, un posto sicuro per la bici, la cena tardi, un rubinetto per lavare i vestiti.</p>
+  <p>Un avvertimento onesto, e ce lo hanno chiesto i partecipanti stessi. <b>Nelle zone più belle conviene prenotare presto.</b> Chi si muove a marzo trova tutto, chi si muove a maggio trova meno.</p>
+
+  <p class="etichetta">I basecamp</p>
+  <p>Sono punti tenda organizzati dalle comunità locali lungo il percorso. Circoli sportivi, campi da calcio, agriturismi, case del popolo. Servizi essenziali, cucina del posto, e le serate attorno ai tavoli che sono diventate leggenda.</p>
+  <p>Nel 2026 li ha usati il <b>33% dei partecipanti</b>, praticamente uno su tre.</p>
+  <p>Non sono campeggi attrezzati e non fingiamo che lo siano. Sono comunità di paese che aprono le porte a qualche centinaio di ciclisti stranieri per una notte, e lo fanno con i volontari. Chi ci dorme lo sceglie per quello, non per i servizi.</p>
+  <p>Quando funzionano, però, funzionano così.</p>
+  <blockquote class="voce"><p>«Podere Sant'Antonio è stato il momento più bello per me. Posizione fantastica, atmosfera bellissima, proprietari gentilissimi. Gli organizzatori meritano davvero un applauso.»</p><cite>Partecipante 2026</cite></blockquote>
+  <blockquote class="voce"><p>«Campiglia dei Foci va citato a parte. La cordialità, l'accoglienza e l'atmosfera generale non le ho trovate uguali da nessun'altra parte.»</p><cite>Partecipante 2026</cite></blockquote>
+
+  <figure class="foto alta dentro-testo"><img width="1200" height="1600" loading="lazy" src="foto/basecamp.jpg" srcset="foto/basecamp-800.jpg 675w, foto/basecamp.jpg 1200w" sizes="(max-width:640px) 100vw, 560px" alt="Vista dall'alto di un basecamp fra i campi, con decine di tende colorate e biciclette sul prato"></figure>
+
+  <p class="etichetta">La libertà vera</p>
+  <p><b>Nessuna tappa obbligata. Nessuna prenotazione imposta.</b> Puoi mescolare come ti pare, una notte in tenda, una in un borgo, una in agriturismo con la piscina.</p>
+  <p>L'86% dei partecipanti 2026 non ha avuto <b>nessuna difficoltà</b> a trovare dove dormire.</p>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cap" id="dieci-domande" data-n="8" data-titolo="Le dieci domande che non ci fai" data-sommario="Allenamento, bici, prima volta, sicurezza, età, tempo e quota. Le risposte vere, con i numeri.">
+  <header class="cap-testa"><span class="cap-num">8</span><h2>Le dieci domande che non ci fai</h2></header>
+  <p>Queste sono i dubbi veri. Non quelli da modulo di contatto, quelli che uno pensa la sera guardando il sito e poi chiude la pagina.</p>
+  <p>Li abbiamo raccolti in tredici anni. Rispondiamo con i numeri quando ci sono, e quando non ci sono lo diciamo.</p>
+  <nav class="domande-indice" aria-label="Le dieci domande">
+    <a href="#domanda-1">1 · Non sono abbastanza allenato</a>
+    <a href="#domanda-2">2 · È la mia prima volta</a>
+    <a href="#domanda-3">3 · Non ho la bici giusta</a>
+    <a href="#domanda-4">4 · Non so cosa portare</a>
+    <a href="#domanda-5">5 · Vengo da solo</a>
+    <a href="#domanda-6">6 · E se mi succede qualcosa?</a>
+    <a href="#domanda-7">7 · Sono una donna, e parto da sola</a>
+    <a href="#domanda-8">8 · Ho passato i sessanta</a>
+    <a href="#domanda-9">9 · Non ho una settimana di ferie</a>
+    <a href="#domanda-10">10 · Cosa ottengo per la quota</a>
+  </nav>
+
+  <div class="domanda" id="domanda-1">
+    <div class="domanda-tit"><span>1</span><h3>«Non sono abbastanza allenato»</h3></div>
+    <p><b>La difficoltà la decidi tu, e questa non è una frase di circostanza.</b></p>
+    <p>Non c'è classifica, non c'è tempo massimo, non ci sono tappe obbligate. Sei tu a decidere quanti chilometri fare in un giorno, dove dormire, quante volte fermarti. Il livello di sforzo lo scegli prima di partire e volendo lo cambi mentre sei per strada.</p>
+    <p>L'Originale resta comunque un anello di circa quattrocentosessanta chilometri.</p>
+    <p>Quello che non c'è sono le difficoltà tecniche estreme. Il percorso è disegnato apposta per essere pedalato a testa alta, così puoi guardarti intorno invece che guardare la ruota davanti.</p>
+    <p>Se il numero ti spaventa, esiste il percorso Newbie da 160 chilometri. È fatto esattamente per questo.</p>
+    <p><b>E poi c'è una cosa che nel 2027 cambia il discorso.</b> Il Detour all'Isola d'Elba si aggancia sia all'Originale sia al Newbie, quindi il chilometraggio te lo costruisci addosso.</p>
+    <div class="box">
+      <p class="box-tit">Percorso</p>
+      <div class="percorsi">
+        <div class="perc" style="--v:28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
+        <div class="perc elba" style="--v:53.6"><span>Newbie + Detour Elba</span><strong>300 km</strong><i></i></div>
+        <div class="perc" style="--v:82.1"><span>Originale</span><strong>460 km</strong><i></i></div>
+        <div class="perc elba" style="--v:100"><span>Originale + Detour Elba</span><strong>560 km</strong><i></i></div>
+      </div>
+    </div>
+    <p>Quattro misure, e ricevi tutte le tracce. <b>Decidi anche all'ultimo, anche mentre pedali.</b></p>
+    <p>E c'è una cosa che ci scrivono ogni anno e che vale più di qualsiasi tabella di allenamento.</p>
+    <blockquote class="voce"><p>«Mi è piaciuto un sacco ed è stata una delle più belle avventure della mia vita. Tre anni e mezzo fa pesavo 210 chili, ora ne peso 120 e faccio il Tuscany Trail.»</p><cite>Partecipante 2026</cite></blockquote>
+  </div>
+
+<figure class="foto larga"><img width="1600" height="1067" loading="lazy" src="foto/papaveri.jpg" srcset="foto/papaveri-800.jpg 900w, foto/papaveri.jpg 1600w" sizes="100vw" alt="Due ciclisti sorridenti in mezzo a un prato di fiori rossi, con un borgo sulla collina alle spalle"></figure>
+
+  <div class="domanda" id="domanda-2">
+    <div class="domanda-tit"><span>2</span><h3>«È la mia prima volta in un evento bikepacking»</h3></div>
+    <p><b>Sei in maggioranza.</b> Il 55% dei partecipanti 2026 era al primo evento di bikepacking della propria vita.</p>
+    <p>Il percorso <b>Newbie</b> è 160 chilometri in due giorni. Il primo giorno pedali insieme a tutti, anche a quelli che stanno facendo il lungo. Respiri la stessa atmosfera, chiacchieri, guardi come hanno caricato le borse, rubi i trucchi a chi lo fa da anni. Il secondo giorno segui una traccia dedicata e panoramica.</p>
+    <p><b>Al secondo giorno hai già imparato una quantità di cose che nessun manuale ti insegna.</b></p>
+    <p>E il Detour all'Elba vale anche per te.</p>
+    <p class="etichetta">La novità che ti toglie metà dei pensieri — l'app del Tuscany Trail</p>
+    <p><b>Nel 2027, per la prima volta, i partecipanti avranno l'app ufficiale del Tuscany Trail.</b></p>
+    <p>È la cosa che più di ogni altra ti semplifica la vita se sei alla prima esperienza, perché toglie di mezzo la domanda che ti accompagna tutto il giorno quando non conosci il territorio — <i>e adesso, quando trovo da bere e da mangiare?</i></p>
+    <p>Con l'app in tasca sai in ogni momento <b>fra quanti chilometri c'è la prossima fontanella, il prossimo bar, il prossimo posto dove si mangia</b>. Vedi la traccia, il profilo di quello che ti aspetta, e il meteo aggiornato di dove stai andando.</p>
+    <p>Vuol dire poter decidere la giornata mentre la stai vivendo, invece di doverla pianificare la sera prima sperando che torni. Per chi è alla prima volta è la differenza fra un'avventura e un'ansia.</p>
+    <blockquote class="voce"><p>«Per il mio grado di allenamento e per le mie aspettative direi che non avrei potuto trovare di meglio come prima esperienza. Non mi sono divertito, ho goduto.»</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Essendo la prima esperienza ho trovato tutto fantastico. Dai panorami, alle persone e l'atmosfera generale.»</p><cite>Partecipante 2026</cite></blockquote>
+  </div>
+
+  <div class="domanda" id="domanda-3">
+    <div class="domanda-tit"><span>3</span><h3>«Non ho la bici giusta»</h3></div>
+    <p><b>Non esiste "la" bicicletta giusta. Esiste la tua.</b></p>
+    <p>Quando arrivi a Campiglia ti ritrovi in mezzo a qualsiasi tipo di bici esistente. Ecco cosa hanno usato davvero i partecipanti 2026.</p>
+    <div class="box barre">
+      <p class="box-tit">Con che bici sono partiti</p>
+      <div class="riga-b top" style="--v:77"><span>Gravel</span><b>77%</b><i></i></div>
+      <div class="riga-b" style="--v:15"><span>Mountain bike</span><b>15%</b><i></i></div>
+      <div class="riga-b" style="--v:6"><span>E-bike (e-MTB, e-gravel, e-touring)</span><b>6%</b><i></i></div>
+      <div class="riga-b" style="--v:2"><span>Touring e altro</span><b>2%</b><i></i></div>
+    </div>
+    <p>Il percorso è disegnato per la gravel, è la scelta più comoda e la fa tre quarti del gruppo. Ma <b>la mountain bike va benissimo</b>, soprattutto se non ti senti a tuo agio a guidare una gravel carica di borse su uno sterrato sconnesso.</p>
+    <p>E se hai una <b>e-bike</b> va bene lo stesso. Siamo stati i primi ad accettarle e non abbiamo intenzione di tornare indietro. L'autonomia la gestisci tu.</p>
+    <p><b>L'unica bici che sconsigliamo è quella da corsa.</b></p>
+    <p>Se vieni da lontano e non vuoi portarti la tua, <b>a Campiglia si noleggia</b>.</p>
+    <blockquote class="voce"><p>«La liberté est totale, c'est ce qui en fait tout l'intérêt.»</p><p class="trad">(La libertà è totale, ed è esattamente questo a renderla interessante.)</p><cite>Partecipante 2025</cite></blockquote>
+  </div>
+
+  <div class="domanda" id="domanda-4">
+    <div class="domanda-tit"><span>4</span><h3>«Non so cosa portare»</h3></div>
+    <p>Il Tuscany Trail si può fare in due modi opposti e in mille sfumature in mezzo.</p>
+    <p><b>Modalità credit card.</b> Bici leggera, due borse piccole, dormi in B&amp;B e agriturismi, mangi fuori. È la scelta della maggioranza.</p>
+    <p><b>Modalità full loaded.</b> Tenda, sacco a pelo, materassino, fornello. Più peso, più autonomia, più avventura.</p>
+    <p>Al <a href="#come-prepararsi">capitolo 10</a> trovi la lista completa di cosa portare, organizzata per quello che farai davvero. Al <a href="#errore-numero-uno">capitolo 11</a> trovi l'errore numero uno, che riguarda proprio le borse.</p>
+    <p>Il consiglio, se sei alle prime armi, è uno solo. <b>Viaggia leggero e usa l'attrezzatura che hai già.</b> Non comprare niente adesso.</p>
+  </div>
+
+  <div class="domanda" id="domanda-5">
+    <div class="domanda-tit"><span>5</span><h3>«Vengo da solo e non conosco nessuno»</h3></div>
+    <p><b>Venire da soli al Tuscany Trail è probabilmente la scelta migliore.</b></p>
+    <p>Non lo diciamo per consolare. Lo dicono i numeri. Alla domanda <i>quanto ti sei trovato bene con gli altri partecipanti</i>, i partecipanti 2026 hanno risposto con una media di <b>4,65 su 5</b>. È il voto più alto di tutto il questionario insieme all'atmosfera.</p>
+    <p>Gli incontri nascono da soli. Al villaggio prima della partenza, durante una sosta al bar, la sera nei basecamp dove si cena e si pianta la tenda fianco a fianco e si finisce a chiacchierare fino a tardi.</p>
+    <p>Siamo seimila da settanta nazioni, con partenze distribuite e ritmi diversi. Ogni anno nascono amicizie che poi tornano insieme l'anno dopo.</p>
+    <blockquote class="voce"><p>«I liked that I could ride at my own pace, solo, but I was never really alone.»</p><p class="trad">(Mi è piaciuto poter pedalare al mio ritmo, da sola, senza essere mai davvero sola.)</p><cite>Partecipante 2025</cite></blockquote>
+    <blockquote class="voce"><p>«Siamo stati (quasi) tutti una grande famiglia che non ti lascia indietro se sei in difficoltà, che ti aspetta anche se fino a poche ore prima non ti conosceva.»</p><cite>Partecipante 2025</cite></blockquote>
+  </div>
+
+<figure class="foto larga"><img width="1600" height="1200" loading="lazy" src="foto/cipressi.jpg" srcset="foto/cipressi-800.jpg 900w, foto/cipressi.jpg 1600w" sizes="100vw" alt="Due ciclisti su una strada bianca fra una fila di cipressi e i campi di grano"></figure>
+
+  <div class="domanda" id="domanda-6">
+    <div class="domanda-tit"><span>6</span><h3>«E se mi succede qualcosa?»</h3></div>
+    <p>È la paura che ferma più persone di tutte. <i>E se rompo la bici. E se non ce la faccio. E se resto solo in mezzo al nulla.</i></p>
+    <p>Risposta breve, <b>al Tuscany Trail non sei mai in mezzo al nulla.</b></p>
+    <ul class="dentro">
+      <li><b>Non sei mai solo davvero.</b> Migliaia di persone sulla stessa traccia nella stessa settimana. Chi si ferma con un problema, in Toscana, viene raggiunto da qualcuno entro pochi minuti.</li>
+      <li><b>Il percorso è testato.</b> La traccia è frutto di anni di sopralluoghi, non ci sono passaggi pericolosi e non ci sono tratti da alpinismo.</li>
+      <li><b>Sei coperto da assicurazione</b> per tutta la durata dell'evento. È compresa nell'iscrizione.</li>
+      <li><b>Puoi fermarti quando vuoi.</b> Il tracciato incrocia paesi collegati da treni e autobus. Se per qualunque motivo decidi di rientrare prima, torni facilmente al punto di partenza.</li>
+      <li><b>Acqua e cibo non sono un problema.</b> Fontanelle pubbliche gratuite, bar, alimentari, ristoranti e agriturismi scandiscono tutto il percorso, e con l'app sai sempre a che punto sono. Il 77% dei partecipanti ha dichiarato che trovare da mangiare è stato facile o molto facile.</li>
+      <li><b>E torni dove sei partito.</b> Anello, macchina nel parcheggio riservato, nessuna logistica da inventare.</li>
+    </ul>
+  </div>
+
+  <div class="domanda" id="domanda-7">
+    <div class="domanda-tit"><span>7</span><h3>«Sono una donna, e parto da sola»</h3></div>
+    <p>Ogni anno partono da sole centinaia di donne e questa è una delle ragioni per cui il Tuscany Trail è cresciuto come è cresciuto.</p>
+    <p>Ti diciamo però anche la parte scomoda, perché è più utile della parte rassicurante.</p>
+    <p>Nel questionario 2026 diverse partecipanti hanno segnalato che in alcuni basecamp le docce sono all'aperto senza separazione fra uomini e donne. Non è una cosa che possiamo far finta di non aver letto, ed è uno dei punti su cui stiamo lavorando con le comunità per il 2027.</p>
+    <p>Se preferisci non pensarci affatto, ricorda che il 65% dei partecipanti dorme al coperto e non mette piede in un basecamp.</p>
+    <p>Sul resto, la strada è tranquilla, i paesi sono sicuri, e l'accoglienza toscana fa il resto.</p>
+  </div>
+
+  <div class="domanda" id="domanda-8">
+    <div class="domanda-tit"><span>8</span><h3>«Ho passato i sessanta»</h3></div>
+    <p>Al Tuscany Trail 2026 c'erano partecipanti di oltre settant'anni che hanno finito il percorso.</p>
+    <p><b>Il punto non è l'età, è il ritmo.</b> Chi ha più anni e meno fretta spesso prende sei giorni invece di quattro, dorme in hotel, si ferma a pranzo per due ore e torna a casa avendo visto molto più di chi ha corso.</p>
+    <blockquote class="voce"><p>«Ho sessantotto anni e riesco a fare circa ottanta chilometri al giorno. Nel complesso questa è una delle esperienze più belle della mia vita.»</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Sono tre anni che partecipo e ogni anno è stata un'avventura diversa. L'anno prossimo ho intenzione di passare da cinque a sette giorni. Voglio fare veramente il cicloturista.»</p><cite>Partecipante 2026</cite></blockquote>
+  </div>
+
+  <div class="domanda" id="domanda-9">
+    <div class="domanda-tit"><span>9</span><h3>«Non ho una settimana di ferie»</h3></div>
+    <p class="forte">Non ti serve una settimana.</p>
+    <p><b>La finestra è di sette giorni, dal 19 al 25 maggio, ma il tempo medio di percorrenza è quattro. Con il percorso Newbie sono due.</b></p>
+    <p>E soprattutto, non devi dormire a Campiglia la notte prima. Ritiri il pacco e parti subito, nella stessa giornata. Chi vuole restare e assaporare il villaggio la sera prima lo fa volentieri, ma non è un passaggio obbligato.</p>
+    <p>Quindi arrivi il venerdì mattina, ritiri, parti, chiudi in quattro giorni e martedì sei a casa. <b>Un lungo fine settimana e due giorni di ferie.</b></p>
+    <p><b>Con il Newbie te la giochi in un weekend.</b></p>
+  </div>
+
+  <div class="domanda" id="domanda-10">
+    <div class="domanda-tit"><span>10</span><h3>«Cosa ottengo esattamente per la quota»</h3></div>
+    <p>Questa è la domanda più legittima di tutte e ce la fanno pochissimi, che è un peccato, perché merita una risposta seria.</p>
+    <p>Ecco cosa c'è dentro.</p>
+    <ul class="dentro">
+      <li><b>Le tracce GPS ufficiali</b>, tutte, ridisegnate ogni anno e frutto di venti anni di ricerca sul territorio. E con le tracce arriva la cosa che nessun altro può darti — <b>l'accesso a tratti privati che aprono soltanto per i partecipanti del Tuscany Trail, una volta l'anno.</b> Non è una traccia che potresti scaricare altrove, perché altrove non esiste e su quelle strade non potresti passare.</li>
+      <li><b>L'app ufficiale dell'evento</b>, novità 2027, con acqua, cibo, servizi, traccia e meteo sempre sotto mano.</li>
+      <li><b>Il pacco di partenza</b> — il cappellino da ciclista esclusivo riservato ai soli iscritti, la mappa cartacea dell'itinerario con altimetria totale e altimetrie parziali, la tabellina e il braccialetto.</li>
+      <li><b>Il magazine cartaceo dell'evento</b>, da leggere prima e da tenere dopo.</li>
+      <li><b>Le guide</b> — quella per arrivare preparato e quella ai luoghi che attraverserai.</li>
+      <li><b>Il villaggio evento e l'expo</b> a Campiglia Marittima, con parcheggi riservati ai partecipanti.</li>
+      <li><b>La rete dei basecamp</b> lungo tutto il percorso, dove ti fermi gratis o a prezzi di favore.</li>
+      <li><b>Bagni e docce all'arrivo</b>, perché tornare a casa dopo quattro giorni senza essersi lavati non è il modo giusto di chiudere un viaggio.</li>
+      <li><b>La copertura assicurativa</b> per tutta la durata dell'evento.</li>
+      <li><b>Il servizio fotografico.</b> Fotografi, videomaker e droni lungo il percorso, e la photo gallery scaricabile con tutte le foto scattate ai partecipanti.</li>
+      <li><b>Il pacco di arrivo</b> — la borsa in cotone finisher, l'attestato, una bottiglia di ottimo vino del Consorzio dei vini della Maremma e la birra per brindare.</li>
+      <li><b>Gli sconti</b> con i partner del Tuscany Trail e sugli altri eventi della Bike Adventure Series, più gli Adventure Points e il badge Finisher sul tuo profilo.</li>
+      <li><b>Il diritto di esserci</b>, che sembra retorica e non lo è. I posti sono seimila a numero chiuso, e la Toscana in quei giorni sa che stiamo arrivando. I comuni preparano i passaggi, i circoli aprono i campi, i bar aggiungono i tavoli. Quello che compri è una settimana in cui una regione intera fa spazio a seimila biciclette.</li>
+    </ul>
+    <p>Per il 2027 ci sono due formule.</p>
+    <div class="formule">
+      <div class="formula"><b>Classic</b><p>Contiene tutto quello che hai appena letto.</p></div>
+      <div class="formula ns"><b>No Stress</b><p>Aggiunge la maglia ufficiale da ciclismo dell'edizione, la maglia in cotone Bike Adventure Series, l'accreditamento con corsia preferenziale, l'iscrizione anticipata anche agli altri eventi della serie e un'ora di videochiamata con un nostro esperto per costruire insieme le tue tappe.</p></div>
+    </div>
+    <p>I dettagli e i prezzi arrivano in lista prima dell'apertura.</p>
+  </div>
+</section>
+
+<figure class="foto larga"><img width="1280" height="1600" loading="lazy" src="foto/strada-bianca.jpg" srcset="foto/strada-bianca-800.jpg 720w, foto/strada-bianca.jpg 1280w" sizes="100vw" alt="Vista dall'alto di una strada bianca che serpeggia fra le colline della Val d'Orcia al tramonto"></figure>
+
+<!-- ============ 9 ============ -->
+<section class="cap" id="le-voci" data-n="9" data-titolo="Le voci" data-sommario="Le frasi dei partecipanti 2026, nella lingua in cui sono arrivate e senza ritocchi.">
+  <header class="cap-testa"><span class="cap-num">9</span><h2>Le voci</h2></header>
+  <p>Risposte vere del questionario 2026, nella lingua in cui sono arrivate.</p>
+  <div class="muro">
+    <blockquote class="voce"><p>«È stata la mia prima Tuscany, un'esperienza indimenticabile, ho pianto all'arrivo, non riuscivo a parlare dall'emozione e dalla stanchezza e soprattutto dal fatto che ero riuscito a portarla a termine senza tagliare nemmeno un metro. Quando ho ritirato il pacco alla fine, un addetto mi ha chiesto com'era andata e non riuscivo a parlare. Mi ha detto, questa è la migliore risposta.»</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«non cambierei nulla! è un evento che ti emoziona... profondamente!»</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Dear Tuscany Trail Team, to be honest, I could not really see what could be improved. I just would like to say thank you. And the motto "Ride your dream" came true.»</p><p class="trad">(Cari del Tuscany Trail, sinceramente non riesco a vedere cosa si potrebbe migliorare. Voglio solo dirvi grazie. E il motto "Ride your dream" si è avverato.)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Es hat meine Erwartungen übertroffen. Ein großes Lob an den Veranstalter und alle Helfer.»</p><p class="trad">(Ha superato le mie aspettative. Un grande elogio all'organizzatore e a tutti i volontari.)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«C'était une expérience vraiment très sympa. L'ambiance est assez géniale. Tout ce brassage de personnes différentes de nationalités différentes.»</p><p class="trad">(È stata un'esperienza davvero bellissima. L'atmosfera è geniale. Tutto questo mescolarsi di persone diverse, di nazionalità diverse.)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«It was a great experience seeing through the UNESCO world heritage sites, Tuscany rolling hills and medieval villages and towns. Not mentioning of food and Tuscany wine, it was brilliant, a life time experience.»</p><p class="trad">(È stata un'esperienza straordinaria, attraversare i siti patrimonio UNESCO, le colline toscane, i borghi medievali. Per non parlare del cibo e del vino. È stata l'esperienza di una vita.)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Favolosa esperienza. Ho trovato persone gentili e disponibili ed una atmosfera conviviale che mi ha riempito di gioia!!!»</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«It was a fantastic experience! I did it with my mum, first time in Europe, in Italy and in an event like this. We loved it!»</p><p class="trad">(È stata un'esperienza fantastica! L'ho fatta con mia mamma, la prima volta in Europa, in Italia e a un evento del genere. Ci è piaciuta moltissimo!)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Dopo cinque anni di fila le emozioni sono sempre tante anche se alcuni luoghi li ho già attraversati. Ma basta un cambiamento di clima che ti fa vedere il panorama con occhi diversi.»</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«It has been a great experience and even it was pretty hard for me sometimes, I enjoyed every single part of the route. Thank you so much for creating this beautiful event and providing such a perfect route!»</p><p class="trad">(È stata un'esperienza magnifica e anche se a tratti è stata dura, mi sono goduto ogni singolo pezzo del percorso. Grazie di cuore per aver creato questo evento e questo percorso perfetto!)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«Thanks for great adventure. See you again! Greetings from Finland!»</p><p class="trad">(Grazie per questa grande avventura. Alla prossima! Saluti dalla Finlandia!)</p><cite>Partecipante 2026</cite></blockquote>
+    <blockquote class="voce"><p>«È stato tutto bellissimo!! Il percorso più tecnico di quanto me lo aspettassi… ed è stato incredibile!!»</p><cite>Partecipante 2026</cite></blockquote>
+  </div>
+</section>
+
+<figure class="foto alta"><img width="1280" height="1600" loading="lazy" src="foto/sosta-gatto.jpg" srcset="foto/sosta-gatto-800.jpg 720w, foto/sosta-gatto.jpg 1280w" sizes="(max-width:640px) 100vw, 560px" alt="Una ciclista seduta su un muretto di pietra accarezza due gatti durante una sosta"></figure>
+
+<!-- ============ 10 ============ -->
+<section class="cap" id="come-prepararsi" data-n="10" data-titolo="Come ci si prepara" data-sommario="Cosa fare sei mesi, tre mesi, un mese e una settimana prima. E la lista da spuntare.">
+  <header class="cap-testa"><span class="cap-num">10</span><h2>Come ci si prepara</h2></header>
+  <p class="apertura">Questa parte è utile anche se poi non ti iscrivi. Tienila.</p>
+  <ol class="linea">
+    <li><p class="etichetta">Sei mesi prima</p><p>Non serve un piano di allenamento. Serve una cosa sola, pedalare e mettere i chilometri nelle gambe. Usa la bici che porterai al Tuscany Trail, e ricordati di usarla sullo sterrato.</p></li>
+    <li><p class="etichetta">Tre mesi prima — febbraio e marzo</p>
+      <p><b>Comincia a caricare la bici.</b> Prendi le borse che pensi di usare, riempile, e vai a fare il tuo giro abituale. Una bici carica frena diversa, sterza diversa e sale molto diversa.</p>
+      <p><b>Prenota i primi pernottamenti</b>, se hai deciso di dormire al coperto. Le zone più belle si riempiono.</p>
+      <p><b>Prova la sella per più ore di fila.</b> È il punto in cui casca la maggior parte delle avventure e ne parliamo al <a href="#errore-numero-uno">capitolo seguente</a>.</p></li>
+    <li><p class="etichetta">Un mese prima — aprile</p>
+      <p>Fai <b>almeno un'uscita lunga con tutto il carico definitivo</b>, possibilmente con una notte fuori. Serve a scoprire le cose piccole che rovinano i viaggi, come la borsa che sfrega il ginocchio o la luce che non si aggancia.</p>
+      <p><b>Fai un tagliando alla bici.</b> Trasmissione, freni, gomme, raggi.</p></li>
+    <li><p class="etichetta">La settimana prima</p><p><b>Non allenarti.</b> Riposa, mangia bene, prepara le borse con calma e <b>pesale</b>.</p></li>
+  </ol>
+
+  <h3 id="la-lista">La lista</h3>
+  <p>Pensa alle azioni che farai, e preparati di conseguenza.</p>
+  <div class="lista-conto"><span id="lista-stato">Spunta quello che hai già in borsa. La lista se la ricorda questo telefono.</span><button type="button" id="lista-azzera">Azzera</button></div>
+
+  <div class="gruppo-lista">
+    <p class="etichetta">Per pedalare</p>
+    <ul class="check" data-lista>
+      <li><label><input type="checkbox"><span>Casco</span></label></li>
+      <li><label><input type="checkbox"><span>Occhiali</span></label></li>
+      <li><label><input type="checkbox"><span>Borse per il bikepacking</span></label></li>
+      <li><label><input type="checkbox"><span>Camere d'aria di scorta e kit riparazione</span></label></li>
+      <li><label><input type="checkbox"><span>Pompa</span></label></li>
+      <li><label><input type="checkbox"><span>Multitool</span></label></li>
+      <li><label><input type="checkbox"><span>Due paia di pantaloncini con il fondello</span></label></li>
+      <li><label><input type="checkbox"><span>Antivento e antipioggia leggeri</span></label></li>
+      <li><label><input type="checkbox"><span>Luci anteriore e posteriore</span></label></li>
+      <li><label><input type="checkbox"><span>Powerbank e cavi</span></label></li>
+      <li><label><input type="checkbox"><span>Navigatore GPS o telefono con supporto solido</span></label></li>
+      <li><label><input type="checkbox"><span>Crema protezione solare</span></label></li>
+      <li><label><input type="checkbox"><span>Crema per il fondello</span></label></li>
+      <li><label><input type="checkbox"><span>Documenti e tessera sanitaria</span></label></li>
+      <li><label><input type="checkbox"><span>Due borracce o una sacca d'acqua</span></label></li>
+    </ul>
+  </div>
+  <div class="gruppo-lista">
+    <p class="etichetta">Se dormi in tenda</p>
+    <ul class="check" data-lista>
+      <li><label><input type="checkbox"><span>Tenda leggera</span></label></li>
+      <li><label><input type="checkbox"><span>Sacco a pelo adatto alle temperature di maggio in collina, che di notte scendono più di quanto pensi</span></label></li>
+      <li><label><input type="checkbox"><span>Materassino</span></label></li>
+      <li><label><input type="checkbox"><span>Asciugamano micro</span></label></li>
+      <li><label><input type="checkbox"><span>Ciabatte</span></label></li>
+    </ul>
+  </div>
+  <div class="gruppo-lista">
+    <p class="etichetta">Oltre la bici</p>
+    <ul class="check" data-lista>
+      <li><label><input type="checkbox"><span>Un cambio leggero per la sera</span></label></li>
+      <li><label><input type="checkbox"><span>Pigiama</span></label></li>
+      <li><label><input type="checkbox"><span>Spazzolino, dentifricio e salviette umidificate intime</span></label></li>
+      <li><label><input type="checkbox"><span>Tappi per le orecchie, che nei basecamp sono il migliore investimento della settimana</span></label></li>
+      <li><label><input type="checkbox"><span>Un lucchetto leggero</span></label></li>
+    </ul>
+  </div>
+  <div class="gruppo-lista">
+    <p class="etichetta">Da lasciare a casa</p>
+    <div class="a-casa"><b>Tutto quello che hai messo dentro pensando <i>male che vada non lo uso</i>.</b></div>
+  </div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cap" id="errore-numero-uno" data-n="11" data-titolo="L'errore numero uno" data-sommario="Non è l'allenamento e non è la bici. È un'altra cosa, e ce n'è anche una seconda.">
+  <header class="cap-testa"><span class="cap-num">11</span><h2>L'errore numero uno</h2></header>
+  <p>Te lo avevamo promesso a inizio guida.</p>
+  <p>Non è l'allenamento. Non è la bici. Non è la navigazione.</p>
+  <p class="forte" style="font-size:30px">È il peso.</p>
+  <p>Ogni anno centinaia di persone partono con troppi chili di roba sulla bici e scoprono al secondo giorno che quei chili non si sentono in pianura, si sentono in salita, e le salite del Tuscany Trail ci sono.</p>
+  <p>Il fascino di portarsi tutto dietro è forte, e capiamo benissimo da dove viene. Ma la Toscana è il posto sbagliato in cui essere autosufficienti, perché non ce n'è bisogno. Ogni pochi chilometri c'è un paese con tutto quello che ti serve.</p>
+  <p><b>Regola pratica.</b> Metti sul tavolo tutto quello che vuoi portare. Poi inizia a togliere roba. Se hai un dubbio su un oggetto, chiedi a chi c'è già stato — sul <b>forum della Bike Adventure Series</b> trovi centinaia di persone che il Tuscany Trail lo hanno già pedalato e che rispondono davvero, con quale bici, quali gomme, quali borse.</p>
+  <div class="forum">
+    <p>Centinaia di persone che il Tuscany Trail lo hanno già fatto.</p>
+    <a class="btn btn-terra" href="https://www.bikeadventureseries.com/community/" target="_blank" rel="noopener">Entra nel forum →</a>
+  </div>
+  <p>E c'è un secondo errore, meno famoso e più doloroso.</p>
+  <p><b>La sella.</b> Una sella sbagliata non ti ferma il primo giorno. Ti distrugge il terzo. Se hai il minimo dubbio sulla tua, risolvilo adesso, non a marzo e non a maggio.</p>
+</section>
+
+<figure class="foto larga"><img width="1600" height="1067" loading="lazy" src="foto/in-gruppo.jpg" srcset="foto/in-gruppo-800.jpg 900w, foto/in-gruppo.jpg 1600w" sizes="100vw" alt="Tre cicliste sorridenti con le borse da bikepacking su una strada bianca fra i prati"></figure>
+
+<!-- ============ 12 ============ -->
+<section class="cap" id="come-arrivare" data-n="12" data-titolo="Come si arriva a Campiglia Marittima" data-sommario="In auto, in treno, in aereo o in bicicletta. Partenza e arrivo coincidono.">
+  <header class="cap-testa"><span class="cap-num">12</span><h2>Come si arriva a Campiglia Marittima</h2></header>
+  <p>Partenza e arrivo coincidono, quindi la logistica è la più semplice che esista. Lasci il mezzo e lo ritrovi.</p>
+  <p>Ecco come è arrivata la gente nel 2026.</p>
+  <div class="box barre">
+    <p class="box-tit">Come sono arrivati</p>
+    <div class="riga-b top" style="--v:73"><span>In auto</span><b>73%</b><i></i></div>
+    <div class="riga-b" style="--v:11"><span>In treno</span><b>11%</b><i></i></div>
+    <div class="riga-b" style="--v:8"><span>In bicicletta</span><b>8%</b><i></i></div>
+    <div class="riga-b" style="--v:7"><span>In aereo</span><b>7%</b><i></i></div>
+  </div>
+  <p><b>In auto.</b> Uscita della SS1 Aurelia, parcheggi riservati ai partecipanti.</p>
+  <p><b>In treno.</b> La stazione di riferimento è sulla linea tirrenica Genova–Roma, che è servita e comoda. Molti arrivano in treno con la bici e ripartono uguale.</p>
+  <p><b>In aereo.</b> L'aeroporto più vicino è Pisa, ben collegato in treno. In alternativa Firenze.</p>
+  <p>Le indicazioni operative complete, con indirizzi e orari, arrivano nell'area personale dopo l'iscrizione.</p>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cap" id="come-iscriversi" data-n="13" data-titolo="Come si entra nel Tuscany Trail 2027" data-sommario="Le due date da segnare e le cose pratiche da sapere adesso.">
+  <header class="cap-testa"><span class="cap-num">13</span><h2>Come si entra nel Tuscany Trail 2027</h2></header>
+  <p class="forte">Segnati due date.</p>
+
+  <p class="etichetta">1 novembre 2026 — I bundle</p>
+  <p><b>Il biglietto doppio.</b> Tuscany Trail 2027 <b>più una seconda avventura</b> a scelta fra gli altri eventi della Bike Adventure Series — Trentino Gravel, The Grand Escape, Unpaved Roads.</p>
+  <p>Le quote per ogni combinazione sono limitate. Quando una combinazione finisce, sparisce.</p>
+
+  <p class="etichetta">3 dicembre 2026 — Le iscrizioni singole</p>
+  <p>Solo Tuscany Trail. Due formule, <b>Classic</b> e <b>No Stress</b>, quest'ultima con i servizi aggiuntivi.</p>
+  <p><b>Seimila posti in tutto. Nel 2026 sono finiti con largo anticipo.</b></p>
+
+  <p class="etichetta">Le cose pratiche da sapere adesso</p>
+  <ul class="dentro">
+    <li><b>Data e fascia di partenza si scelgono all'iscrizione e sono vincolanti.</b> Le giornate più richieste finiscono per prime. È l'unica cosa del Tuscany Trail che non puoi cambiare dopo.</li>
+    <li><b>Il percorso invece lo puoi cambiare.</b> Indichi una preferenza quando ti iscrivi, ma ricevi tutte le tracce e decidi anche durante l'evento. Originale, Newbie, con Detour o senza.</li>
+    <li><b>Il certificato medico non serve all'iscrizione.</b> Si carica da dicembre nell'area personale.</li>
+    <li><b>Il Detour all'Elba è già compreso.</b> Non è un supplemento.</li>
+  </ul>
+
+  <h3>E adesso, la parte che conta</h3>
+  <p>Ogni anno succede la stessa cosa e ogni anno ci dispiace allo stesso modo.</p>
+  <p>Nei giorni successivi alla chiusura ci arrivano decine di messaggi di persone che ci avevano pensato, che si erano quasi decise, che avevano intenzione di parlarne con l'amico e poi hanno rimandato di tre settimane. Non c'è niente che possiamo fare per loro, <b>perché seimila è seimila</b>.</p>
+  <p>Se sei in lista ricevi <b>l'avviso ventiquattr'ore prima di ogni apertura</b>, i dettagli del Detour all'Elba in anteprima e tutto quello che serve per prepararti.</p>
+
+  <div class="date" id="resta-in-lista">
+    <h3>Resta in lista. È l'unica cosa che ti chiediamo di fare oggi.</h3>
+    <!-- Il countdown punta alla prossima apertura, il bundle fino al 1/11 ore 18,
+         poi il biglietto singolo fino al 3/12 ore 12. Ora italiana, come sul sito
+         e come su elba.tuscanytrail.it. Passate tutte e due sparisce. -->
+    <div class="cd" data-countdown hidden>
+      <p class="cd-titolo" data-cd-label></p>
+      <div class="cd-griglia">
+        <div class="cd-box"><strong data-k="d">0</strong><span>Giorni</span></div>
+        <div class="cd-box"><strong data-k="h">00</strong><span>Ore</span></div>
+        <div class="cd-box"><strong data-k="m">00</strong><span>Minuti</span></div>
+        <div class="cd-box"><strong data-k="s">00</strong><span>Secondi</span></div>
+      </div>
+    </div>
+    <p><b>1 novembre</b>, aprono i bundle. <b>3 dicembre</b>, aprono le iscrizioni singole.</p>
+
+    <!-- Modulo lista: stesso worker e stessa lista Brevo (18, Tuscany Trail LEAD)
+         di elba.tuscanytrail.it, source "guida". Il worker accetta solo le origini
+         in ALLOWED_ORIGINS e il sitekey Turnstile vale solo sui domini tuscanytrail.it:
+         per questo il modulo si accende solo lì. Su github.io resta il bottone. -->
+    <form class="sub" data-subscribe data-endpoint="https://tt-subscribe.account-fe1.workers.dev/subscribe" novalidate hidden>
+      <input class="sub-input" id="sub-guida" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="la-tua@email.it" aria-label="Email">
+      <div class="sub-hp" aria-hidden="true"><label for="sub-guida-website">Website</label><input id="sub-guida-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="sub-consent" for="sub-guida-consent"><input id="sub-guida-consent" name="consent" type="checkbox" required><span>Accetto la <a href="https://tuscanytrail.it/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></span></label>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEFVIPZwIPLja0Hi" data-appearance="interaction-only" data-language="auto" data-size="flexible" data-action="turnstile-spin-v2"></div>
+      <p class="sub-msg" data-msg role="status" aria-live="polite" hidden></p>
+      <button class="sub-btn" type="submit">Avvisami prima di ogni apertura</button>
+    </form>
+    <a class="btn btn-bianco" data-senza-modulo href="https://tuscanytrail.it/" target="_blank" rel="noopener">Entra in lista su tuscanytrail.it →</a>
+  </div>
+</section>
+
+<figure class="foto larga"><img width="1600" height="1067" loading="lazy" src="foto/gravel.jpg" srcset="foto/gravel-800.jpg 900w, foto/gravel.jpg 1600w" sizes="100vw" alt="Un ciclista in gravel con le borse su una strada bianca all'ombra dei cipressi"></figure>
+
+<!-- ============ 14 ============ -->
+<section class="cap" id="il-patto" data-n="14" data-titolo="Il patto" data-sommario="Le tre cose che il Tuscany Trail ti promette, e nessun'altra.">
+  <header class="cap-testa"><span class="cap-num">14</span><h2>Il patto</h2></header>
+  <p>Il Tuscany Trail ti promette tre cose e non te ne promette nessun'altra.</p>
+  <ol class="passi">
+    <li><b>La prima.</b> Nessuno ti cronometra, nessuno ti classifica, nessuno ti guarda arrivare con un'espressione delusa perché ci hai messo troppo. Arrivare è l'unico traguardo, per il primo come per l'ultimo.</li>
+    <li><b>La seconda.</b> Vedrai una parte di mondo che non si vede in macchina, non si vede in treno e non si vede a piedi, perché è troppo grande per le gambe e troppo bella per andarci veloce. La bicicletta è l'unico mezzo alla velocità giusta, e la Toscana è il posto dove questo si sente più che altrove.</li>
+    <li><b>La terza. Tornerai a casa diverso.</b></li>
+  </ol>
+  <p>Non è una frase da brochure, è la cosa che ci scrivono più spesso e con più imbarazzo, perché è difficile da spiegare a chi non c'era. Parti che sei uno che va in bicicletta e torni che sei uno che ha attraversato una regione con le proprie gambe, portandosi dietro solo quello che ci stava nelle borse. Sono quattro giorni in cui decidi tu ogni cosa, in cui scopri di avere più margine di quanto pensavi e in cui il mondo si riduce alla strada davanti e a quello che ti serve davvero.</p>
+  <p><b>Da quel margine, poi, non si torna indietro.</b> Chi lo ha fatto lo riconosce nell'altro che lo ha fatto, e per questo si ritrovano l'anno dopo.</p>
+  <p>Il resto lo metti tu.</p>
+  <div class="firma">
+    <p>Dal 19 al 25 maggio 2027, Campiglia Marittima.</p>
+    <p class="ride">Ride your dream.</p>
+    <p><b>Il team del Tuscany Trail</b></p>
+  </div>
+
+  <div class="ps">
+    <p><b>P.S. — Se in questa guida hai saltato tutto e sei arrivato qui, queste sono le due righe che contano.</b> Il 1 novembre 2026 aprono i bundle, il 3 dicembre le iscrizioni singole. <b>I posti sono seimila e nel 2026 sono finiti con largo anticipo.</b> Chi è in lista riceve l'avviso ventiquattr'ore prima di ogni apertura. Non serve altro.</p>
+    <p><b>P.P.S. — Il 55% delle persone che sono partite l'anno scorso non aveva mai fatto un evento di bikepacking in vita sua.</b> Hanno dato all'esperienza 9,13 su 10. Quello che ti manca non è l'esperienza, è la data sul calendario.</p>
+  </div>
+  <figure class="foto dentro-testo"><img width="1600" height="1067" loading="lazy" src="foto/finisher.jpg" srcset="foto/finisher-800.jpg 900w, foto/finisher.jpg 1600w" sizes="(max-width:640px) 100vw, 700px" alt="Due partecipanti festeggiano con le braccia alzate davanti al muro Finisher del Tuscany Trail"></figure>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="colonna">
+    <span>Tuscany Trail · 19–25 maggio 2027 · Campiglia Marittima · <a href="https://tuscanytrail.it/">tuscanytrail.it</a></span>
+    <span><a href="#indice">Indice</a> · <button type="button" onclick="window.print()">Stampa o salva in PDF</button></span>
+  </div>
+</footer>
+
+<!-- ============ cassetto indice ============ -->
+<div class="velo" id="velo" data-chiudi-tutto></div>
+<aside class="cassetto" id="cassetto" aria-label="Indice dei capitoli" aria-hidden="true">
+  <div class="cassetto-testa"><b>Indice</b><button class="chiudi" type="button" data-chiudi-tutto aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <ol id="cassetto-lista"></ol>
+</aside>
+
+<!-- ============ ricerca ============ -->
+<div class="cerca" id="cerca" role="dialog" aria-modal="true" aria-label="Cerca nella guida">
+  <div class="cerca-testa">
+    <svg class="lente" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="cerca-campo" type="search" placeholder="Cerca nella guida…" autocomplete="off" spellcheck="false" aria-label="Cosa cerchi">
+    <button class="chiudi" type="button" data-chiudi-tutto aria-label="Chiudi la ricerca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="cerca-corpo"><div class="cerca-in">
+    <p class="cerca-info" id="cerca-info">Scrivi una parola, per esempio una di queste.</p>
+    <div class="suggerimenti" id="suggerimenti">
+      <button type="button">Elba</button><button type="button">tenda</button><button type="button">e-bike</button><button type="button">treno</button><button type="button">sella</button><button type="button">assicurazione</button><button type="button">certificato medico</button><button type="button">Newbie</button><button type="button">Val d'Orcia</button><button type="button">app</button>
+    </div>
+    <ol class="risultati" id="risultati"></ol>
+  </div></div>
+</div>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var caps=$$('section.cap');
+
+  /* ---------- indice, cassetto e binario costruiti dai capitoli ---------- */
+  function minuti(el){var p=(el.textContent||'').trim().split(/\s+/).length;return Math.max(1,Math.round(p/200))}
+  var vi=$('#voci-indice'),cl=$('#cassetto-lista'),bl=$('#binario ol');
+  caps.forEach(function(c){
+    var n=c.dataset.n,t=c.dataset.titolo,id=c.id;
+    var li=document.createElement('li');
+    li.innerHTML='<a href="#'+id+'"><span class="vi-num">'+(n||'')+'</span><span class="vi-tit"></span><span class="vi-min">'+minuti(c)+' min</span><span class="vi-som"></span></a>';
+    li.querySelector('.vi-tit').textContent=t;li.querySelector('.vi-som').textContent=c.dataset.sommario||'';
+    if(!n)li.querySelector('.vi-num').textContent='—';
+    vi.appendChild(li);
+    [cl,bl].forEach(function(lista){
+      var l=document.createElement('li');l.innerHTML='<a href="#'+id+'" data-cap="'+id+'"><b>'+(n||'·')+'</b><span></span></a>';
+      l.querySelector('span').textContent=t;lista.appendChild(l);
+    });
+  });
+
+  /* ---------- barra in alto, progresso, capitolo attivo ---------- */
+  var barra=$('#barra'),bin=$('#binario'),prog=$('#progresso'),cop=$('.copertina'),main=$('#guida');
+  function scorri(){
+    var y=window.scrollY,su=y>cop.offsetHeight-80;
+    barra.classList.toggle('su',su);bin.classList.toggle('su',su);
+    var tot=main.offsetTop+main.offsetHeight-window.innerHeight;
+    prog.style.width=Math.max(0,Math.min(100,(y-main.offsetTop)/(tot-main.offsetTop)*100))+'%';
+    var att=null;
+    for(var i=0;i<caps.length;i++){if(caps[i].getBoundingClientRect().top<window.innerHeight*.35)att=caps[i].id}
+    $$('[data-cap]').forEach(function(a){a.classList.toggle('attivo',a.dataset.cap===att)});
+  }
+  window.addEventListener('scroll',scorri,{passive:true});window.addEventListener('resize',scorri);scorri();
+
+  /* ---------- cassetto indice ---------- */
+  var cas=$('#cassetto'),velo=$('#velo'),cerca=$('#cerca'),campo=$('#cerca-campo');
+  function apriIndice(){cas.classList.add('aperto');velo.classList.add('aperto');cas.setAttribute('aria-hidden','false');var a=$('a.attivo',cas)||$('a',cas);a&&a.focus({preventScroll:true})}
+  function chiudiTutto(){cas.classList.remove('aperto');velo.classList.remove('aperto');cas.setAttribute('aria-hidden','true');cerca.classList.remove('aperto');document.body.style.overflow=''}
+  $$('[data-apri-indice]').forEach(function(b){b.addEventListener('click',apriIndice)});
+  $$('[data-chiudi-tutto]').forEach(function(b){b.addEventListener('click',chiudiTutto)});
+  cas.addEventListener('click',function(e){if(e.target.closest('a'))chiudiTutto()});
+
+  /* ---------- ricerca ---------- */
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[’`]/g,"'")}
+  var indice=[];
+  caps.forEach(function(c){
+    var nome=(c.dataset.n?c.dataset.n+' · ':'')+c.dataset.titolo;
+    $$('p,li,h3,blockquote cite',c).forEach(function(el){
+      if(el.closest('li') && el.tagName==='P')return; /* i paragrafi dentro la linea del tempo li prende il li */
+      if(el.tagName==='CITE'||el.closest('.cd')||el.closest('form'))return;
+      if(el.tagName==='LI'&&el.querySelector('li'))return;
+      var t=el.textContent.replace(/\s+/g,' ').trim();if(t.length<3)return;
+      indice.push({el:el,t:t,n:norm(t),cap:nome});
+    });
+  });
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function evidenzia(t,termini){
+    /* posizioni nel testo normalizzato: stessa lunghezza del testo originale per le lettere latine */
+    var n=norm(t),r=[];
+    termini.forEach(function(q){var i=0;while((i=n.indexOf(q,i))>-1){r.push([i,i+q.length]);i+=q.length}});
+    r.sort(function(a,b){return a[0]-b[0]});
+    var out='',p=0;r.forEach(function(x){if(x[0]<p)return;out+=esc(t.slice(p,x[0]))+'<mark>'+esc(t.slice(x[0],x[1]))+'</mark>';p=x[1]});
+    return out+esc(t.slice(p));
+  }
+  function ritaglio(t,termini){
+    var n=norm(t),i=n.indexOf(termini[0]);if(t.length<=220)return t;
+    var a=Math.max(0,i-80),b=Math.min(t.length,a+220);
+    return (a>0?'… ':'')+t.slice(a,b).replace(/^\S*\s/,a>0?'':'$&')+(b<t.length?' …':'');
+  }
+  var ris=$('#risultati'),info=$('#cerca-info'),sug=$('#suggerimenti'),sel=-1,timer;
+  function cercaOra(){
+    var q=norm(campo.value.trim());ris.innerHTML='';sel=-1;
+    if(q.length<2){info.textContent='Scrivi una parola, per esempio una di queste.';sug.hidden=false;return}
+    sug.hidden=true;
+    var termini=q.split(/\s+/).filter(function(x){return x.length>1});
+    var trovati=indice.filter(function(x){return termini.every(function(k){return x.n.indexOf(k)>-1})});
+    /* prima i titoli, poi il resto nell'ordine della guida */
+    trovati.sort(function(a,b){return (b.el.tagName==='H3')-(a.el.tagName==='H3')});
+    info.textContent=trovati.length?(trovati.length===1?'Un risultato.':trovati.length+' risultati.'):'Nessun risultato. Prova con un\'altra parola.';
+    trovati.slice(0,60).forEach(function(x,k){
+      var li=document.createElement('li'),a=document.createElement('a');a.href='#';
+      a.innerHTML='<span class="ris-cap">'+esc(x.cap)+'</span><span class="ris-txt">'+evidenzia(ritaglio(x.t,termini),termini)+'</span>';
+      a.addEventListener('click',function(e){e.preventDefault();vai(x,termini)});
+      li.appendChild(a);ris.appendChild(li);
+    });
+  }
+  function vai(x,termini){
+    chiudiTutto();
+    var el=x.el,orig=el.innerHTML,conControlli=!!el.querySelector('input,button');
+    /* evidenzia le parole cercate dentro il paragrafo, poi rimette tutto com'era.
+       Non sulle voci della lista da spuntare: rifare l'HTML staccherebbe le caselle. */
+    if(!conControlli)try{
+      var tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodi=[],nd;while(nd=tw.nextNode())nodi.push(nd);
+      nodi.forEach(function(tn){var h=evidenzia(tn.nodeValue,termini);if(h.indexOf('<mark>')>-1){var s=document.createElement('span');s.innerHTML=h;tn.parentNode.replaceChild(s,tn)}});
+    }catch(_){}
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+    el.classList.remove('lampo');void el.offsetWidth;el.classList.add('lampo');
+    setTimeout(function(){if(!conControlli)el.innerHTML=orig;el.classList.remove('lampo')},4000);
+    try{if(window.gtag)gtag('event','search',{search_term:campo.value.trim()})}catch(_){}
+    try{if(window.zaraz)zaraz.track('search',{search_term:campo.value.trim()})}catch(_){}
+  }
+  function apriCerca(){cerca.classList.add('aperto');document.body.style.overflow='hidden';setTimeout(function(){campo.focus();campo.select()},30);cercaOra()}
+  $$('[data-apri-cerca]').forEach(function(b){b.addEventListener('click',apriCerca)});
+  campo.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(cercaOra,120)});
+  $$('button',sug).forEach(function(b){b.addEventListener('click',function(){campo.value=b.textContent;cercaOra();campo.focus()})});
+  campo.addEventListener('keydown',function(e){
+    var voci=$$('a',ris);if(!voci.length)return;
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();sel=(sel+(e.key==='ArrowDown'?1:-1)+voci.length)%voci.length;voci.forEach(function(a,i){a.classList.toggle('sel',i===sel)});voci[sel].scrollIntoView({block:'nearest'})}
+    if(e.key==='Enter'){e.preventDefault();(voci[sel]||voci[0]).click()}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')chiudiTutto();
+    var scrivendo=/INPUT|TEXTAREA/.test((document.activeElement||{}).tagName);
+    if(!scrivendo&&(e.key==='/'||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'))){e.preventDefault();apriCerca()}
+  });
+
+  /* ---------- lista da spuntare, ricordata da questo browser ---------- */
+  var KEY='tt-guida-lista',boxes=$$('[data-lista] input'),stato=$('#lista-stato');
+  var salvati=[];try{salvati=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(_){}
+  boxes.forEach(function(b,i){b.checked=salvati.indexOf(i)>-1;b.addEventListener('change',aggiorna)});
+  function aggiorna(salva){
+    var fatti=[];boxes.forEach(function(b,i){if(b.checked)fatti.push(i)});
+    if(salva!==false){try{localStorage.setItem(KEY,JSON.stringify(fatti))}catch(_){}}
+    stato.textContent=fatti.length?(fatti.length+' su '+boxes.length+' già in borsa.'):'Spunta quello che hai già in borsa. La lista se la ricorda questo telefono.';
+  }
+  aggiorna(false);
+  $('#lista-azzera').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});aggiorna()});
+})();
+
+/* ---------- countdown alla prossima apertura (come su elba.tuscanytrail.it) ---------- */
+(function(){
+  var box=document.querySelector('[data-countdown]');if(!box)return;
+  var tappe=[
+    {t:Date.parse('2026-11-01T18:00:00+01:00'),l:'I bundle aprono tra'},
+    {t:Date.parse('2026-12-03T12:00:00+01:00'),l:'Le iscrizioni singole aprono tra'}
+  ];
+  var label=box.querySelector('[data-cd-label]'),el={},timer;
+  ['d','h','m','s'].forEach(function(k){el[k]=box.querySelector('[data-k="'+k+'"]')});
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var now=Date.now(),tappa=null;
+    for(var i=0;i<tappe.length;i++){if(tappe[i].t>now){tappa=tappe[i];break}}
+    if(!tappa){box.hidden=true;clearInterval(timer);return}
+    var ms=tappa.t-now;label.textContent=tappa.l;
+    el.d.textContent=Math.floor(ms/864e5);el.h.textContent=pad(Math.floor(ms/36e5)%24);
+    el.m.textContent=pad(Math.floor(ms/6e4)%60);el.s.textContent=pad(Math.floor(ms/1e3)%60);
+    box.hidden=false;
+  }
+  tick();timer=setInterval(tick,1000);
+})();
+
+/* ---------- modulo lista → worker tt-subscribe → Brevo (solo su tuscanytrail.it) ---------- */
+(function(){
+  var form=document.querySelector('[data-subscribe]'),alt=document.querySelector('[data-senza-modulo]');
+  if(!form||!/(^|\.)tuscanytrail\.it$/.test(location.hostname))return;
+  form.hidden=false;if(alt)alt.hidden=true;alt&&(alt.style.display='none');
+  var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.async=true;s.defer=true;document.head.appendChild(s);
+  var msg=form.querySelector('[data-msg]'),btn=form.querySelector('button[type=submit]'),
+      email=form.querySelector('input[name=email]'),consent=form.querySelector('input[name=consent]');
+  var T={sending:'Invio in corso…',ok:'La tua iscrizione è avvenuta correttamente.',err:'La tua iscrizione non può essere convalidata. Riprova tra poco.',email:'Controlla l’indirizzo email.',consent:'Serve il consenso alla privacy policy per iscriverti.'};
+  function say(t){msg.textContent=t;msg.hidden=false;msg.scrollIntoView({block:'nearest'})}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!email.value.trim()||!email.checkValidity()){say(T.email);email.focus();return}
+    if(!consent.checked){say(T.consent);consent.focus();return}
+    btn.disabled=true;say(T.sending);
+    var attesa=0;
+    (function pronto(){
+      var tok=form.querySelector('[name="cf-turnstile-response"]');
+      if((!tok||!tok.value)&&attesa<10000){attesa+=250;return setTimeout(pronto,250)}
+      invia(tok);
+    })();
+  });
+  function invia(tok){
+    fetch(form.dataset.endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({
+      email:email.value.trim(),consent:true,lang:'it',source:'guida',
+      website:form.querySelector('input[name=website]').value,
+      turnstileToken:tok?tok.value:''
+    })}).then(function(res){
+      if(!res.ok)throw new Error(res.status);
+      say(T.ok);form.querySelectorAll('input,button').forEach(function(x){x.disabled=true});
+      try{if(window.zaraz)zaraz.track('Lead',{source:'guida',lang:'it'})}catch(_){}
+    }).catch(function(){
+      say(T.err);btn.disabled=false;
+      var w=form.querySelector('.cf-turnstile');if(w&&window.turnstile)window.turnstile.reset(w);
+    });
+  }
+})();
+</script>
+</body>
+</html>
