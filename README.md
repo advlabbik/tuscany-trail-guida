@@ -8,7 +8,6 @@ Live: https://advlabbik.github.io/tuscany-trail-guida/
 
 - **14 capitoli numerati** più «Prima di tutto il resto». Indice, cassetto indice (telefono) e binario laterale (schermi larghi) si costruiscono da soli dalle `section.cap`: titolo in `data-titolo`, riga di sommario in `data-sommario`, numero in `data-n`. Per aggiungere o rinominare un capitolo basta toccare la sezione.
 - **Ricerca** (tasto Cerca, oppure `/` o Ctrl+K). Indicizza paragrafi, voci d'elenco e titoli dentro le `section.cap`: tutto quello che sta fuori da una sezione non si trova. Porta al paragrafo e lo evidenzia.
-- **Lista da spuntare** al capitolo 10, ricordata dal browser (`localStorage` chiave `tt-guida-lista`).
 - **Countdown** alle due aperture (1/11 ore 18, 3/12 ore 12) e **modulo lista** in fondo al capitolo 13.
 - **Stampa o salva in PDF** dal piè di pagina, con un foglio di stile di stampa.
 
