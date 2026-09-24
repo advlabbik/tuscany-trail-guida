@@ -14,8 +14,8 @@
 <meta property="og:site_name" content="Tuscany Trail">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#8a3a1e">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%238a3a1e'/></svg>">
+<meta name="theme-color" content="#a20c2f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23a20c2f'/></svg>">
 <!-- Tracciamento: vedi il commento in ../index.html. Qui il gtag parte solo su github.io. -->
 <script>
 if(/github\.io$/.test(location.hostname)){
@@ -26,7 +26,12 @@ if(/github\.io$/.test(location.hostname)){
 <link rel="alternate" hreflang="it" href="https://advlabbik.github.io/tuscany-trail-guida/">
 <link rel="alternate" hreflang="en" href="https://advlabbik.github.io/tuscany-trail-guida/en/">
 <link rel="alternate" hreflang="x-default" href="https://advlabbik.github.io/tuscany-trail-guida/en/">
-<link rel="stylesheet" href="../guida.css?v=3">
+<!-- Il tema viene da ttrefactor (pnpm export:guide-theme): tema/ non si modifica a mano.
+     chrome.css è la cornice di questo minisito: barra, copertina, indice, ricerca. -->
+<link rel="stylesheet" href="../tema/fonts.css?v=4">
+<link rel="stylesheet" href="../tema/tokens.css?v=4">
+<link rel="stylesheet" href="../tema/guide.css?v=4">
+<link rel="stylesheet" href="../chrome.css?v=4">
 </head>
 <body>
 
@@ -42,15 +47,14 @@ if(/github\.io$/.test(location.hostname)){
 </header>
 
 <!-- ============ cover ============ -->
-<section class="copertina" id="inizio">
+<section class="copertina guida" id="inizio">
   <nav class="lingue" aria-label="Language"><a href="../?lang=it" hreflang="it" lang="it" data-lingua="it">IT</a><span aria-current="true">EN</span></nav>
   <img width="1600" height="1200" src="../foto/copertina.jpg" srcset="../foto/copertina-800.jpg 900w, ../foto/copertina.jpg 1600w" sizes="100vw" alt="A white gravel road climbing through green hills in Tuscany under a few clouds" fetchpriority="high">
+  <p class="spaziato">Fourteenth edition<br>The world's largest bikepacking event</p>
   <div class="copertina-in">
-    <div class="riga-bianca"></div>
     <h1>Tuscany<br>Trail</h1>
     <p class="laguida">The Guide</p>
     <p class="dati">2027 Edition<br>19–25 May · Campiglia Marittima, Tuscany</p>
-    <p class="spaziato">Fourteenth edition<br>The world's largest bikepacking event</p>
     <div class="cd cd-cop" data-countdown hidden>
       <p class="cd-titolo" data-cd-label></p>
       <div class="cd-griglia">
@@ -70,7 +74,7 @@ if(/github\.io$/.test(location.hostname)){
 
 <nav class="binario" id="binario" aria-label="Chapters"><p class="bt">Chapters</p><ol></ol></nav>
 
-<main id="guida">
+<main class="guida" id="guida">
 <div class="colonna">
 
 <!-- ============ 0 · Before anything else ============ -->
@@ -292,13 +296,13 @@ if(/github\.io$/.test(location.hostname)){
     <p>The Detour is an optional deviation. In 2027 it crosses the sea and takes you riding on an island. Iron mines the Etruscans were working three thousand years ago. Mediterranean scrub that smells of helichrysum and myrtle. A mountain in the middle and the sea on every side, which on a bike changes the very way you look ahead.</p>
     <p>Here's how it works. At a certain point on the route you come to the fork, and you decide.</p>
     <p>The Detour can be added to <b>both the Original route and the Newbie route</b>. The choice stays open until the very last minute, because once you have signed up <b>you receive all the tracks</b> and you can change your mind even while you're out on the road.</p>
-    <div class="box" style="background:#fff">
+    <div class="box">
       <p class="box-tit">Route</p>
       <div class="percorsi">
-        <div class="perc" style="--v:28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
-        <div class="perc elba" style="--v:53.6"><span>Newbie + Elba Detour</span><strong>300 km</strong><i></i></div>
-        <div class="perc" style="--v:82.1"><span>Original</span><strong>460 km</strong><i></i></div>
-        <div class="perc elba" style="--v:100"><span>Original + Elba Detour</span><strong>560 km</strong><i></i></div>
+        <div class="perc" data-v="28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
+        <div class="perc elba" data-v="53.6"><span>Newbie + Elba Detour</span><strong>300 km</strong><i></i></div>
+        <div class="perc" data-v="82.1"><span>Original</span><strong>460 km</strong><i></i></div>
+        <div class="perc elba" data-v="100"><span>Original + Elba Detour</span><strong>560 km</strong><i></i></div>
       </div>
     </div>
     <p>Four different sizes of the same journey. <b>You put it together however you want, and you can decide right up to the last moment.</b></p>
@@ -357,10 +361,10 @@ if(/github\.io$/.test(location.hostname)){
   <p>Here is how participants split in 2026.</p>
   <div class="box barre">
     <p class="box-tit">Where they slept</p>
-    <div class="riga-b top" style="--v:65"><span>Hotels, B&amp;Bs and farmhouses only</span><b>65%</b><i></i></div>
-    <div class="riga-b" style="--v:17"><span>Tent only</span><b>17%</b><i></i></div>
-    <div class="riga-b" style="--v:16"><span>Mixed, hotel and tent</span><b>16%</b><i></i></div>
-    <div class="riga-b" style="--v:2"><span>Bivouac without a tent</span><b>2%</b><i></i></div>
+    <div class="riga-b top" data-v="65"><span>Hotels, B&amp;Bs and farmhouses only</span><b>65%</b><i></i></div>
+    <div class="riga-b" data-v="17"><span>Tent only</span><b>17%</b><i></i></div>
+    <div class="riga-b" data-v="16"><span>Mixed, hotel and tent</span><b>16%</b><i></i></div>
+    <div class="riga-b" data-v="2"><span>Bivouac without a tent</span><b>2%</b><i></i></div>
   </div>
   <p><b>65% never put up a tent.</b> If you have it in your head that bikepacking must mean a sleeping bag and a bivouac, this number is the answer. The majority sleep indoors.</p>
 
@@ -412,10 +416,10 @@ if(/github\.io$/.test(location.hostname)){
     <div class="box">
       <p class="box-tit">Route</p>
       <div class="percorsi">
-        <div class="perc" style="--v:28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
-        <div class="perc elba" style="--v:53.6"><span>Newbie + Elba Detour</span><strong>300 km</strong><i></i></div>
-        <div class="perc" style="--v:82.1"><span>Original</span><strong>460 km</strong><i></i></div>
-        <div class="perc elba" style="--v:100"><span>Original + Elba Detour</span><strong>560 km</strong><i></i></div>
+        <div class="perc" data-v="28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
+        <div class="perc elba" data-v="53.6"><span>Newbie + Elba Detour</span><strong>300 km</strong><i></i></div>
+        <div class="perc" data-v="82.1"><span>Original</span><strong>460 km</strong><i></i></div>
+        <div class="perc elba" data-v="100"><span>Original + Elba Detour</span><strong>560 km</strong><i></i></div>
       </div>
     </div>
     <p>Four sizes, and you receive all the tracks. <b>Decide at the last moment, even while you're riding.</b></p>
@@ -446,10 +450,10 @@ if(/github\.io$/.test(location.hostname)){
     <p>When you get to Campiglia you find yourself among every kind of bike that exists. Here's what 2026 participants actually rode.</p>
     <div class="box barre">
       <p class="box-tit">What they rode</p>
-      <div class="riga-b top" style="--v:77"><span>Gravel</span><b>77%</b><i></i></div>
-      <div class="riga-b" style="--v:15"><span>Mountain bike</span><b>15%</b><i></i></div>
-      <div class="riga-b" style="--v:6"><span>E-bike (e-MTB, e-gravel, e-touring)</span><b>6%</b><i></i></div>
-      <div class="riga-b" style="--v:2"><span>Touring and other</span><b>2%</b><i></i></div>
+      <div class="riga-b top" data-v="77"><span>Gravel</span><b>77%</b><i></i></div>
+      <div class="riga-b" data-v="15"><span>Mountain bike</span><b>15%</b><i></i></div>
+      <div class="riga-b" data-v="6"><span>E-bike (e-MTB, e-gravel, e-touring)</span><b>6%</b><i></i></div>
+      <div class="riga-b" data-v="2"><span>Touring and other</span><b>2%</b><i></i></div>
     </div>
     <p>The route is designed for a gravel bike, it's the most comfortable choice and three quarters of the field make it. But <b>a mountain bike is absolutely fine</b>, especially if you don't feel comfortable handling a loaded gravel bike on rough tracks.</p>
     <p>And if you have an <b>e-bike</b> that's fine too. We were the first to accept them and we have no intention of going back. The battery range is your business.</p>
@@ -594,7 +598,7 @@ if(/github\.io$/.test(location.hostname)){
   <header class="cap-testa"><span class="cap-num">11</span><h2>The number one mistake</h2></header>
   <p>We promised you this at the start of the guide.</p>
   <p>It's not training. It's not the bike. It's not navigation.</p>
-  <p class="forte" style="font-size:30px">It's the weight.</p>
+  <p class="forte grosso">It's the weight.</p>
   <p>Every year hundreds of people set off with too many kilos of stuff on the bike and discover on the second day that those kilos aren't felt on the flat, they're felt on the climbs, and the Tuscany Trail has climbs.</p>
   <p>The appeal of carrying everything with you is strong, and we understand exactly where it comes from. But Tuscany is the wrong place to be self sufficient, because there's no need. Every few kilometres there's a village with everything you need.</p>
   <p><b>Rule of thumb.</b> Put everything you want to bring on the table. Then start taking things away. If you have a doubt about an item, ask the people who have been there — on the <b>Bike Adventure Series forum</b> you'll find hundreds of people who have already ridden the Tuscany Trail and who really do answer, with which bike, which tyres, which bags.</p>
@@ -615,10 +619,10 @@ if(/github\.io$/.test(location.hostname)){
   <p>Here is how people arrived in 2026.</p>
   <div class="box barre">
     <p class="box-tit">How they arrived</p>
-    <div class="riga-b top" style="--v:73"><span>By car</span><b>73%</b><i></i></div>
-    <div class="riga-b" style="--v:11"><span>By train</span><b>11%</b><i></i></div>
-    <div class="riga-b" style="--v:8"><span>By bike</span><b>8%</b><i></i></div>
-    <div class="riga-b" style="--v:7"><span>By plane</span><b>7%</b><i></i></div>
+    <div class="riga-b top" data-v="73"><span>By car</span><b>73%</b><i></i></div>
+    <div class="riga-b" data-v="11"><span>By train</span><b>11%</b><i></i></div>
+    <div class="riga-b" data-v="8"><span>By bike</span><b>8%</b><i></i></div>
+    <div class="riga-b" data-v="7"><span>By plane</span><b>7%</b><i></i></div>
   </div>
   <p><b>By car.</b> Exit off the SS1 Aurelia, with parking reserved for participants.</p>
   <p><b>By train.</b> The nearest station is on the Tyrrhenian Genoa to Rome line, which is well served and convenient. Many people arrive by train with the bike and leave the same way.</p>
@@ -664,15 +668,7 @@ if(/github\.io$/.test(location.hostname)){
       </div>
     </div>
     <p><b>1 November at 11am</b>, the bundles open. <b>3 December</b>, single entries open.</p>
-    <form class="sub" data-subscribe data-endpoint="https://tt-subscribe.account-fe1.workers.dev/subscribe" novalidate hidden>
-      <input class="sub-input" id="sub-guida" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="your@email.com" aria-label="Email">
-      <div class="sub-hp" aria-hidden="true"><label for="sub-guida-website">Website</label><input id="sub-guida-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <label class="sub-consent" for="sub-guida-consent"><input id="sub-guida-consent" name="consent" type="checkbox" required><span>I accept the <a href="https://tuscanytrail.it/en/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></span></label>
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEFVIPZwIPLja0Hi" data-appearance="interaction-only" data-language="auto" data-size="flexible" data-action="turnstile-spin-v2"></div>
-      <p class="sub-msg" data-msg role="status" aria-live="polite" hidden></p>
-      <button class="sub-btn" type="submit">Alert me before each opening</button>
-    </form>
-    <a class="btn btn-bianco" data-senza-modulo href="https://tuscanytrail.it/en/" target="_blank" rel="noopener">Join the list on tuscanytrail.it →</a>
+    <a class="btn btn-bianco" href="https://tuscanytrail.it/en/" target="_blank" rel="noopener">Join the list on tuscanytrail.it →</a>
   </div>
 </section>
 
@@ -736,6 +732,6 @@ if(/github\.io$/.test(location.hostname)){
   </div></div>
 </div>
 
-<script src="../guida.js?v=3"></script>
+<script src="../guida.js?v=4"></script>
 </body>
 </html>

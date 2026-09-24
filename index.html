@@ -14,8 +14,8 @@
 <meta property="og:site_name" content="Tuscany Trail">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#8a3a1e">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%238a3a1e'/></svg>">
+<meta name="theme-color" content="#a20c2f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23a20c2f'/></svg>">
 <!-- Tracciamento. Su un sottodominio di tuscanytrail.it (zona Cloudflare) Zaraz
      inietta da sé GA4 G-9CFZLTETEL e i due pixel: lì niente script nostri, un
      gtag in più conterebbe ogni visita due volte (vedi tuscany-trail-elba).
@@ -40,7 +40,12 @@ if(/github\.io$/.test(location.hostname)){
   if(q==='en'||(!s&&nav!=='it')||s==='en')location.replace('en/'+location.hash);
 }catch(_){}})();
 </script>
-<link rel="stylesheet" href="guida.css?v=3">
+<!-- Il tema viene da ttrefactor (pnpm export:guide-theme): tema/ non si modifica a mano.
+     chrome.css è la cornice di questo minisito: barra, copertina, indice, ricerca. -->
+<link rel="stylesheet" href="tema/fonts.css?v=4">
+<link rel="stylesheet" href="tema/tokens.css?v=4">
+<link rel="stylesheet" href="tema/guide.css?v=4">
+<link rel="stylesheet" href="chrome.css?v=4">
 </head>
 <body>
 
@@ -56,15 +61,14 @@ if(/github\.io$/.test(location.hostname)){
 </header>
 
 <!-- ============ copertina ============ -->
-<section class="copertina" id="inizio">
+<section class="copertina guida" id="inizio">
   <nav class="lingue" aria-label="Lingua"><span aria-current="true">IT</span><a href="en/" hreflang="en" lang="en" data-lingua="en">EN</a></nav>
   <img width="1600" height="1200" src="foto/copertina.jpg" srcset="foto/copertina-800.jpg 900w, foto/copertina.jpg 1600w" sizes="100vw" alt="Una strada bianca che sale fra colline verdi in Toscana, sotto un cielo con poche nuvole" fetchpriority="high">
+  <p class="spaziato">Quattordicesima edizione<br>Il più grande evento di bikepacking del mondo</p>
   <div class="copertina-in">
-    <div class="riga-bianca"></div>
     <h1>Tuscany<br>Trail</h1>
     <p class="laguida">La Guida</p>
     <p class="dati">Edizione 2027<br>19–25 maggio · Campiglia Marittima, Toscana</p>
-    <p class="spaziato">Quattordicesima edizione<br>Il più grande evento di bikepacking del mondo</p>
     <div class="cd cd-cop" data-countdown hidden>
       <p class="cd-titolo" data-cd-label></p>
       <div class="cd-griglia">
@@ -84,7 +88,7 @@ if(/github\.io$/.test(location.hostname)){
 
 <nav class="binario" id="binario" aria-label="Capitoli"><p class="bt">Capitoli</p><ol></ol></nav>
 
-<main id="guida">
+<main class="guida" id="guida">
 <div class="colonna">
 
 <!-- ============ 0 · Prima di tutto il resto ============ -->
@@ -306,13 +310,13 @@ if(/github\.io$/.test(location.hostname)){
     <p>Il Detour è una deviazione facoltativa. Nel 2027 attraversa il mare e porta a pedalare su un'isola. Miniere di ferro che gli Etruschi sfruttavano tremila anni fa. Macchia mediterranea che profuma di elicriso e di mirto. Una montagna nel mezzo e il mare da tutti i lati, che è una condizione che in bicicletta cambia il modo stesso di guardare avanti.</p>
     <p>Funziona così. A un certo punto del percorso trovi il bivio, e decidi tu.</p>
     <p>Il Detour si può aggiungere <b>sia al percorso Originale sia al percorso Newbie</b>. La scelta resta aperta fino all'ultimo minuto, perché dopo l'iscrizione <b>ricevi tutte le tracce</b> e puoi cambiare idea anche mentre sei per strada.</p>
-    <div class="box" style="background:#fff">
+    <div class="box">
       <p class="box-tit">Percorso</p>
       <div class="percorsi">
-        <div class="perc" style="--v:28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
-        <div class="perc elba" style="--v:53.6"><span>Newbie + Detour Elba</span><strong>300 km</strong><i></i></div>
-        <div class="perc" style="--v:82.1"><span>Originale</span><strong>460 km</strong><i></i></div>
-        <div class="perc elba" style="--v:100"><span>Originale + Detour Elba</span><strong>560 km</strong><i></i></div>
+        <div class="perc" data-v="28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
+        <div class="perc elba" data-v="53.6"><span>Newbie + Detour Elba</span><strong>300 km</strong><i></i></div>
+        <div class="perc" data-v="82.1"><span>Originale</span><strong>460 km</strong><i></i></div>
+        <div class="perc elba" data-v="100"><span>Originale + Detour Elba</span><strong>560 km</strong><i></i></div>
       </div>
     </div>
     <p>Quattro misure diverse dello stesso viaggio. <b>Lo monti come vuoi, e puoi deciderlo fino all'ultimo.</b></p>
@@ -371,10 +375,10 @@ if(/github\.io$/.test(location.hostname)){
   <p>Ecco come si sono distribuiti i partecipanti nel 2026.</p>
   <div class="box barre">
     <p class="box-tit">Dove hanno dormito</p>
-    <div class="riga-b top" style="--v:65"><span>Solo hotel, B&amp;B, agriturismi</span><b>65%</b><i></i></div>
-    <div class="riga-b" style="--v:17"><span>Solo in tenda</span><b>17%</b><i></i></div>
-    <div class="riga-b" style="--v:16"><span>Misto, hotel e tenda</span><b>16%</b><i></i></div>
-    <div class="riga-b" style="--v:2"><span>Bivacco senza tenda</span><b>2%</b><i></i></div>
+    <div class="riga-b top" data-v="65"><span>Solo hotel, B&amp;B, agriturismi</span><b>65%</b><i></i></div>
+    <div class="riga-b" data-v="17"><span>Solo in tenda</span><b>17%</b><i></i></div>
+    <div class="riga-b" data-v="16"><span>Misto, hotel e tenda</span><b>16%</b><i></i></div>
+    <div class="riga-b" data-v="2"><span>Bivacco senza tenda</span><b>2%</b><i></i></div>
   </div>
   <p><b>Il 65% non ha mai montato una tenda.</b> Se hai in testa che bikepacking voglia dire per forza sacco a pelo e bivacco, questo numero è la risposta. La maggioranza dorme al coperto.</p>
 
@@ -426,10 +430,10 @@ if(/github\.io$/.test(location.hostname)){
     <div class="box">
       <p class="box-tit">Percorso</p>
       <div class="percorsi">
-        <div class="perc" style="--v:28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
-        <div class="perc elba" style="--v:53.6"><span>Newbie + Detour Elba</span><strong>300 km</strong><i></i></div>
-        <div class="perc" style="--v:82.1"><span>Originale</span><strong>460 km</strong><i></i></div>
-        <div class="perc elba" style="--v:100"><span>Originale + Detour Elba</span><strong>560 km</strong><i></i></div>
+        <div class="perc" data-v="28.6"><span>Newbie</span><strong>160 km</strong><i></i></div>
+        <div class="perc elba" data-v="53.6"><span>Newbie + Detour Elba</span><strong>300 km</strong><i></i></div>
+        <div class="perc" data-v="82.1"><span>Originale</span><strong>460 km</strong><i></i></div>
+        <div class="perc elba" data-v="100"><span>Originale + Detour Elba</span><strong>560 km</strong><i></i></div>
       </div>
     </div>
     <p>Quattro misure, e ricevi tutte le tracce. <b>Decidi anche all'ultimo, anche mentre pedali.</b></p>
@@ -460,10 +464,10 @@ if(/github\.io$/.test(location.hostname)){
     <p>Quando arrivi a Campiglia ti ritrovi in mezzo a qualsiasi tipo di bici esistente. Ecco cosa hanno usato davvero i partecipanti 2026.</p>
     <div class="box barre">
       <p class="box-tit">Con che bici sono partiti</p>
-      <div class="riga-b top" style="--v:77"><span>Gravel</span><b>77%</b><i></i></div>
-      <div class="riga-b" style="--v:15"><span>Mountain bike</span><b>15%</b><i></i></div>
-      <div class="riga-b" style="--v:6"><span>E-bike (e-MTB, e-gravel, e-touring)</span><b>6%</b><i></i></div>
-      <div class="riga-b" style="--v:2"><span>Touring e altro</span><b>2%</b><i></i></div>
+      <div class="riga-b top" data-v="77"><span>Gravel</span><b>77%</b><i></i></div>
+      <div class="riga-b" data-v="15"><span>Mountain bike</span><b>15%</b><i></i></div>
+      <div class="riga-b" data-v="6"><span>E-bike (e-MTB, e-gravel, e-touring)</span><b>6%</b><i></i></div>
+      <div class="riga-b" data-v="2"><span>Touring e altro</span><b>2%</b><i></i></div>
     </div>
     <p>Il percorso è disegnato per la gravel, è la scelta più comoda e la fa tre quarti del gruppo. Ma <b>la mountain bike va benissimo</b>, soprattutto se non ti senti a tuo agio a guidare una gravel carica di borse su uno sterrato sconnesso.</p>
     <p>E se hai una <b>e-bike</b> va bene lo stesso. Siamo stati i primi ad accettarle e non abbiamo intenzione di tornare indietro. L'autonomia la gestisci tu.</p>
@@ -608,7 +612,7 @@ if(/github\.io$/.test(location.hostname)){
   <header class="cap-testa"><span class="cap-num">11</span><h2>L'errore numero uno</h2></header>
   <p>Te lo avevamo promesso a inizio guida.</p>
   <p>Non è l'allenamento. Non è la bici. Non è la navigazione.</p>
-  <p class="forte" style="font-size:30px">È il peso.</p>
+  <p class="forte grosso">È il peso.</p>
   <p>Ogni anno centinaia di persone partono con troppi chili di roba sulla bici e scoprono al secondo giorno che quei chili non si sentono in pianura, si sentono in salita, e le salite del Tuscany Trail ci sono.</p>
   <p>Il fascino di portarsi tutto dietro è forte, e capiamo benissimo da dove viene. Ma la Toscana è il posto sbagliato in cui essere autosufficienti, perché non ce n'è bisogno. Ogni pochi chilometri c'è un paese con tutto quello che ti serve.</p>
   <p><b>Regola pratica.</b> Metti sul tavolo tutto quello che vuoi portare. Poi inizia a togliere roba. Se hai un dubbio su un oggetto, chiedi a chi c'è già stato — sul <b>forum della Bike Adventure Series</b> trovi centinaia di persone che il Tuscany Trail lo hanno già pedalato e che rispondono davvero, con quale bici, quali gomme, quali borse.</p>
@@ -629,10 +633,10 @@ if(/github\.io$/.test(location.hostname)){
   <p>Ecco come è arrivata la gente nel 2026.</p>
   <div class="box barre">
     <p class="box-tit">Come sono arrivati</p>
-    <div class="riga-b top" style="--v:73"><span>In auto</span><b>73%</b><i></i></div>
-    <div class="riga-b" style="--v:11"><span>In treno</span><b>11%</b><i></i></div>
-    <div class="riga-b" style="--v:8"><span>In bicicletta</span><b>8%</b><i></i></div>
-    <div class="riga-b" style="--v:7"><span>In aereo</span><b>7%</b><i></i></div>
+    <div class="riga-b top" data-v="73"><span>In auto</span><b>73%</b><i></i></div>
+    <div class="riga-b" data-v="11"><span>In treno</span><b>11%</b><i></i></div>
+    <div class="riga-b" data-v="8"><span>In bicicletta</span><b>8%</b><i></i></div>
+    <div class="riga-b" data-v="7"><span>In aereo</span><b>7%</b><i></i></div>
   </div>
   <p><b>In auto.</b> Uscita della SS1 Aurelia, parcheggi riservati ai partecipanti.</p>
   <p><b>In treno.</b> La stazione di riferimento è sulla linea tirrenica Genova–Roma, che è servita e comoda. Molti arrivano in treno con la bici e ripartono uguale.</p>
@@ -680,19 +684,7 @@ if(/github\.io$/.test(location.hostname)){
     </div>
     <p><b>1 novembre alle 11</b>, aprono i bundle. <b>3 dicembre</b>, aprono le iscrizioni singole.</p>
 
-    <!-- Modulo lista: stesso worker e stessa lista Brevo (18, Tuscany Trail LEAD)
-         di elba.tuscanytrail.it, source "guida". Il worker accetta solo le origini
-         in ALLOWED_ORIGINS e il sitekey Turnstile vale solo sui domini tuscanytrail.it:
-         per questo il modulo si accende solo lì. Su github.io resta il bottone. -->
-    <form class="sub" data-subscribe data-endpoint="https://tt-subscribe.account-fe1.workers.dev/subscribe" novalidate hidden>
-      <input class="sub-input" id="sub-guida" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="la-tua@email.it" aria-label="Email">
-      <div class="sub-hp" aria-hidden="true"><label for="sub-guida-website">Website</label><input id="sub-guida-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <label class="sub-consent" for="sub-guida-consent"><input id="sub-guida-consent" name="consent" type="checkbox" required><span>Accetto la <a href="https://tuscanytrail.it/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></span></label>
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEFVIPZwIPLja0Hi" data-appearance="interaction-only" data-language="auto" data-size="flexible" data-action="turnstile-spin-v2"></div>
-      <p class="sub-msg" data-msg role="status" aria-live="polite" hidden></p>
-      <button class="sub-btn" type="submit">Avvisami prima di ogni apertura</button>
-    </form>
-    <a class="btn btn-bianco" data-senza-modulo href="https://tuscanytrail.it/" target="_blank" rel="noopener">Entra in lista su tuscanytrail.it →</a>
+    <a class="btn btn-bianco" href="https://tuscanytrail.it/" target="_blank" rel="noopener">Entra in lista su tuscanytrail.it →</a>
   </div>
 </section>
 
@@ -756,6 +748,6 @@ if(/github\.io$/.test(location.hostname)){
   </div></div>
 </div>
 
-<script src="guida.js?v=3"></script>
+<script src="guida.js?v=4"></script>
 </body>
 </html>

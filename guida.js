@@ -3,10 +3,8 @@
 (function(){
   var LANG=document.documentElement.lang==='en'?'en':'it';
   var T={
-    it:{min:' min',cercaVuoto:'Scrivi una parola, per esempio una di queste.',uno:'Un risultato.',tanti:' risultati.',nessuno:'Nessun risultato. Prova con un\'altra parola.',
-        sending:'Invio in corso…',ok:'La tua iscrizione è avvenuta correttamente.',err:'La tua iscrizione non può essere convalidata. Riprova tra poco.',email:'Controlla l’indirizzo email.',consent:'Serve il consenso alla privacy policy per iscriverti.'},
-    en:{min:' min',cercaVuoto:'Type a word, for example one of these.',uno:'One result.',tanti:' results.',nessuno:'No results. Try another word.',
-        sending:'Sending…',ok:'You are on the list. Check your inbox.',err:'We could not confirm your subscription. Please try again.',email:'Please check your email address.',consent:'You need to accept the privacy policy to subscribe.'}
+    it:{min:' min',cercaVuoto:'Scrivi una parola, per esempio una di queste.',uno:'Un risultato.',tanti:' risultati.',nessuno:'Nessun risultato. Prova con un\'altra parola.'},
+    en:{min:' min',cercaVuoto:'Type a word, for example one of these.',uno:'One result.',tanti:' results.',nessuno:'No results. Try another word.'}
   }[LANG];
 
   var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
@@ -168,43 +166,10 @@
     tick();timer=setInterval(tick,1000);
   })();
 
-  /* ---------- modulo lista → worker tt-subscribe → Brevo (solo su tuscanytrail.it) ----------
-     Stesso worker e stessa lista Brevo (18) di elba.tuscanytrail.it, source "guida".
-     Il worker accetta solo le origini in ALLOWED_ORIGINS e il sitekey Turnstile vale
-     solo sui domini tuscanytrail.it: altrove resta il bottone verso il sito. */
-  (function(){
-    var form=$('[data-subscribe]'),alt=$('[data-senza-modulo]');
-    if(!form||!/(^|\.)tuscanytrail\.it$/.test(location.hostname))return;
-    form.hidden=false;if(alt)alt.style.display='none';
-    var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.async=true;s.defer=true;document.head.appendChild(s);
-    var msg=$('[data-msg]',form),btn=$('button[type=submit]',form),email=$('input[name=email]',form),consent=$('input[name=consent]',form);
-    function say(t){msg.textContent=t;msg.hidden=false;msg.scrollIntoView({block:'nearest'})}
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      if(!email.value.trim()||!email.checkValidity()){say(T.email);email.focus();return}
-      if(!consent.checked){say(T.consent);consent.focus();return}
-      btn.disabled=true;say(T.sending);
-      /* Turnstile impiega qualche secondo a generare il token: si aspetta invece di inviarlo vuoto. */
-      var attesa=0;
-      (function pronto(){
-        var tok=$('[name="cf-turnstile-response"]',form);
-        if((!tok||!tok.value)&&attesa<10000){attesa+=250;return setTimeout(pronto,250)}
-        invia(tok);
-      })();
-    });
-    function invia(tok){
-      fetch(form.dataset.endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({
-        email:email.value.trim(),consent:true,lang:LANG,source:'guida',
-        website:$('input[name=website]',form).value,
-        turnstileToken:tok?tok.value:''
-      })}).then(function(res){
-        if(!res.ok)throw new Error(res.status);
-        say(T.ok);$$('input,button',form).forEach(function(x){x.disabled=true});
-        try{if(window.zaraz)zaraz.track('Lead',{source:'guida',lang:LANG})}catch(_){}
-      }).catch(function(){
-        say(T.err);btn.disabled=false;
-        var w=$('.cf-turnstile',form);if(w&&window.turnstile)window.turnstile.reset(w);
-      });
-    }
-  })();
+  /* ---------- barre: data-v → --v ----------
+     Il valore delle barre stava in style="--v:62". Nel lettore di bas-guides la
+     CSP vieta lo stile in linea, quindi il valore sta in data-v e lo copia qui lo
+     script: setProperty passa, perché è CSSOM e non un attributo. Senza
+     JavaScript la barra resta vuota, ma il numero è scritto accanto. */
+  $$('[data-v]').forEach(function(el){el.style.setProperty('--v',el.getAttribute('data-v'))});
 })();
