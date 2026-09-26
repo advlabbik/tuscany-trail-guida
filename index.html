@@ -77,14 +77,16 @@ if(/github\.io$/.test(location.hostname)){
     <p class="laguida">La Guida</p>
     <p class="dati">Edizione 2027<br>19–25 maggio · Campiglia Marittima, Toscana</p>
     <div class="cd cd-cop" data-countdown hidden>
-      <p class="cd-titolo" data-cd-label></p>
+      <p class="cd-titolo" data-iso="2026-11-01T11:00:00+01:00">1 novembre, ore 11 · aprono i bundle</p>
+      <p class="cd-titolo" data-iso="2026-12-03T12:00:00+01:00" hidden>3 dicembre · aprono le iscrizioni singole</p>
       <div class="cd-griglia">
         <div class="cd-box"><strong data-k="d">0</strong><span>Giorni</span></div>
         <div class="cd-box"><strong data-k="h">00</strong><span>Ore</span></div>
         <div class="cd-box"><strong data-k="m">00</strong><span>Minuti</span></div>
         <div class="cd-box"><strong data-k="s">00</strong><span>Secondi</span></div>
       </div>
-      <p class="cd-gancio" data-cd-gancio></p>
+      <p class="cd-gancio" data-iso="2026-11-01T11:00:00+01:00">Tuscany Trail più una seconda avventura della Bike Adventure Series. Le quote per ogni combinazione sono limitate, e quando una combinazione finisce sparisce.</p>
+      <p class="cd-gancio" data-iso="2026-12-03T12:00:00+01:00" hidden>Data e fascia di partenza si scelgono all'iscrizione, e le giornate più richieste finiscono per prime.</p>
       <a class="cd-link" href="#resta-in-lista">Come non restare fuori ↓</a>
     </div>
     <div class="bottoni">
@@ -679,9 +681,10 @@ if(/github\.io$/.test(location.hostname)){
 
   <div class="date" id="resta-in-lista">
     <h3>Resta in lista. È l'unica cosa che ti chiediamo di fare oggi.</h3>
-    <!-- Countdown: le tappe e i ganci stanno in guida.js -->
+    <!-- Countdown: le tappe (data-iso) e il loro testo stanno qui, guida.js legge dal DOM -->
     <div class="cd" data-countdown hidden>
-      <p class="cd-titolo" data-cd-label></p>
+      <p class="cd-titolo" data-iso="2026-11-01T11:00:00+01:00">1 novembre, ore 11 · aprono i bundle</p>
+      <p class="cd-titolo" data-iso="2026-12-03T12:00:00+01:00" hidden>3 dicembre · aprono le iscrizioni singole</p>
       <div class="cd-griglia">
         <div class="cd-box"><strong data-k="d">0</strong><span>Giorni</span></div>
         <div class="cd-box"><strong data-k="h">00</strong><span>Ore</span></div>
