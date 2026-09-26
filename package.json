@@ -1,0 +1,11 @@
+{
+  "name": "tuscany-trail-guida",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pacchetto": "node scripts/pacchetto.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}

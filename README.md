@@ -40,3 +40,11 @@ Il testo resta parola per parola quello del PDF: il restyling tocca classi e CSS
 ## Anteprima locale
 
 `python -m http.server 8651` nella cartella, poi http://localhost:8651
+
+## Pacchetto per bas-guides
+
+`npm install` una volta, poi `npm run pacchetto`: crea `pacchetto/it/` e `pacchetto/en/`
+(copertina, capitoli, foto usate, `guide.pdf` stampato con Chrome). È la cartella da
+caricare nell'amministrazione di bas-guides, una per lingua. Lo script si ferma se il
+testo del pacchetto non è parola per parola quello della guida, o se manca una foto.
+Serve Google Chrome installato (oppure `CHROME_PATH`).
