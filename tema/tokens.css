@@ -1,4 +1,4 @@
-/* Generato da ttrefactor@3a1c4cf (src/styles/tokens.css) con scripts/export-guide-theme.mjs.
+/* Generato da ttrefactor@01e8ad8 (src/styles/tokens.css) con scripts/export-guide-theme.mjs.
    Non modificare qui: si corregge in ttrefactor e si esporta di nuovo. */
 
 /* ============================================================
@@ -61,7 +61,12 @@
      niente: i massimi sono quelli di prima. */
   --fs-lead: clamp(17px, 4.4vw, 18px);
   --fs-body: clamp(16px, 4.1vw, 17px);
-  --fs-sm: clamp(15.5px, 4vw, 16px);
+  /* Non è più un clamp(): il minimo era 15,5px e a 390px (4vw = 15,6px) restava
+     sotto la soglia dei 16px qui sopra — proprio il testo corrente che questo
+     token serve (righe di dati, tabella dei biglietti). Il massimo era già
+     16px per qualunque schermo da 400px in su: min e max coincidono, quindi è
+     un numero fisso e non più una scala fluida. */
+  --fs-sm: 16px;
   --fs-xs: clamp(13.5px, 3.5vw, 14.5px);
   --fs-kicker: 11px;
   --fs-label: 10px;
