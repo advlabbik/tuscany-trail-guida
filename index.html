@@ -77,14 +77,16 @@ if(/github\.io$/.test(location.hostname)){
     <p class="laguida">La Guida</p>
     <p class="dati">Edizione 2027<br>19–25 maggio · Campiglia Marittima, Toscana</p>
     <div class="cd cd-cop" data-countdown hidden>
-      <p class="cd-titolo" data-cd-label></p>
+      <p class="cd-titolo" data-iso="2026-11-01T11:00:00+01:00">1 novembre, ore 11 · aprono i bundle</p>
+      <p class="cd-titolo" data-iso="2026-12-03T12:00:00+01:00" hidden>3 dicembre · aprono le iscrizioni singole</p>
       <div class="cd-griglia">
         <div class="cd-box"><strong data-k="d">0</strong><span>Giorni</span></div>
         <div class="cd-box"><strong data-k="h">00</strong><span>Ore</span></div>
         <div class="cd-box"><strong data-k="m">00</strong><span>Minuti</span></div>
         <div class="cd-box"><strong data-k="s">00</strong><span>Secondi</span></div>
       </div>
-      <p class="cd-gancio" data-cd-gancio></p>
+      <p class="cd-gancio" data-iso="2026-11-01T11:00:00+01:00">Tuscany Trail più una seconda avventura della Bike Adventure Series. Le quote per ogni combinazione sono limitate, e quando una combinazione finisce sparisce.</p>
+      <p class="cd-gancio" data-iso="2026-12-03T12:00:00+01:00" hidden>Data e fascia di partenza si scelgono all'iscrizione, e le giornate più richieste finiscono per prime.</p>
       <a class="cd-link" href="#resta-in-lista">Come non restare fuori ↓</a>
     </div>
     <div class="bottoni">
@@ -228,7 +230,7 @@ if(/github\.io$/.test(location.hostname)){
   <p>Chi lo ha fatto lo scrive nel questionario più o meno sempre con le stesse parole.</p>
   <blockquote class="voce"><p lang="en">«Tuscany is everything you've ever read about or seen on tv, just breathtaking everywhere you look.»</p><p class="trad">(La Toscana è tutto quello che hai letto o visto in televisione, semplicemente mozzafiato ovunque guardi.)</p><cite>Partecipante 2026</cite></blockquote>
 
-  <div class="terra" id="campiglia">
+  <div id="campiglia">
     <h3>La Costa degli Etruschi e Campiglia Marittima</h3>
     <p><b>Si comincia e si finisce qui, su una collina che guarda il Mar Tirreno.</b></p>
     <p>Campiglia Marittima è un borgo medievale dominato dalla Rocca, una fortificazione tirata su fra il XII e il XIII secolo. Dall'alto lo sguardo scivola giù per le colline fino alla costa, e nelle giornate limpide all'orizzonte si stacca il profilo dell'Isola d'Elba. Che dal 2027 non è più soltanto un profilo, ma <a href="#detour-elba">ci arriviamo fra qualche pagina</a>.</p>
@@ -239,7 +241,7 @@ if(/github\.io$/.test(location.hostname)){
 
   <figure class="foto alta dentro-testo"><img width="1280" height="1600" loading="lazy" src="foto/borgo-in-bici.jpg" srcset="foto/borgo-in-bici-800.jpg 720w, foto/borgo-in-bici.jpg 1280w" sizes="(max-width:640px) 100vw, 560px" alt="Due cicliste con le borse attraversano le stradine di pietra di un borgo toscano"></figure>
 
-  <div class="terra" id="mare-selvatico">
+  <div id="mare-selvatico">
     <h3>Il mare selvatico — Scarlino, Cala Violina, Castiglione della Pescaia</h3>
     <p><b>C'è un tratto di costa toscana dove le automobili non arrivano. Ci si va a piedi oppure in bicicletta, e basta.</b></p>
     <p>Dentro ci sono due baie.</p>
@@ -251,7 +253,7 @@ if(/github\.io$/.test(location.hostname)){
     <p><b>È qui, a Castiglione della Pescaia, che i due percorsi si separano.</b> Fino a questo punto avete pedalato tutti insieme, chi fa i centosessanta chilometri e chi ne fa quattrocentosessanta. Da qui in avanti ognuno prende la sua strada.</p>
   </div>
 
-  <div class="terra" id="colline-metallifere">
+  <div id="colline-metallifere">
     <h3>Le Colline Metallifere e la Maremma — quello che vede chi fa il corto</h3>
     <p><b>Chi sceglie il percorso Newbie da qui sale verso l'interno, ed entra nella Toscana che i turisti non hanno ancora trovato.</b></p>
     <p><b>Gavorrano</b> sta sulle Colline Metallifere ed è stata per decenni la capitale europea della pirite. Il castello degli Aldobrandeschi risale all'XI secolo, ma la cosa che resta addosso è il Teatro delle Rocce, un anfiteatro ricavato dentro una cava dismessa. Un posto dove una ferita industriale è diventata un palcoscenico.</p>
@@ -264,7 +266,7 @@ if(/github\.io$/.test(location.hostname)){
 
   <p class="etichetta">E da qui in avanti, il percorso Originale</p>
 
-  <div class="terra" id="val-dorcia">
+  <div id="val-dorcia">
     <h3>La Val d'Orcia</h3>
     <p><b>Questa è la cartolina. Ed è una delle rare volte in cui la cartolina è più brutta dell'originale.</b></p>
     <p>Patrimonio UNESCO, la Val d'Orcia è quella distesa di colline ondulate, cipressi solitari e casali isolati che chiunque abbia acceso un computer negli ultimi vent'anni ha visto almeno una volta senza sapere dove fosse.</p>
@@ -278,7 +280,7 @@ if(/github\.io$/.test(location.hostname)){
 
 <figure class="foto larga"><img width="1600" height="1200" loading="lazy" src="foto/val-dorcia.jpg" srcset="foto/val-dorcia-800.jpg 900w, foto/val-dorcia.jpg 1600w" sizes="100vw" alt="Una lunga fila di ciclisti su una strada bianca dritta fra i campi di grano verde, con un borgo sulla collina"></figure>
 
-  <div class="terra" id="siena">
+  <div id="siena">
     <h3>Siena</h3>
     <p><b>Piazza del Campo a fine maggio non è la Piazza del Campo di agosto.</b></p>
     <p>Il Palio si corre il 2 luglio e il 16 agosto, ma a maggio la città è già dentro la sua liturgia. C'è l'estrazione a sorte delle contrade che si aggiungono alle sette che corrono di diritto, ci sono le prime cene, le prove, le bandiere che compaiono ai balconi. L'aria è elettrica in un modo che i turisti di luglio non vedranno mai, perché a luglio è già spettacolo mentre a maggio è ancora rito.</p>
@@ -286,7 +288,7 @@ if(/github\.io$/.test(location.hostname)){
     <p>Entrare in una città come Siena con la polvere sulle gambe, e sedersi in terra nella conca di mattoni rossi con un gelato in mano. Le proporzioni si riallineano di colpo. Sei arrivato fin qui con le tue gambe.</p>
   </div>
 
-  <div class="terra" id="francigena">
+  <div id="francigena">
     <h3>La Via Francigena — Monteriggioni, Colle Val d'Elsa, San Gimignano</h3>
     <p><b>Per un lungo tratto il Tuscany Trail si sovrappone alla Via Francigena</b>, il cammino che dal medioevo porta i pellegrini dal nord Europa fino a Roma. Si pedala dentro mille anni di gente che passava di qui a piedi con lo stesso spirito con cui ci passi tu.</p>
     <p><b>Monteriggioni</b> è un cerchio di mura lungo cinquecentosettanta metri con quattordici torri, costruito nel Duecento dalla Repubblica di Siena come avamposto contro Firenze. È rimasto intatto. Dante lo cita nell'Inferno paragonando le sue torri ai giganti. Ci si entra dalla Porta Franca, quella che guarda verso Siena, e dentro c'è una piazza, una chiesa romanica e il silenzio.</p>
@@ -294,14 +296,14 @@ if(/github\.io$/.test(location.hostname)){
     <p><b>San Gimignano</b>, la Manhattan del Medioevo. Al suo apice aveva settantadue torri, oggi ne restano quattordici, e bastano a disegnare uno skyline che si riconosce da venti chilometri di distanza. In Piazza della Cisterna c'è quello che parecchie classifiche considerano il miglior gelato artigianale del mondo. Non è il motivo per cui si fa il Tuscany Trail, ma dopo una salita non è nemmeno un dettaglio trascurabile.</p>
   </div>
 
-  <div class="terra" id="val-di-cecina">
+  <div id="val-di-cecina">
     <h3>La Val di Cecina — Volterra e Montecatini</h3>
     <p><b>Poi il cerchio comincia a chiudersi, attraverso una Toscana più aspra, più boscosa, più solitaria.</b></p>
     <p><b>Montecatini Val di Cecina</b> sta a quattrocentoquattordici metri, con la torre del castello che ne svetta altri trentotto. Nell'Ottocento qui c'era la miniera di rame più importante d'Europa, e il castello minerario di Caporciano è ancora lì a raccontarlo. Nel 2025 i partecipanti che arrivavano quassù sono stati accolti da una mongolfiera. Nessuno se l'aspettava, ed è esattamente il tipo di cosa che non si può programmare.</p>
     <p>Intorno, boschi di querce, calanchi, poderi isolati e chilometri in cui non incontri nessuno tranne altri come te.</p>
   </div>
 
-  <div class="terra" id="il-finale">
+  <div id="il-finale">
     <h3>Il finale, che non ti raccontiamo</h3>
     <p>E poi si scende verso il mare.</p>
     <p>L'aria cambia, l'odore torna salato, e a un certo punto in fondo ricompare il Tirreno. È lo stesso mare di quattro giorni prima e non è affatto lo stesso.</p>
@@ -380,7 +382,7 @@ if(/github\.io$/.test(location.hostname)){
   <header class="cap-testa"><span class="cap-num">7</span><h2>Dove dormi</h2></header>
   <p>Questa è la domanda che ci fanno più spesso di tutte, subito dopo quella sull'allenamento. <b>La risposta breve è che dormi dove ti pare.</b></p>
   <p>Ecco come si sono distribuiti i partecipanti nel 2026.</p>
-  <div class="box barre">
+  <div class="box">
     <p class="box-tit">Dove hanno dormito</p>
     <div class="riga-b top" data-v="65"><span>Solo hotel, B&amp;B, agriturismi</span><b>65%</b><i></i></div>
     <div class="riga-b" data-v="17"><span>Solo in tenda</span><b>17%</b><i></i></div>
@@ -469,7 +471,7 @@ if(/github\.io$/.test(location.hostname)){
     <div class="domanda-tit"><span>3</span><h3>«Non ho la bici giusta»</h3></div>
     <p><b>Non esiste "la" bicicletta giusta. Esiste la tua.</b></p>
     <p>Quando arrivi a Campiglia ti ritrovi in mezzo a qualsiasi tipo di bici esistente. Ecco cosa hanno usato davvero i partecipanti 2026.</p>
-    <div class="box barre">
+    <div class="box">
       <p class="box-tit">Con che bici sono partiti</p>
       <div class="riga-b top" data-v="77"><span>Gravel</span><b>77%</b><i></i></div>
       <div class="riga-b" data-v="15"><span>Mountain bike</span><b>15%</b><i></i></div>
@@ -625,7 +627,7 @@ if(/github\.io$/.test(location.hostname)){
   <p><b>Regola pratica.</b> Metti sul tavolo tutto quello che vuoi portare. Poi inizia a togliere roba. Se hai un dubbio su un oggetto, chiedi a chi c'è già stato — sul <b>forum della Bike Adventure Series</b> trovi centinaia di persone che il Tuscany Trail lo hanno già pedalato e che rispondono davvero, con quale bici, quali gomme, quali borse.</p>
   <div class="forum">
     <p>Centinaia di persone che il Tuscany Trail lo hanno già fatto.</p>
-    <a class="btn btn-terra" href="https://www.bikeadventureseries.com/community/" target="_blank" rel="noopener">Entra nel forum →</a>
+    <a class="btn" href="https://www.bikeadventureseries.com/community/" target="_blank" rel="noopener">Entra nel forum →</a>
   </div>
   <p>E c'è un secondo errore, meno famoso e più doloroso.</p>
   <p><b>La sella.</b> Una sella sbagliata non ti ferma il primo giorno. Ti distrugge il terzo. Se hai il minimo dubbio sulla tua, risolvilo adesso, non a marzo e non a maggio.</p>
@@ -638,7 +640,7 @@ if(/github\.io$/.test(location.hostname)){
   <header class="cap-testa"><span class="cap-num">12</span><h2>Come si arriva a Campiglia Marittima</h2></header>
   <p>Partenza e arrivo coincidono, quindi la logistica è la più semplice che esista. Lasci il mezzo e lo ritrovi.</p>
   <p>Ecco come è arrivata la gente nel 2026.</p>
-  <div class="box barre">
+  <div class="box">
     <p class="box-tit">Come sono arrivati</p>
     <div class="riga-b top" data-v="73"><span>In auto</span><b>73%</b><i></i></div>
     <div class="riga-b" data-v="11"><span>In treno</span><b>11%</b><i></i></div>
@@ -679,9 +681,10 @@ if(/github\.io$/.test(location.hostname)){
 
   <div class="date" id="resta-in-lista">
     <h3>Resta in lista. È l'unica cosa che ti chiediamo di fare oggi.</h3>
-    <!-- Countdown: le tappe e i ganci stanno in guida.js -->
+    <!-- Countdown: le tappe (data-iso) e il loro testo stanno qui, guida.js legge dal DOM -->
     <div class="cd" data-countdown hidden>
-      <p class="cd-titolo" data-cd-label></p>
+      <p class="cd-titolo" data-iso="2026-11-01T11:00:00+01:00">1 novembre, ore 11 · aprono i bundle</p>
+      <p class="cd-titolo" data-iso="2026-12-03T12:00:00+01:00" hidden>3 dicembre · aprono le iscrizioni singole</p>
       <div class="cd-griglia">
         <div class="cd-box"><strong data-k="d">0</strong><span>Giorni</span></div>
         <div class="cd-box"><strong data-k="h">00</strong><span>Ore</span></div>

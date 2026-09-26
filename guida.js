@@ -163,38 +163,31 @@
   });
 
   /* ---------- countdown alla prossima apertura, in copertina e in fondo ----------
-     Ora italiana (a novembre e dicembre +01:00). Passata una tappa si passa alla
-     successiva, passate tutte i riquadri spariscono. Il gancio compare solo dove
-     c'è [data-cd-gancio], cioè in copertina. */
+     Le tappe stanno nell'HTML: ogni testo porta la sua data in data-iso (ora
+     italiana, a novembre e dicembre +01:00). Si mostrano i testi della prima tappa
+     futura; passate tutte, i riquadri spariscono. Il lettore di bas-guides fa lo
+     stesso con lo stesso markup. */
   (function(){
     var boxes=$$('[data-countdown]');if(!boxes.length)return;
-    var tappe=[
-      {t:Date.parse('2026-11-01T11:00:00+01:00'),
-       it:{l:'1 novembre, ore 11 · aprono i bundle',g:'Tuscany Trail più una seconda avventura della Bike Adventure Series. Le quote per ogni combinazione sono limitate, e quando una combinazione finisce sparisce.'},
-       en:{l:'1 November, 11am · the bundles open',g:'Tuscany Trail plus a second Bike Adventure Series adventure. Each combination has a limited number of places, and when a combination is gone, it\'s gone.'}},
-      {t:Date.parse('2026-12-03T12:00:00+01:00'),
-       it:{l:'3 dicembre · aprono le iscrizioni singole',g:'Data e fascia di partenza si scelgono all\'iscrizione, e le giornate più richieste finiscono per prime.'},
-       en:{l:'3 December · single entries open',g:'Start date and time slot are chosen at sign up, and the most popular days go first.'}}
-    ];
     var timer,pad=function(n){return String(n).padStart(2,'0')};
     function tick(){
-      /* Scheda in background: niente da aggiornare. Al ritorno riparte subito
-         (visibilitychange più sotto), senza aspettare il secondo successivo. */
       if(document.hidden)return;
-      var now=Date.now(),tappa=null;
-      for(var i=0;i<tappe.length;i++){if(tappe[i].t>now){tappa=tappe[i];break}}
+      var now=Date.now(),vive=0;
       boxes.forEach(function(box){
-        if(!tappa){box.hidden=true;return}
-        var ms=tappa.t-now,testi=tappa[LANG],g=$('[data-cd-gancio]',box);
-        $('[data-cd-label]',box).textContent=testi.l;
-        if(g)g.textContent=testi.g;
+        var tappe=$$('[data-iso]',box).map(function(el){return Date.parse(el.getAttribute('data-iso'))})
+          .filter(function(t){return t>now}).sort(function(a,b){return a-b});
+        var t=tappe[0];
+        if(!t){box.hidden=true;return}
+        vive++;
+        $$('[data-iso]',box).forEach(function(el){el.hidden=Date.parse(el.getAttribute('data-iso'))!==t});
+        var ms=t-now;
         $('[data-k="d"]',box).textContent=Math.floor(ms/864e5);
         $('[data-k="h"]',box).textContent=pad(Math.floor(ms/36e5)%24);
         $('[data-k="m"]',box).textContent=pad(Math.floor(ms/6e4)%60);
         $('[data-k="s"]',box).textContent=pad(Math.floor(ms/1e3)%60);
         box.hidden=false;
       });
-      if(!tappa)clearInterval(timer);
+      if(!vive)clearInterval(timer);
     }
     tick();timer=setInterval(tick,1000);document.addEventListener('visibilitychange',tick);
   })();
