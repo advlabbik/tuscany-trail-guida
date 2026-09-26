@@ -31,13 +31,17 @@ if(/github\.io$/.test(location.hostname)){
 <link rel="alternate" hreflang="en" href="https://advlabbik.github.io/tuscany-trail-guida/en/">
 <link rel="alternate" hreflang="x-default" href="https://advlabbik.github.io/tuscany-trail-guida/en/">
 <script>
-/* Chi non ha il browser in italiano e non ha mai scelto la lingua va sulla versione inglese.
-   ?lang=it lo tiene qui (per i link delle email italiane, se servisse). */
+/* Va sulla versione inglese solo chi l'ha chiesta: ?lang=en o una scelta già fatta.
+   Chi ha soltanto il browser in un'altra lingua resta qui e vede l'avviso in inglese
+   in cima: un reindirizzamento automatico spostava anche Googlebot, che si presenta
+   in inglese, e chi legge in italiano col telefono impostato in inglese.
+   ?lang=it tiene qui senza avviso (per i link delle email italiane, se servisse). */
 (function(){try{
   var q=new URLSearchParams(location.search).get('lang'),s=localStorage.getItem('tt-guida-lang');
   if(q==='it'){localStorage.setItem('tt-guida-lang','it');return}
   var nav=(navigator.languages&&navigator.languages[0]||navigator.language||'it').slice(0,2).toLowerCase();
-  if(q==='en'||(!s&&nav!=='it')||s==='en')location.replace('en/'+location.hash);
+  if(q==='en'||s==='en')location.replace('en/'+location.hash);
+  else if(!s&&nav!=='it')document.documentElement.classList.add('avviso-en');
 }catch(_){}})();
 </script>
 <!-- Il tema viene da ttrefactor (pnpm export:guide-theme): tema/ non si modifica a mano.
@@ -45,9 +49,12 @@ if(/github\.io$/.test(location.hostname)){
 <link rel="stylesheet" href="tema/fonts.css?v=5">
 <link rel="stylesheet" href="tema/tokens.css?v=5">
 <link rel="stylesheet" href="tema/guide.css?v=5">
-<link rel="stylesheet" href="chrome.css?v=5">
+<link rel="stylesheet" href="chrome.css?v=6">
 </head>
 <body>
+
+<!-- Solo per chi ha il browser in un'altra lingua: la classe la mette lo script in testa. -->
+<p class="avviso-lingua" lang="en">This guide is also available in English. <a href="en/" hreflang="en" data-lingua="en">Read it in English →</a></p>
 
 <!-- ============ barra in alto (compare dopo la copertina) ============ -->
 <header class="barra-top" id="barra">

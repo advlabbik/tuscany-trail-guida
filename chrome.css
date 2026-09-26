@@ -47,6 +47,29 @@ button {
 
 /* ---------- barra in alto ---------- */
 
+/* ============ avviso di lingua ============ */
+/* Sta nel flusso sopra la copertina e se ne va con lo scorrimento: la barra in
+   alto resta fissa e non se lo trascina dietro. Nascosto finché lo script in
+   testa non mette .avviso-en su <html>. */
+.avviso-lingua {
+  display: none;
+  margin: 0;
+  padding: 10px var(--pad-x);
+  background: var(--ink);
+  color: var(--cream);
+  font: 500 var(--fs-sm) / 1.4 var(--font-body);
+  text-align: center;
+}
+
+.avviso-en .avviso-lingua {
+  display: block;
+}
+
+.avviso-lingua a {
+  color: inherit;
+  font-weight: 700;
+}
+
 .barra-top {
   position: fixed;
   inset: 0 0 auto 0;
@@ -718,6 +741,7 @@ footer button {
 }
 
 @media print {
+  .avviso-lingua,
   .barra-top,
   .lingue,
   .binario,
