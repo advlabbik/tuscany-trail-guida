@@ -94,17 +94,19 @@ try {
     }, null, 2) + '\n');
 
     // PDF: JavaScript acceso (le barre prendono --v), tutte le foto subito.
+    // Niente srcset in stampa: le varianti foto/*-800.jpg sono file JPEG rovinati (bande
+    // arcobaleno, fondo grigio) e Chrome le sceglie per le foto stampate più strette.
+    // Si stampa dall'originale in src, lo stesso file che va nel pacchetto.
     const acceso = await browser.newContext();
     const p2 = await acceso.newPage();
     await p2.goto(url, { waitUntil: 'domcontentloaded' });
     await p2.evaluate(async () => {
       const imgs = [...document.images];
-      imgs.forEach((i) => { i.loading = 'eager'; });
-      await Promise.all(imgs.map((i) => (i.complete && i.naturalWidth ? null : new Promise((ok) => {
-        i.addEventListener('load', ok, { once: true }); i.addEventListener('error', ok, { once: true });
-      }))));
+      imgs.forEach((i) => { i.loading = 'eager'; i.removeAttribute('srcset'); i.removeAttribute('sizes'); });
+      await Promise.all(imgs.map((i) => i.decode().catch(() => null)));
     });
-    const mancanti = await p2.evaluate(() => [...document.images].filter((i) => !i.naturalWidth).map((i) => i.src));
+    const mancanti = await p2.evaluate(() => [...document.images]
+      .filter((i) => !i.naturalWidth || i.currentSrc !== i.src).map((i) => i.currentSrc || i.src));
     if (mancanti.length) fallisci(`${lang}: foto non caricate per la stampa: ${mancanti.join(', ')}`);
     await p2.pdf({ path: join(dir, 'guide.pdf'), format: 'A4', printBackground: true });
     await acceso.close();
